@@ -1,4 +1,4 @@
-#Safe@Cal
+# Safe@Cal
 
 The goal if this project is to create an xcode app that allows users to make smart decisions about walking at night on UC Berkeley's campus.
 

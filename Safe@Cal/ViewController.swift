@@ -47,17 +47,23 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         about crimes in the area
      ***/
     func addCrimeData() {
-        // Create (hard coded) crime object
-        let crime:Crime = Crime.init(lat: 37.8658, long: -122.2571, datetime: NSDate(), offense: "Robbery")
+        // Create (hard coded for now) crime object
+        let crime1:Crime = Crime.init(lat: 37.8658, long: -122.2571, datetime: NSDate(), offense: "Robbery")
+        let crime2:Crime = Crime.init(lat: 37.8716, long: -122.2538, datetime: NSDate(), offense: "Armed Robbery")
+        let crime3:Crime = Crime.init(lat: 37.8697, long: -122.2521, datetime: NSDate(), offense: "Aggrevated Assault")
+        let crime4:Crime = Crime.init(lat: 37.8679, long: -122.2590, datetime: NSDate(), offense: "Assault with a Deadly Weapon")
+        
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy' 'HH:mm"
         
-        // Add annotation to map
-        let myTestAnnotation = MKPointAnnotation()
-        myTestAnnotation.coordinate = CLLocationCoordinate2DMake(crime.lat, crime.long)
-        myTestAnnotation.title = crime.offense
-        myTestAnnotation.subtitle = dateFormatter.stringFromDate(crime.datetime)
-        map.addAnnotation(myTestAnnotation)
+        // Add annotations to map
+        for crime in [crime1, crime2, crime3, crime4] {
+            let myTestAnnotation = MKPointAnnotation()
+            myTestAnnotation.coordinate = CLLocationCoordinate2DMake(crime.lat, crime.long)
+            myTestAnnotation.title = crime.offense
+            myTestAnnotation.subtitle = dateFormatter.stringFromDate(crime.datetime)
+            map.addAnnotation(myTestAnnotation)
+        }
     }
     
     override func didReceiveMemoryWarning() {
