@@ -26,12 +26,64 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         manager.requestAlwaysAuthorization()
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
+        map.delegate = self
         
-//        if CLLocationManager.locationServicesEnabled() {
-        addCrimeData()
-        whereTo()
-//        }
+        if CLLocationManager.locationServicesEnabled() {
+            addCrimeData()
+            whereTo()
+        }
+    }
+    
+    /***
+        Get user's desired destination and offer routing to that destination
+     ***/
+    func whereTo() {
+        let sourceLocation = CLLocationCoordinate2D(latitude: currLocation.latitude, longitude: currLocation.longitude)
+        // Hard coding to 2545 Hilliges Ave
+        let destinationLocation = CLLocationCoordinate2D(latitude: 37.863630, longitude: -122.256088)
         
+        let sourcePlacemark = MKPlacemark(coordinate: sourceLocation, addressDictionary: nil)
+        let destinationPlacemark = MKPlacemark(coordinate: destinationLocation, addressDictionary: nil)
+        
+        let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
+        let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
+        
+        let sourceAnnotation = MKPointAnnotation()
+        if let location = sourcePlacemark.location {
+            sourceAnnotation.coordinate = location.coordinate
+        }
+        
+        let destinationAnnotation = MKPointAnnotation()
+        if let location = destinationPlacemark.location {
+            destinationAnnotation.coordinate = location.coordinate
+        }
+        
+        self.map.showAnnotations([sourceAnnotation,destinationAnnotation], animated: true )
+        
+        let directionRequest = MKDirectionsRequest()
+        directionRequest.source = sourceMapItem
+        directionRequest.destination = destinationMapItem
+        directionRequest.transportType = .Walking
+        
+        let directions = MKDirections(request: directionRequest)
+        
+        directions.calculateDirectionsWithCompletionHandler {
+            (response, error) -> Void in
+            
+            guard let response = response else {
+                if let error = error {
+                    print("Error: \(error)")
+                }
+                
+                return
+            }
+            
+            let route = response.routes[0]
+            self.map.addOverlay((route.polyline), level: MKOverlayLevel.AboveRoads)
+            
+            let rect = route.polyline.boundingMapRect
+            self.map.setRegion(MKCoordinateRegionForMapRect(rect), animated: true)
+        }
     }
     
     /***
@@ -46,45 +98,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
         map.setRegion(region, animated: true)
         self.map.showsUserLocation = true
+        
     }
     
-    /***
-        Get user's desired destination and offer routing to that destination
-     ***/
-    func whereTo() {
-        // Hard coding to 2545 Hilliges Ave`
-//        let sourceCoord = manager.location?.coordinate
-        let sourceCoord = CLLocationCoordinate2DMake(self.currLocation.latitude, self.currLocation.longitude)
-        let destinationCoord = CLLocationCoordinate2DMake(37.863630, -122.256088)
-        let sourcePlacemark = MKPlacemark(coordinate: sourceCoord, addressDictionary: nil)
-        let destinationPlacemark = MKPlacemark(coordinate:destinationCoord, addressDictionary: nil)
-        
-        let sourceItem = MKMapItem(placemark: sourcePlacemark)
-        let destItem = MKMapItem(placemark: destinationPlacemark)
-        
-        let directionRequest = MKDirectionsRequest()
-        directionRequest.source = sourceItem
-        directionRequest.destination = destItem
-        directionRequest.transportType = .Walking
-        
-        let directions = MKDirections(request: directionRequest)
-        directions.calculateDirectionsWithCompletionHandler { (response, error) -> Void in
-            
-            guard let response = response else {
-                if let error = error {
-                    print("Error: \(error)")
-                }
-                return
-            }
-            
-            let route = response.routes[0] //fastest route
-            self.map.addOverlay((route.polyline), level: MKOverlayLevel.AboveRoads)
-            
-            let rect = route.polyline.boundingMapRect
-            self.map.setRegion(MKCoordinateRegionForMapRect(rect), animated: true)
-        }
-    }
-
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
         renderer.strokeColor = UIColor.blueColor()
