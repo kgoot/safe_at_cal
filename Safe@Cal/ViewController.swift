@@ -23,7 +23,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.requestAlwaysAuthorization()
+//        manager.requestAlwaysAuthorization()
+        manager.requestLocation()
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
         map.delegate = self
@@ -107,7 +108,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         renderer.lineWidth = 5.0
         return renderer
     }
-
     
     /***
         Add annotations to the map displaying lat/long information
