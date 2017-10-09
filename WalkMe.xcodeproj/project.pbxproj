@@ -1,0 +1,578 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		581A292D1F8AFC6D00796B72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A292C1F8AFC6D00796B72 /* AppDelegate.swift */; };
+		581A292F1F8AFC6D00796B72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A292E1F8AFC6D00796B72 /* ViewController.swift */; };
+		581A29321F8AFC6D00796B72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581A29301F8AFC6D00796B72 /* Main.storyboard */; };
+		581A29341F8AFC6D00796B72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 581A29331F8AFC6D00796B72 /* Assets.xcassets */; };
+		581A29371F8AFC6D00796B72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581A29351F8AFC6D00796B72 /* LaunchScreen.storyboard */; };
+		581A29421F8AFC6D00796B72 /* WalkMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A29411F8AFC6D00796B72 /* WalkMeTests.swift */; };
+		581A294D1F8AFC6D00796B72 /* WalkMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A294C1F8AFC6D00796B72 /* WalkMeUITests.swift */; };
+		581A295C1F8AFCB000796B72 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 581A295B1F8AFCB000796B72 /* MapKit.framework */; };
+		581A295E1F8BDB4400796B72 /* Crime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A295D1F8BDB4400796B72 /* Crime.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		581A293E1F8AFC6D00796B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 581A29211F8AFC6C00796B72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 581A29281F8AFC6C00796B72;
+			remoteInfo = WalkMe;
+		};
+		581A29491F8AFC6D00796B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 581A29211F8AFC6C00796B72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 581A29281F8AFC6C00796B72;
+			remoteInfo = WalkMe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		581A29291F8AFC6D00796B72 /* WalkMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		581A292C1F8AFC6D00796B72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		581A292E1F8AFC6D00796B72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		581A29311F8AFC6D00796B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		581A29331F8AFC6D00796B72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		581A29361F8AFC6D00796B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		581A29381F8AFC6D00796B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		581A293D1F8AFC6D00796B72 /* WalkMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		581A29411F8AFC6D00796B72 /* WalkMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkMeTests.swift; sourceTree = "<group>"; };
+		581A29431F8AFC6D00796B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		581A29481F8AFC6D00796B72 /* WalkMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		581A294C1F8AFC6D00796B72 /* WalkMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkMeUITests.swift; sourceTree = "<group>"; };
+		581A294E1F8AFC6D00796B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		581A295B1F8AFCB000796B72 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		581A295D1F8BDB4400796B72 /* Crime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crime.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		581A29261F8AFC6C00796B72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				581A295C1F8AFCB000796B72 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		581A293A1F8AFC6D00796B72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		581A29451F8AFC6D00796B72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		581A29201F8AFC6C00796B72 = {
+			isa = PBXGroup;
+			children = (
+				581A292B1F8AFC6D00796B72 /* WalkMe */,
+				581A29401F8AFC6D00796B72 /* WalkMeTests */,
+				581A294B1F8AFC6D00796B72 /* WalkMeUITests */,
+				581A292A1F8AFC6D00796B72 /* Products */,
+				581A295A1F8AFCB000796B72 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		581A292A1F8AFC6D00796B72 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				581A29291F8AFC6D00796B72 /* WalkMe.app */,
+				581A293D1F8AFC6D00796B72 /* WalkMeTests.xctest */,
+				581A29481F8AFC6D00796B72 /* WalkMeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		581A292B1F8AFC6D00796B72 /* WalkMe */ = {
+			isa = PBXGroup;
+			children = (
+				581A292C1F8AFC6D00796B72 /* AppDelegate.swift */,
+				581A292E1F8AFC6D00796B72 /* ViewController.swift */,
+				581A29301F8AFC6D00796B72 /* Main.storyboard */,
+				581A29331F8AFC6D00796B72 /* Assets.xcassets */,
+				581A29351F8AFC6D00796B72 /* LaunchScreen.storyboard */,
+				581A29381F8AFC6D00796B72 /* Info.plist */,
+				581A295D1F8BDB4400796B72 /* Crime.swift */,
+			);
+			path = WalkMe;
+			sourceTree = "<group>";
+		};
+		581A29401F8AFC6D00796B72 /* WalkMeTests */ = {
+			isa = PBXGroup;
+			children = (
+				581A29411F8AFC6D00796B72 /* WalkMeTests.swift */,
+				581A29431F8AFC6D00796B72 /* Info.plist */,
+			);
+			path = WalkMeTests;
+			sourceTree = "<group>";
+		};
+		581A294B1F8AFC6D00796B72 /* WalkMeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				581A294C1F8AFC6D00796B72 /* WalkMeUITests.swift */,
+				581A294E1F8AFC6D00796B72 /* Info.plist */,
+			);
+			path = WalkMeUITests;
+			sourceTree = "<group>";
+		};
+		581A295A1F8AFCB000796B72 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				581A295B1F8AFCB000796B72 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		581A29281F8AFC6C00796B72 /* WalkMe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 581A29511F8AFC6D00796B72 /* Build configuration list for PBXNativeTarget "WalkMe" */;
+			buildPhases = (
+				581A29251F8AFC6C00796B72 /* Sources */,
+				581A29261F8AFC6C00796B72 /* Frameworks */,
+				581A29271F8AFC6C00796B72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WalkMe;
+			productName = WalkMe;
+			productReference = 581A29291F8AFC6D00796B72 /* WalkMe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		581A293C1F8AFC6D00796B72 /* WalkMeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 581A29541F8AFC6D00796B72 /* Build configuration list for PBXNativeTarget "WalkMeTests" */;
+			buildPhases = (
+				581A29391F8AFC6D00796B72 /* Sources */,
+				581A293A1F8AFC6D00796B72 /* Frameworks */,
+				581A293B1F8AFC6D00796B72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				581A293F1F8AFC6D00796B72 /* PBXTargetDependency */,
+			);
+			name = WalkMeTests;
+			productName = WalkMeTests;
+			productReference = 581A293D1F8AFC6D00796B72 /* WalkMeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		581A29471F8AFC6D00796B72 /* WalkMeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 581A29571F8AFC6D00796B72 /* Build configuration list for PBXNativeTarget "WalkMeUITests" */;
+			buildPhases = (
+				581A29441F8AFC6D00796B72 /* Sources */,
+				581A29451F8AFC6D00796B72 /* Frameworks */,
+				581A29461F8AFC6D00796B72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				581A294A1F8AFC6D00796B72 /* PBXTargetDependency */,
+			);
+			name = WalkMeUITests;
+			productName = WalkMeUITests;
+			productReference = 581A29481F8AFC6D00796B72 /* WalkMeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		581A29211F8AFC6C00796B72 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = KGLG;
+				TargetAttributes = {
+					581A29281F8AFC6C00796B72 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					581A293C1F8AFC6D00796B72 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 581A29281F8AFC6C00796B72;
+					};
+					581A29471F8AFC6D00796B72 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 581A29281F8AFC6C00796B72;
+					};
+				};
+			};
+			buildConfigurationList = 581A29241F8AFC6C00796B72 /* Build configuration list for PBXProject "WalkMe" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 581A29201F8AFC6C00796B72;
+			productRefGroup = 581A292A1F8AFC6D00796B72 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				581A29281F8AFC6C00796B72 /* WalkMe */,
+				581A293C1F8AFC6D00796B72 /* WalkMeTests */,
+				581A29471F8AFC6D00796B72 /* WalkMeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		581A29271F8AFC6C00796B72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				581A29371F8AFC6D00796B72 /* LaunchScreen.storyboard in Resources */,
+				581A29341F8AFC6D00796B72 /* Assets.xcassets in Resources */,
+				581A29321F8AFC6D00796B72 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		581A293B1F8AFC6D00796B72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		581A29461F8AFC6D00796B72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		581A29251F8AFC6C00796B72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				581A292F1F8AFC6D00796B72 /* ViewController.swift in Sources */,
+				581A295E1F8BDB4400796B72 /* Crime.swift in Sources */,
+				581A292D1F8AFC6D00796B72 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		581A29391F8AFC6D00796B72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				581A29421F8AFC6D00796B72 /* WalkMeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		581A29441F8AFC6D00796B72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				581A294D1F8AFC6D00796B72 /* WalkMeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		581A293F1F8AFC6D00796B72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 581A29281F8AFC6C00796B72 /* WalkMe */;
+			targetProxy = 581A293E1F8AFC6D00796B72 /* PBXContainerItemProxy */;
+		};
+		581A294A1F8AFC6D00796B72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 581A29281F8AFC6C00796B72 /* WalkMe */;
+			targetProxy = 581A29491F8AFC6D00796B72 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		581A29301F8AFC6D00796B72 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				581A29311F8AFC6D00796B72 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		581A29351F8AFC6D00796B72 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				581A29361F8AFC6D00796B72 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		581A294F1F8AFC6D00796B72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		581A29501F8AFC6D00796B72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		581A29521F8AFC6D00796B72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WalkMe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KGLG.WalkMe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		581A29531F8AFC6D00796B72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WalkMe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KGLG.WalkMe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		581A29551F8AFC6D00796B72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WalkMeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KGLG.WalkMeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalkMe.app/WalkMe";
+			};
+			name = Debug;
+		};
+		581A29561F8AFC6D00796B72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WalkMeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KGLG.WalkMeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalkMe.app/WalkMe";
+			};
+			name = Release;
+		};
+		581A29581F8AFC6D00796B72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WalkMeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KGLG.WalkMeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WalkMe;
+			};
+			name = Debug;
+		};
+		581A29591F8AFC6D00796B72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WalkMeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KGLG.WalkMeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WalkMe;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		581A29241F8AFC6C00796B72 /* Build configuration list for PBXProject "WalkMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				581A294F1F8AFC6D00796B72 /* Debug */,
+				581A29501F8AFC6D00796B72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		581A29511F8AFC6D00796B72 /* Build configuration list for PBXNativeTarget "WalkMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				581A29521F8AFC6D00796B72 /* Debug */,
+				581A29531F8AFC6D00796B72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		581A29541F8AFC6D00796B72 /* Build configuration list for PBXNativeTarget "WalkMeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				581A29551F8AFC6D00796B72 /* Debug */,
+				581A29561F8AFC6D00796B72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		581A29571F8AFC6D00796B72 /* Build configuration list for PBXNativeTarget "WalkMeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				581A29581F8AFC6D00796B72 /* Debug */,
+				581A29591F8AFC6D00796B72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 581A29211F8AFC6C00796B72 /* Project object */;
+}
