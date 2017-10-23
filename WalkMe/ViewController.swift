@@ -52,20 +52,52 @@ class ViewController: UIViewController {
     }
     
     /***
+     Read CSV data intro matrix
+     ***/
+    func csv() -> [[String]] {
+        if let filepath = Bundle.main.path(forResource: "crimedata", ofType: "csv") {
+            do {
+                let data = try String(contentsOfFile: filepath)
+                let rows = data.components(separatedBy: "\n")
+                var result: [[String]] = []
+                for row in rows {
+                    let columns = row.components(separatedBy: "    ") //TODO: why doesn't \t work for me?
+                    result.append(columns)
+                }
+                return result
+            }
+            catch { return []}
+        }
+        else { return []}
+    }
+    
+    //return a list of crimes
+    func createCrimes(rows: [[String]]) -> [Crime]{
+        var crimes:[Crime] = []
+        for row in rows {
+            if (row.count == 5) { //TODO(kgoot) better error handling
+                let offense:String = row[2]
+                let latlong = row[4].components(separatedBy: ",").flatMap { Double($0.trimmingCharacters(in: .whitespaces))}
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MM/dd/yy' 'HH:mm"
+                let date = dateFormatter.date(from: row[3])!
+                crimes.append(Crime.init(lat: latlong[0], long: latlong[1], datetime: date, offense: offense))
+            }
+        }
+        return crimes
+    }
+    
+    /***
      Add annotations to the map displaying lat/long information
      about crimes in the area
      ***/
     func addCrimeData() {
-        // Create (hard coded for now) crime objects
-        let crime1:Crime = Crime.init(lat: 37.8658, long: -122.2571, datetime: Date(), offense: "Robbery")
-        let crime2:Crime = Crime.init(lat: 37.8716, long: -122.2538, datetime: Date(), offense: "Armed Robbery")
-        let crime3:Crime = Crime.init(lat: 37.8697, long: -122.2521, datetime: Date(), offense: "Aggrevated Assault")
-        let crime4:Crime = Crime.init(lat: 37.8679, long: -122.2590, datetime: Date(), offense: "Assault with a Deadly Weapon")
-        
+        let csvRows = csv()
+        let crimes = createCrimes(rows: csvRows)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy' 'HH:mm"
         // Add annotations to map
-        for crime in [crime1, crime2, crime3, crime4] {
+        for crime in crimes {
             let myTestAnnotation = MKPointAnnotation()
             myTestAnnotation.coordinate = CLLocationCoordinate2DMake(crime.lat, crime.long)
             myTestAnnotation.title = crime.offense

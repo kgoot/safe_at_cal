@@ -16,6 +16,7 @@
 		581A294D1F8AFC6D00796B72 /* WalkMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A294C1F8AFC6D00796B72 /* WalkMeUITests.swift */; };
 		581A295C1F8AFCB000796B72 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 581A295B1F8AFCB000796B72 /* MapKit.framework */; };
 		581A295E1F8BDB4400796B72 /* Crime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A295D1F8BDB4400796B72 /* Crime.swift */; };
+		9A4AEA221F9E9C8B00F7C16E /* crimedata.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9A4AEA211F9E9C8B00F7C16E /* crimedata.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		581A294E1F8AFC6D00796B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		581A295B1F8AFCB000796B72 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		581A295D1F8BDB4400796B72 /* Crime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crime.swift; sourceTree = "<group>"; };
+		9A4AEA211F9E9C8B00F7C16E /* crimedata.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = crimedata.csv; path = WalkMe/crimedata.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		581A29201F8AFC6C00796B72 = {
 			isa = PBXGroup;
 			children = (
+				9A4AEA211F9E9C8B00F7C16E /* crimedata.csv */,
 				581A292B1F8AFC6D00796B72 /* WalkMe */,
 				581A29401F8AFC6D00796B72 /* WalkMeTests */,
 				581A294B1F8AFC6D00796B72 /* WalkMeUITests */,
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				581A29371F8AFC6D00796B72 /* LaunchScreen.storyboard in Resources */,
+				9A4AEA221F9E9C8B00F7C16E /* crimedata.csv in Resources */,
 				581A29341F8AFC6D00796B72 /* Assets.xcassets in Resources */,
 				581A29321F8AFC6D00796B72 /* Main.storyboard in Resources */,
 			);
