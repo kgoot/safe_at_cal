@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+//import UberRides
 
 class ViewController: UIViewController {
 
@@ -28,13 +29,15 @@ class ViewController: UIViewController {
         locationManager.startUpdatingLocation()
         
         mapView.delegate = self
-        
         searchBar.delegate = self
         
         addCrimeData()
     }
 
     func getDirections(to destination: MKMapItem) {
+        let overlays = mapView.overlays
+        mapView.removeOverlays(overlays)
+        
         let sourcePlacemark = MKPlacemark(coordinate: currentCoordinate)
         let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
         let directionRequest = MKDirectionsRequest()
@@ -46,9 +49,70 @@ class ViewController: UIViewController {
         directions.calculate { (responce, _) in
             guard let responce = responce else { return }
             guard let primaryRoute = responce.routes.first else { return }
+//            guard let secondaryRoute = responce.routes.filter(<#T##isIncluded: (MKRoute) throws -> Bool##(MKRoute) throws -> Bool#>)
             self.mapView.add(primaryRoute.polyline)
-            self.steps = primaryRoute.steps
+            self.steps = primaryRoute.steps // todo
         }
+    }
+    
+//  Returns a Boolean indicating whether the specified URL contains a directions request
+//    class func isDirectionsRequest(URL)
+   
+//  Initializes and returns a directions request object using the specified URL
+//    init(contentsOf: URL)
+
+//    var requestsAlternateRoutes: Bool { get set }
+//    MKDirectionsRequest *walkingRouteRequest = [[MKDirectionsRequest alloc] init];
+//    walkingRouteRequest.transportType = MKDirectionsTransportTypeWalking;
+//    [walkingRouteRequest setSource:[startPoint mapItem]];
+//    [walkingRouteRequest setDestination :[endPoint mapItem]];
+//
+//    MKDirections *walkingRouteDirections = [[MKDirections alloc] initWithRequest:walkingRouteRequest];
+//    [walkingRouteDirections calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse * walkingRouteResponse, NSError *walkingRouteError) {
+//    if (walkingRouteError) {
+//    [self handleDirectionsError:walkingRouteError];
+//    } else {
+//    // The code doesn't request alternate routes, so add the single calculated route to
+//    // a previously declared MKRoute property called walkingRoute.
+//    self.walkingRoute = walkingRouteResponse.routes[0];
+//    }
+//    }];
+//
+    
+    /***
+     Read CSV data intro matrix
+     ***/
+    func csv() -> [[String]] {
+        if let filepath = Bundle.main.path(forResource: "crimedata", ofType: "csv") {
+            do {
+                let data = try String(contentsOfFile: filepath)
+                let rows = data.components(separatedBy: "\n")
+                var result: [[String]] = []
+                for row in rows {
+                    let columns = row.components(separatedBy: "    ") //TODO: why doesn't \t work for me?
+                    result.append(columns)
+                }
+                return result
+            }
+            catch { return []}
+        }
+        else { return []}
+    }
+    
+    //return a list of crimes
+    func createCrimes(rows: [[String]]) -> [Crime]{
+        var crimes:[Crime] = []
+        for row in rows {
+            if (row.count == 5) { //TODO(kgoot) better error handling
+                let offense:String = row[2]
+                let latlong = row[4].components(separatedBy: ",").flatMap { Double($0.trimmingCharacters(in: .whitespaces))}
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MM/dd/yy' 'HH:mm"
+                let date = dateFormatter.date(from: row[3])!
+                crimes.append(Crime.init(lat: latlong[0], long: latlong[1], datetime: date, offense: offense))
+            }
+        }
+        return crimes
     }
     
     /***
@@ -56,16 +120,12 @@ class ViewController: UIViewController {
      about crimes in the area
      ***/
     func addCrimeData() {
-        // Create (hard coded for now) crime objects
-        let crime1:Crime = Crime.init(lat: 37.8658, long: -122.2571, datetime: Date(), offense: "Robbery")
-        let crime2:Crime = Crime.init(lat: 37.8716, long: -122.2538, datetime: Date(), offense: "Armed Robbery")
-        let crime3:Crime = Crime.init(lat: 37.8697, long: -122.2521, datetime: Date(), offense: "Aggrevated Assault")
-        let crime4:Crime = Crime.init(lat: 37.8679, long: -122.2590, datetime: Date(), offense: "Assault with a Deadly Weapon")
-        
+        let csvRows = csv()
+        let crimes = createCrimes(rows: csvRows)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy' 'HH:mm"
         // Add annotations to map
-        for crime in [crime1, crime2, crime3, crime4] {
+        for crime in crimes {
             let myTestAnnotation = MKPointAnnotation()
             myTestAnnotation.coordinate = CLLocationCoordinate2DMake(crime.lat, crime.long)
             myTestAnnotation.title = crime.offense
@@ -123,3 +183,38 @@ extension ViewController: MKMapViewDelegate {
         return MKOverlayPathRenderer()
     }
 }
+
+//override func viewDidLoad() {
+//    super.viewDidLoad()
+//    
+//    // ride request button
+////    let button = RideRequestButton()
+//    
+//    //put the button in the view
+////    view.addSubview(button)
+//}
+
+// all of this until ** goes into .xcodeproj file?
+//
+//$ gem install cocoapods
+//
+//pod init
+//target "WalkMe" do
+//  use_frameworks!
+//pod "UberRides", "~> 0.7"
+//end
+//$ pod install
+//
+//<key>UberClientID</key>
+//<string>X1F-bvD7HRBx83qJNS-1GZROfz6u3tLM</string>
+//<key>UberDisplayName</key>
+//<string>WalkMe</string>
+//<key>LSApplicationQueriesSchemes</key>
+//<array>
+//<string>uber</string>
+//<string>uberauth</string>
+//</array>
+
+
+
+

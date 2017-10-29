@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>WalkMe</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -31,18 +33,18 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Enable Location Sharing when in usage</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Lol</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Enable Location Sharing when in usage</string>
-	<key>NSLocationUsageDescription</key>
-	<string>Yes</string>
 	<key>MKDirectionsApplicationSupportedModes</key>
 	<array>
 		<string>MKDirectionsModePedestrian</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Enable Location Sharing when in usage</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Lol</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Yes</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Enable Location Sharing when in usage</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
