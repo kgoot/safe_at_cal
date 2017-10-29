@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+//import UberRides
 
 class ViewController: UIViewController {
 
@@ -28,13 +29,15 @@ class ViewController: UIViewController {
         locationManager.startUpdatingLocation()
         
         mapView.delegate = self
-        
         searchBar.delegate = self
         
         addCrimeData()
     }
 
     func getDirections(to destination: MKMapItem) {
+        let overlays = mapView.overlays
+        mapView.removeOverlays(overlays)
+        
         let sourcePlacemark = MKPlacemark(coordinate: currentCoordinate)
         let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
         let directionRequest = MKDirectionsRequest()
@@ -46,10 +49,35 @@ class ViewController: UIViewController {
         directions.calculate { (responce, _) in
             guard let responce = responce else { return }
             guard let primaryRoute = responce.routes.first else { return }
+//            guard let secondaryRoute = responce.routes.filter(<#T##isIncluded: (MKRoute) throws -> Bool##(MKRoute) throws -> Bool#>)
             self.mapView.add(primaryRoute.polyline)
-            self.steps = primaryRoute.steps
+            self.steps = primaryRoute.steps // todo
         }
     }
+    
+//  Returns a Boolean indicating whether the specified URL contains a directions request
+//    class func isDirectionsRequest(URL)
+   
+//  Initializes and returns a directions request object using the specified URL
+//    init(contentsOf: URL)
+
+//    var requestsAlternateRoutes: Bool { get set }
+//    MKDirectionsRequest *walkingRouteRequest = [[MKDirectionsRequest alloc] init];
+//    walkingRouteRequest.transportType = MKDirectionsTransportTypeWalking;
+//    [walkingRouteRequest setSource:[startPoint mapItem]];
+//    [walkingRouteRequest setDestination :[endPoint mapItem]];
+//
+//    MKDirections *walkingRouteDirections = [[MKDirections alloc] initWithRequest:walkingRouteRequest];
+//    [walkingRouteDirections calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse * walkingRouteResponse, NSError *walkingRouteError) {
+//    if (walkingRouteError) {
+//    [self handleDirectionsError:walkingRouteError];
+//    } else {
+//    // The code doesn't request alternate routes, so add the single calculated route to
+//    // a previously declared MKRoute property called walkingRoute.
+//    self.walkingRoute = walkingRouteResponse.routes[0];
+//    }
+//    }];
+//
     
     /***
      Read CSV data intro matrix
@@ -155,3 +183,38 @@ extension ViewController: MKMapViewDelegate {
         return MKOverlayPathRenderer()
     }
 }
+
+//override func viewDidLoad() {
+//    super.viewDidLoad()
+//    
+//    // ride request button
+////    let button = RideRequestButton()
+//    
+//    //put the button in the view
+////    view.addSubview(button)
+//}
+
+// all of this until ** goes into .xcodeproj file?
+//
+//$ gem install cocoapods
+//
+//pod init
+//target "WalkMe" do
+//  use_frameworks!
+//pod "UberRides", "~> 0.7"
+//end
+//$ pod install
+//
+//<key>UberClientID</key>
+//<string>X1F-bvD7HRBx83qJNS-1GZROfz6u3tLM</string>
+//<key>UberDisplayName</key>
+//<string>WalkMe</string>
+//<key>LSApplicationQueriesSchemes</key>
+//<array>
+//<string>uber</string>
+//<string>uberauth</string>
+//</array>
+
+
+
+
