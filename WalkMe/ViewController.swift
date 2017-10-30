@@ -15,11 +15,20 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
+
+    @IBOutlet weak var navLeadConst: NSLayoutConstraint!
+    @IBAction func openNav(_ sender: Any) {
+        if (navLeadConst.constant == 0) {
+            navLeadConst.constant = -140
+        } else {
+            navLeadConst.constant = 0
+        }
+    }
     
-    @IBOutlet weak var searchResultsTableView: UITableView!
-    
-    var searchCompleter = MKLocalSearchCompleter()
-    var searchResults = [MKLocalSearchCompletion]()
+    //    @IBOutlet weak var searchResultsTableView: UITableView!
+//
+//    var searchCompleter = MKLocalSearchCompleter()
+//    var searchResults = [MKLocalSearchCompletion]()
     
     let locationManager = CLLocationManager()
     var currentCoordinate: CLLocationCoordinate2D!
@@ -37,9 +46,31 @@ class ViewController: UIViewController {
         searchBar.delegate = self
 //        searchCompleter.delegate = self
         
-        addCrimeData()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy' 'HH:mm"
+        let date = dateFormatter.date(from: "09/29/16 00:00")! //FIXME(kgoot) remove this hardcode
+        addCrimeData(datetime: date)
+        
+    }
+    
+    @IBAction func loadWeeklyData(_ sender: Any) {
+        mapView.removeAnnotations(mapView.annotations)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy' 'HH:mm"
+        let date = dateFormatter.date(from: "09/20/17 00:00")!
+        addCrimeData(datetime: date)
+        navLeadConst.constant = -140
     }
 
+    @IBAction func loadAllData(_ sender: Any) {
+        mapView.removeAnnotations(mapView.annotations)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy' 'HH:mm"
+        let date = dateFormatter.date(from: "09/29/16 00:00")! //FIXME(kgoot) remove this hardcode
+        addCrimeData(datetime: date)
+        navLeadConst.constant = -140
+    }
+    
     func getDirections(to destination: MKMapItem) {
         let overlays = mapView.overlays
         mapView.removeOverlays(overlays)
@@ -164,18 +195,20 @@ class ViewController: UIViewController {
      Add annotations to the map displaying lat/long information
      about crimes in the area
      ***/
-    func addCrimeData() {
+    func addCrimeData(datetime: Date) {
         let csvRows = csv()
         let crimes = createCrimes(rows: csvRows)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy' 'HH:mm"
         // Add annotations to map
         for crime in crimes {
-            let myTestAnnotation = MKPointAnnotation()
-            myTestAnnotation.coordinate = CLLocationCoordinate2DMake(crime.lat, crime.long)
-            myTestAnnotation.title = crime.offense
-            myTestAnnotation.subtitle = dateFormatter.string(for: crime.datetime)
-            mapView.addAnnotation(myTestAnnotation)
+            if (crime.datetime > datetime) {
+                let myTestAnnotation = MKPointAnnotation()
+                myTestAnnotation.coordinate = CLLocationCoordinate2DMake(crime.lat, crime.long)
+                myTestAnnotation.title = crime.offense
+                myTestAnnotation.subtitle = dateFormatter.string(for: crime.datetime)
+                mapView.addAnnotation(myTestAnnotation)
+            }
         }
     }
 }
@@ -216,10 +249,10 @@ extension ViewController: UISearchBarDelegate {
             self.getDirections(to: mapItem)
         }
     }
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        searchCompleter.queryFragment = searchText
-    }
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//
+//        searchCompleter.queryFragment = searchText
+//    }
 }
 
 extension ViewController: MKMapViewDelegate {
