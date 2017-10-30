@@ -146,7 +146,7 @@ class ViewController: UIViewController {
    
 //  Initializes and returns a directions request object using the specified URL
 //    init(contentsOf: URL)
-
+//
 //    var requestsAlternateRoutes: Bool { get set }
 //    MKDirectionsRequest *walkingRouteRequest = [[MKDirectionsRequest alloc] init];
 //    walkingRouteRequest.transportType = MKDirectionsTransportTypeWalking;
@@ -220,6 +220,47 @@ class ViewController: UIViewController {
                 mapView.addAnnotation(myTestAnnotation)
             }
         }
+    }
+    
+    
+    var routes: [MKRoute] { get {} }
+    func get_route_crime_count(routes) {
+        
+        var route_crime_counts:[Int] = []
+        var steps: [MKRouteStep] { get {} }
+        for route in routes {
+            var pointCount = route.polyline.pointCount
+            CLLocationCoordinate2D * routeCoordinates = malloc(pointCount * sizeof(CLLocationCoordinate2D))
+            [route.polyline getCoordinates:routeCoordinates range:NSMakeRange(0, pointCount)]
+            
+            //this part just shows how to use the results...
+            NSLog("route pointCount = %d", pointCount);
+            var count:Int = 0
+            let csvRows = csv()
+            let crimes = createCrimes(rows: csvRows)
+
+            for c in pointCount {
+                NSLog("routeCoordinates[%d] = %f, %f",
+                       c, routeCoordinates[c].latitude, routeCoordinates[c].longitude);
+                for crime in crimes {
+                    let myTestAnnotation = MKPointAnnotation()
+                    myTestAnnotation.coordinate = CLLocationCoordinate2DMake(crime.lat, crime.long)
+                    if (routeCoordinates[c].latitude == crime.lat && routeCoordinates[c].longitude == crime.long) {
+                        count += 1
+                    }
+                }
+            }
+            //free the memory used by the C array when done with it...
+            free(routeCoordinates);
+            route_crime_counts.append(count)
+        }
+        var min = 0
+        for i in route_crime_counts {
+            if route_crime_counts[min] > route_crime_counts[i] {
+                min = i
+            }
+        }
+        return route[min]
     }
 }
 
