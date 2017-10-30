@@ -85,12 +85,12 @@ class ViewController: UIViewController {
         let directions = MKDirections(request: directionRequest)
         directions.calculate { (responce, _) in
             guard let responce = responce else { return }
-            let routes = responce.routes
+            let routesList = responce.routes
             
             let primaryRoute: MKRoute;
-            if (routes.count > 1) {
+            if (routesList.count > 1) {
                 // score routes and find best one based on data
-                primaryRoute = self.scoreRoutes()
+                primaryRoute = self.scoreRoutes(routes: routesList)
             } else {
                 primaryRoute = responce.routes.first!
             }
@@ -103,10 +103,48 @@ class ViewController: UIViewController {
         }
     }
     
-    func scoreRoutes() -> MKRoute {
+    func scoreRoutes(routes: [MKRoute]) -> MKRoute {
+        var route_crime_counts:[Int] = []
+        for route in routes {
+            var pointCount = route.polyline.pointCount
+            print(pointCount)
+        }
+    return routes.first!
+            CLLocationCoordinate2D * routeCoordinates = malloc(pointCount * sizeof(CLLocationCoordinate2D))
+            [route.polyline getCoordinates:routeCoordinates range:NSMakeRange(0, pointCount)]
+
+            //this part just shows how to use the results...
+            NSLog("route pointCount = %d", pointCount);
+            var count:Int = 0
+            let csvRows = csv()
+            let crimes = createCrimes(rows: csvRows)
+
+            for c in pointCount {
+                NSLog("routeCoordinates[%d] = %f, %f",
+                      c, routeCoordinates[c].latitude, routeCoordinates[c].longitude);
+                for crime in crimes {
+                    let myTestAnnotation = MKPointAnnotation()
+                    myTestAnnotation.coordinate = CLLocationCoordinate2DMake(crime.lat, crime.long)
+                    if (routeCoordinates[c].latitude == crime.lat && routeCoordinates[c].longitude == crime.long) {
+                        count += 1
+                    }
+                }
+            }
+            //free the memory used by the C array when done with it...
+            free(routeCoordinates);
+            route_crime_counts.append(count)
+        }
+        var min = 0
+        for i in route_crime_counts {
+            if route_crime_counts[min] > route_crime_counts[i] {
+                min = i
+            }
+        }
+        return route[min]
+
         //return the lowest/highest scored route
         //TODO(lily)
-        return MKRoute.init()
+//        return MKRoute.init()
     }
     
 //    func highlightedText(_ text: String, inRanges ranges: [NSValue], size: CGFloat) -> NSAttributedString {
@@ -213,45 +251,11 @@ class ViewController: UIViewController {
     }
     
     
-    var routes: [MKRoute] { get {} }
-    func get_route_crime_count(routes) {
-        
-        var route_crime_counts:[Int] = []
-        var steps: [MKRouteStep] { get {} }
-        for route in routes {
-            var pointCount = route.polyline.pointCount
-            CLLocationCoordinate2D * routeCoordinates = malloc(pointCount * sizeof(CLLocationCoordinate2D))
-            [route.polyline getCoordinates:routeCoordinates range:NSMakeRange(0, pointCount)]
-            
-            //this part just shows how to use the results...
-            NSLog("route pointCount = %d", pointCount);
-            var count:Int = 0
-            let csvRows = csv()
-            let crimes = createCrimes(rows: csvRows)
-
-            for c in pointCount {
-                NSLog("routeCoordinates[%d] = %f, %f",
-                       c, routeCoordinates[c].latitude, routeCoordinates[c].longitude);
-                for crime in crimes {
-                    let myTestAnnotation = MKPointAnnotation()
-                    myTestAnnotation.coordinate = CLLocationCoordinate2DMake(crime.lat, crime.long)
-                    if (routeCoordinates[c].latitude == crime.lat && routeCoordinates[c].longitude == crime.long) {
-                        count += 1
-                    }
-                }
-            }
-            //free the memory used by the C array when done with it...
-            free(routeCoordinates);
-            route_crime_counts.append(count)
-        }
-        var min = 0
-        for i in route_crime_counts {
-            if route_crime_counts[min] > route_crime_counts[i] {
-                min = i
-            }
-        }
-        return route[min]
-    }
+//    var routes: [MKRoute] { get {} }
+//    func get_route_crime_count(routes) {
+//
+//
+//    }
 }
 
 extension ViewController: CLLocationManagerDelegate {
