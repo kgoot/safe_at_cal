@@ -17,6 +17,7 @@
 		581A295C1F8AFCB000796B72 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 581A295B1F8AFCB000796B72 /* MapKit.framework */; };
 		581A295E1F8BDB4400796B72 /* Crime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A295D1F8BDB4400796B72 /* Crime.swift */; };
 		9A4AEA221F9E9C8B00F7C16E /* crimedata.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9A4AEA211F9E9C8B00F7C16E /* crimedata.csv */; };
+		9A4AEA241FA6CE8E00F7C16E /* nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4AEA231FA6CE8E00F7C16E /* nav.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		581A295B1F8AFCB000796B72 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		581A295D1F8BDB4400796B72 /* Crime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crime.swift; sourceTree = "<group>"; };
 		9A4AEA211F9E9C8B00F7C16E /* crimedata.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = crimedata.csv; path = WalkMe/crimedata.csv; sourceTree = "<group>"; };
+		9A4AEA231FA6CE8E00F7C16E /* nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nav.png; path = ../../../Downloads/nav.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				581A292C1F8AFC6D00796B72 /* AppDelegate.swift */,
 				581A292E1F8AFC6D00796B72 /* ViewController.swift */,
 				581A29301F8AFC6D00796B72 /* Main.storyboard */,
+				9A4AEA231FA6CE8E00F7C16E /* nav.png */,
 				581A29331F8AFC6D00796B72 /* Assets.xcassets */,
 				581A29351F8AFC6D00796B72 /* LaunchScreen.storyboard */,
 				581A29381F8AFC6D00796B72 /* Info.plist */,
@@ -259,6 +262,7 @@
 				9A4AEA221F9E9C8B00F7C16E /* crimedata.csv in Resources */,
 				581A29341F8AFC6D00796B72 /* Assets.xcassets in Resources */,
 				581A29321F8AFC6D00796B72 /* Main.storyboard in Resources */,
+				9A4AEA241FA6CE8E00F7C16E /* nav.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
