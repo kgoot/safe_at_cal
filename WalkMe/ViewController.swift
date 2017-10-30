@@ -15,6 +15,20 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
+
+    @IBOutlet weak var navLeadConst: NSLayoutConstraint!
+    @IBAction func openNav(_ sender: Any) {
+        if (navLeadConst.constant == 0) {
+            navLeadConst.constant = -140
+        } else {
+            navLeadConst.constant = 0
+        }
+    }
+    
+    //    @IBOutlet weak var searchResultsTableView: UITableView!
+//
+//    var searchCompleter = MKLocalSearchCompleter()
+//    var searchResults = [MKLocalSearchCompletion]()
     
     let locationManager = CLLocationManager()
     var currentCoordinate: CLLocationCoordinate2D!
@@ -30,10 +44,33 @@ class ViewController: UIViewController {
         
         mapView.delegate = self
         searchBar.delegate = self
+//        searchCompleter.delegate = self
         
-        addCrimeData()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy' 'HH:mm"
+        let date = dateFormatter.date(from: "09/29/16 00:00")! //FIXME(kgoot) remove this hardcode
+        addCrimeData(datetime: date)
+        
+    }
+    
+    @IBAction func loadWeeklyData(_ sender: Any) {
+        mapView.removeAnnotations(mapView.annotations)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy' 'HH:mm"
+        let date = dateFormatter.date(from: "09/20/17 00:00")!
+        addCrimeData(datetime: date)
+        navLeadConst.constant = -140
     }
 
+    @IBAction func loadAllData(_ sender: Any) {
+        mapView.removeAnnotations(mapView.annotations)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy' 'HH:mm"
+        let date = dateFormatter.date(from: "09/29/16 00:00")! //FIXME(kgoot) remove this hardcode
+        addCrimeData(datetime: date)
+        navLeadConst.constant = -140
+    }
+    
     func getDirections(to destination: MKMapItem) {
         let overlays = mapView.overlays
         mapView.removeOverlays(overlays)
@@ -48,12 +85,51 @@ class ViewController: UIViewController {
         let directions = MKDirections(request: directionRequest)
         directions.calculate { (responce, _) in
             guard let responce = responce else { return }
-            guard let primaryRoute = responce.routes.first else { return }
-//            guard let secondaryRoute = responce.routes.filter(<#T##isIncluded: (MKRoute) throws -> Bool##(MKRoute) throws -> Bool#>)
+            let routes = responce.routes
+            
+            let primaryRoute: MKRoute;
+            if (routes.count > 1) {
+                // score routes and find best one based on data
+                primaryRoute = self.scoreRoutes()
+            } else {
+                primaryRoute = responce.routes.first!
+            }
+            
             self.mapView.add(primaryRoute.polyline)
+            self.mapView.setVisibleMapRect(primaryRoute.polyline.boundingMapRect,
+                                      edgePadding: UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0),
+                                      animated: true)
             self.steps = primaryRoute.steps // todo
         }
     }
+    
+    func scoreRoutes() -> MKRoute {
+        //return the lowest/highest scored route
+        //TODO(lily)
+        return MKRoute.init()
+    }
+    
+//    func highlightedText(_ text: String, inRanges ranges: [NSValue], size: CGFloat) -> NSAttributedString {
+//        let attributedText = NSMutableAttributedString(string: text)
+//        let regular = UIFont.systemFont(ofSize: size)
+//        attributedText.addAttribute(NSFontAttributedStringKey.font, value:regular, range:NSMakeRange(0, text.characters.count))
+//
+//        let bold = UIFont.boldSystemFont(ofSize: size)
+//        for value in ranges {
+//            attributedText.addAttribute(NSFontAttributedStringKey.font, value:bold, range:value.rangeValue)
+//        }
+//        return attributedText
+//    }
+    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let searchResult = searchResults[indexPath.row]
+//        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+//
+//        cell.textLabel?.attributedText = highlightedText(searchResult.title, inRanges: searchResult.titleHighlightRanges, size: 17.0)
+//        cell.detailTextLabel?.attributedText = highlightedText(searchResult.subtitle, inRanges: searchResult.subtitleHighlightRanges, size: 12.0)
+//
+//        return cell
+//    }
     
 //  Returns a Boolean indicating whether the specified URL contains a directions request
 //    class func isDirectionsRequest(URL)
@@ -119,18 +195,20 @@ class ViewController: UIViewController {
      Add annotations to the map displaying lat/long information
      about crimes in the area
      ***/
-    func addCrimeData() {
+    func addCrimeData(datetime: Date) {
         let csvRows = csv()
         let crimes = createCrimes(rows: csvRows)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy' 'HH:mm"
         // Add annotations to map
         for crime in crimes {
-            let myTestAnnotation = MKPointAnnotation()
-            myTestAnnotation.coordinate = CLLocationCoordinate2DMake(crime.lat, crime.long)
-            myTestAnnotation.title = crime.offense
-            myTestAnnotation.subtitle = dateFormatter.string(for: crime.datetime)
-            mapView.addAnnotation(myTestAnnotation)
+            if (crime.datetime > datetime) {
+                let myTestAnnotation = MKPointAnnotation()
+                myTestAnnotation.coordinate = CLLocationCoordinate2DMake(crime.lat, crime.long)
+                myTestAnnotation.title = crime.offense
+                myTestAnnotation.subtitle = dateFormatter.string(for: crime.datetime)
+                mapView.addAnnotation(myTestAnnotation)
+            }
         }
     }
 }
@@ -144,7 +222,7 @@ extension ViewController: CLLocationManagerDelegate {
         let span:MKCoordinateSpan = MKCoordinateSpanMake(0.015, 0.015)
         let region:MKCoordinateRegion = MKCoordinateRegionMake(currentCoordinate, span)
         mapView.setRegion(region, animated: true)
-        mapView.userTrackingMode = .followWithHeading
+//        mapView.userTrackingMode = .followWithHeading
         self.mapView.showsUserLocation = true
     }
 }
@@ -153,6 +231,7 @@ extension ViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
         self.view.endEditing(true)
+    
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -170,6 +249,10 @@ extension ViewController: UISearchBarDelegate {
             self.getDirections(to: mapItem)
         }
     }
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//
+//        searchCompleter.queryFragment = searchText
+//    }
 }
 
 extension ViewController: MKMapViewDelegate {
@@ -183,6 +266,15 @@ extension ViewController: MKMapViewDelegate {
         return MKOverlayPathRenderer()
     }
 }
+
+/**
+ Highlights the matching search strings with the results
+ - parameter text: The text to highlight
+ - parameter ranges: The ranges where the text should be highlighted
+ - parameter size: The size the text should be set at
+ - returns: A highlighted attributed string with the ranges highlighted
+ */
+
 
 //override func viewDidLoad() {
 //    super.viewDidLoad()
