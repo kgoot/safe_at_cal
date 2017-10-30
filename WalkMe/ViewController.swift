@@ -88,9 +88,9 @@ class ViewController: UIViewController {
             let routes = responce.routes
             
             let primaryRoute: MKRoute;
-            if (routes.count > 1) {
+            if (routes.count >= 1) { //FIXME
                 // score routes and find best one based on data
-                primaryRoute = self.scoreRoutes()
+                primaryRoute = self.scoreRoutes(routes: routes)
             } else {
                 primaryRoute = responce.routes.first!
             }
@@ -103,10 +103,20 @@ class ViewController: UIViewController {
         }
     }
     
-    func scoreRoutes() -> MKRoute {
-        //return the lowest/highest scored route
-        //TODO(lily)
-        return MKRoute.init()
+    func scoreRoutes(routes: [MKRoute]) -> MKRoute {
+        for route in routes {
+             print("hello world")
+            for step in route.steps {
+                let coord = step.polyline.coordinate
+//                MKPinAnnotationView.bluePinColor()
+                
+                let myTestAnnotation = MKPointAnnotation()
+                myTestAnnotation.coordinate = CLLocationCoordinate2DMake(coord.latitude, coord.longitude)
+                mapView.addAnnotation(myTestAnnotation)
+            }
+             print("end world")
+        }
+        return routes.first!
     }
     
 //    func highlightedText(_ text: String, inRanges ranges: [NSValue], size: CGFloat) -> NSAttributedString {
@@ -249,10 +259,6 @@ extension ViewController: UISearchBarDelegate {
             self.getDirections(to: mapItem)
         }
     }
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//
-//        searchCompleter.queryFragment = searchText
-//    }
 }
 
 extension ViewController: MKMapViewDelegate {
@@ -267,46 +273,8 @@ extension ViewController: MKMapViewDelegate {
     }
 }
 
-/**
- Highlights the matching search strings with the results
- - parameter text: The text to highlight
- - parameter ranges: The ranges where the text should be highlighted
- - parameter size: The size the text should be set at
- - returns: A highlighted attributed string with the ranges highlighted
- */
-
-
-//override func viewDidLoad() {
-//    super.viewDidLoad()
-//    
-//    // ride request button
-////    let button = RideRequestButton()
-//    
-//    //put the button in the view
-////    view.addSubview(button)
-//}
-
-// all of this until ** goes into .xcodeproj file?
-//
-//$ gem install cocoapods
-//
-//pod init
-//target "WalkMe" do
-//  use_frameworks!
-//pod "UberRides", "~> 0.7"
-//end
-//$ pod install
-//
-//<key>UberClientID</key>
-//<string>X1F-bvD7HRBx83qJNS-1GZROfz6u3tLM</string>
-//<key>UberDisplayName</key>
-//<string>WalkMe</string>
-//<key>LSApplicationQueriesSchemes</key>
-//<array>
-//<string>uber</string>
-//<string>uberauth</string>
-//</array>
-
-
-
-
+extension MKPinAnnotationView {
+    class func bluePinColor() -> UIColor {
+        return UIColor.blue
+    }
+}
