@@ -22,7 +22,22 @@ class LoginView: UIViewController {
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var login_button: UIButton!
     
+    // NEXT Action
+    @IBAction func primaryEmailAction(_ sender: Any) {
+        self.passwordText.becomeFirstResponder()
+    }
+    
+    // GO Action
+    @IBAction func primaryPasswordAction(_ sender: Any) {
+        beginSignIn()
+    }
+    
+    //LOGIN Action
     @IBAction func login_action(_ sender: Any) {
+        beginSignIn()
+    }
+    
+    func beginSignIn() {
         if emailText.text != "" && passwordText.text != "" {
             if segmentControl.selectedSegmentIndex == 0 { //Login user {
                 Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
@@ -66,12 +81,19 @@ class LoginView: UIViewController {
     
     @IBOutlet weak var imUpConst: NSLayoutConstraint!
     @IBAction func emailedClicked(_ sender: Any) {
-        imUpConst.constant = -210
+        imUpConst.constant = -220
         UIView.animate(withDuration: 1.0) {
             self.view.layoutIfNeeded()
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        imUpConst.constant = 0
+        UIView.animate(withDuration: 1.0) {
+            self.view.layoutIfNeeded()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,8 +104,3 @@ class LoginView: UIViewController {
         }
     }
 }
-
-
-
-
-
