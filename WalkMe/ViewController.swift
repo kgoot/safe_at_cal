@@ -10,6 +10,8 @@ import UIKit
 import MapKit
 import CoreLocation
 import FirebaseAuth
+import FirebaseDatabase
+import KeychainSwift
 //import UberRides
 
 class ViewController: UIViewController {
@@ -25,8 +27,7 @@ class ViewController: UIViewController {
             if segmentControl.selectedSegmentIndex == 0 { //Login user {
                 Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
                     if user != nil { //Sign in success
-                        print("success login")
-                        self.performSegue(withIdentifier: "goto_home", sender: self)
+                        self.completeSignIn(id: user!.uid)
                     } else { // Error
                         if let myError = error?.localizedDescription {
                             print(myError)
@@ -39,8 +40,7 @@ class ViewController: UIViewController {
             else { //sign up user
                 Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
                     if user != nil { //success sign in
-                        print("success sign in")
-                        self.performSegue(withIdentifier: "goto_home", sender: self)
+                        self.completeSignIn(id: user!.uid)
                     } else {
                         if let myError = error?.localizedDescription {
                             print(myError)
@@ -52,9 +52,28 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    func completeSignIn(id: String) {
+        if self.emailText.text!.hasSuffix("berkeley.edu") {
+            print("success login")
+            let keyChain = DataService().keyChain
+            keyChain.set(id, forKey: "uid")
+            self.performSegue(withIdentifier: "goto_home", sender: self)
+        } else {
+            self.performSegue(withIdentifier: "goto_sorry", sender: self)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("hello")
+
+        let keyChain = DataService().keyChain
+        if keyChain.get("uid") != nil {
+//            self.performSegue(withIdentifier: "goto_home", sender: self)
+        }
     }
 }
+
+
+
+

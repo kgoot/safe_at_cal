@@ -8,6 +8,8 @@ target 'WalkMe' do
   # Pods for WalkMe
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'Firebase/Database'
+pod 'KeychainSwift'
 
   target 'WalkMeTests' do
     inherit! :search_paths

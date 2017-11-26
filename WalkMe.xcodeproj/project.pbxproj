@@ -20,8 +20,10 @@
 		6456F073B69E51ACADC625D7 /* Pods_WalkMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABCF422D99719523B319E50 /* Pods_WalkMeUITests.framework */; };
 		9A4AEA221F9E9C8B00F7C16E /* crimedata.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9A4AEA211F9E9C8B00F7C16E /* crimedata.csv */; };
 		9A4AEA241FA6CE8E00F7C16E /* nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4AEA231FA6CE8E00F7C16E /* nav.png */; };
+		9ADE7BBB1FCA956A007AFC55 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADE7BBA1FCA956A007AFC55 /* ViewController3.swift */; };
 		9AE919051FCA0D330070E5BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AE919041FCA0D330070E5BF /* GoogleService-Info.plist */; };
 		9AE919071FCA48AA0070E5BF /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE919061FCA48AA0070E5BF /* ViewController2.swift */; };
+		9AE9190B1FCA8BCB0070E5BF /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE9190A1FCA8BCB0070E5BF /* DataService.swift */; };
 		C445A0F000DCA598BA23CEA2 /* Pods_WalkMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F5A3908F54C14D78F237C /* Pods_WalkMeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,8 +70,10 @@
 		8ABCF422D99719523B319E50 /* Pods_WalkMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkMeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4AEA211F9E9C8B00F7C16E /* crimedata.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = crimedata.csv; path = WalkMe/crimedata.csv; sourceTree = "<group>"; };
 		9A4AEA231FA6CE8E00F7C16E /* nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nav.png; path = ../../../Downloads/nav.png; sourceTree = "<group>"; };
+		9ADE7BBA1FCA956A007AFC55 /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 		9AE919041FCA0D330070E5BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9AE919061FCA48AA0070E5BF /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		9AE9190A1FCA8BCB0070E5BF /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		B62AA286594DBB4EF2C47DA7 /* Pods-WalkMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WalkMe/Pods-WalkMe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +135,7 @@
 				581A292C1F8AFC6D00796B72 /* AppDelegate.swift */,
 				581A292E1F8AFC6D00796B72 /* ViewController.swift */,
 				9AE919061FCA48AA0070E5BF /* ViewController2.swift */,
+				9ADE7BBA1FCA956A007AFC55 /* ViewController3.swift */,
 				581A29301F8AFC6D00796B72 /* Main.storyboard */,
 				9A4AEA231FA6CE8E00F7C16E /* nav.png */,
 				581A29331F8AFC6D00796B72 /* Assets.xcassets */,
@@ -138,6 +143,7 @@
 				581A29381F8AFC6D00796B72 /* Info.plist */,
 				9AE919041FCA0D330070E5BF /* GoogleService-Info.plist */,
 				581A295D1F8BDB4400796B72 /* Crime.swift */,
+				9AE9190A1FCA8BCB0070E5BF /* DataService.swift */,
 			);
 			path = WalkMe;
 			sourceTree = "<group>";
@@ -454,12 +460,16 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-WalkMe/Pods-WalkMe-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,8 +501,10 @@
 			files = (
 				581A292F1F8AFC6D00796B72 /* ViewController.swift in Sources */,
 				9AE919071FCA48AA0070E5BF /* ViewController2.swift in Sources */,
+				9ADE7BBB1FCA956A007AFC55 /* ViewController3.swift in Sources */,
 				581A295E1F8BDB4400796B72 /* Crime.swift in Sources */,
 				581A292D1F8AFC6D00796B72 /* AppDelegate.swift in Sources */,
+				9AE9190B1FCA8BCB0070E5BF /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,6 +27,11 @@ class ViewController2: UIViewController {
         }
     }
     
+    //SIGN OUT
+    @IBAction func signOut(_ sender: Any) {
+        self.performSegue(withIdentifier: "goto_login", sender: self)
+    }
+    
     let locationManager = CLLocationManager()
     var currentCoordinate: CLLocationCoordinate2D!
     var steps = [MKRouteStep]()
