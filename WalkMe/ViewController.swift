@@ -63,6 +63,15 @@ class ViewController: UIViewController {
             self.performSegue(withIdentifier: "goto_sorry", sender: self)
         }
     }
+    
+    @IBOutlet weak var imUpConst: NSLayoutConstraint!
+    @IBAction func emailedClicked(_ sender: Any) {
+        imUpConst.constant = -210
+        UIView.animate(withDuration: 1.0) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +82,7 @@ class ViewController: UIViewController {
         }
     }
 }
+
 
 
 
