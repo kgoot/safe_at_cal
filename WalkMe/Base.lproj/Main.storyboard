@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cav-b7-dE6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xzq-QG-2KZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -120,7 +120,7 @@
         <!--WalkMe-->
         <scene sceneID="4ae-Kl-c4j">
             <objects>
-                <viewController id="cav-b7-dE6" customClass="ViewController" customModule="WalkMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cav-b7-dE6" customClass="ViewController1" customModule="WalkMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tkt-bV-haL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -173,7 +173,7 @@
                                 </connections>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.97253084182739258" green="0.96862208843231201" blue="0.96863222122192383" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Wp8-l1-iy0" firstAttribute="leading" secondItem="ylZ-z5-gV1" secondAttribute="leading" constant="125" id="2Pi-s3-xrE"/>
                             <constraint firstItem="ylZ-z5-gV1" firstAttribute="trailing" secondItem="GL7-uf-bTn" secondAttribute="trailing" constant="50" id="ClZ-8Z-vvY"/>
@@ -300,13 +300,37 @@
             </objects>
             <point key="canvasLocation" x="743" y="385"/>
         </scene>
+        <!--View Controller0-->
+        <scene sceneID="GCx-hT-vzo">
+            <objects>
+                <viewController id="Xzq-QG-2KZ" customClass="ViewController0" customModule="WalkMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FdB-sS-ZfI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="walkme" translatesAutoresizingMaskIntoConstraints="NO" id="Qpb-sC-wSD">
+                                <rect key="frame" x="37" y="145" width="300" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="mfD-eU-dwC"/>
+                    </view>
+                    <connections>
+                        <segue destination="cav-b7-dE6" kind="show" identifier="goto_welcome" id="DsU-Au-rf1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rVm-5v-JhP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-927" y="133"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="walkme" width="600" height="600"/>
+        <image name="walkme" width="927" height="853"/>
         <image name="walkme_icon" width="573" height="266"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OsE-1I-eGU"/>
+        <segue reference="DsU-Au-rf1"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

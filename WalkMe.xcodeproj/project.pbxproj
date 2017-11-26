@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		426D28A71FED58200F4E27E0 /* Pods_WalkMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88B199786C825327F77B14D6 /* Pods_WalkMe.framework */; };
 		581A292D1F8AFC6D00796B72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A292C1F8AFC6D00796B72 /* AppDelegate.swift */; };
-		581A292F1F8AFC6D00796B72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A292E1F8AFC6D00796B72 /* ViewController.swift */; };
+		581A292F1F8AFC6D00796B72 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A292E1F8AFC6D00796B72 /* ViewController1.swift */; };
 		581A29321F8AFC6D00796B72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581A29301F8AFC6D00796B72 /* Main.storyboard */; };
 		581A29341F8AFC6D00796B72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 581A29331F8AFC6D00796B72 /* Assets.xcassets */; };
 		581A29371F8AFC6D00796B72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581A29351F8AFC6D00796B72 /* LaunchScreen.storyboard */; };
@@ -18,6 +18,7 @@
 		581A295C1F8AFCB000796B72 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 581A295B1F8AFCB000796B72 /* MapKit.framework */; };
 		581A295E1F8BDB4400796B72 /* Crime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A295D1F8BDB4400796B72 /* Crime.swift */; };
 		6456F073B69E51ACADC625D7 /* Pods_WalkMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABCF422D99719523B319E50 /* Pods_WalkMeUITests.framework */; };
+		9A31DA651FCAB8C800E99B22 /* ViewController0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A31DA641FCAB8C800E99B22 /* ViewController0.swift */; };
 		9A4AEA221F9E9C8B00F7C16E /* crimedata.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9A4AEA211F9E9C8B00F7C16E /* crimedata.csv */; };
 		9A4AEA241FA6CE8E00F7C16E /* nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4AEA231FA6CE8E00F7C16E /* nav.png */; };
 		9ADE7BBB1FCA956A007AFC55 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADE7BBA1FCA956A007AFC55 /* ViewController3.swift */; };
@@ -51,7 +52,7 @@
 		14CDD3517B2C7BCB5396D279 /* Pods-WalkMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WalkMeTests/Pods-WalkMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		581A29291F8AFC6D00796B72 /* WalkMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		581A292C1F8AFC6D00796B72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		581A292E1F8AFC6D00796B72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		581A292E1F8AFC6D00796B72 /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
 		581A29311F8AFC6D00796B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		581A29331F8AFC6D00796B72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		581A29361F8AFC6D00796B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 		777F5A3908F54C14D78F237C /* Pods_WalkMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B199786C825327F77B14D6 /* Pods_WalkMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ABCF422D99719523B319E50 /* Pods_WalkMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkMeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A31DA641FCAB8C800E99B22 /* ViewController0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController0.swift; sourceTree = "<group>"; };
 		9A4AEA211F9E9C8B00F7C16E /* crimedata.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = crimedata.csv; path = WalkMe/crimedata.csv; sourceTree = "<group>"; };
 		9A4AEA231FA6CE8E00F7C16E /* nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nav.png; path = ../../../Downloads/nav.png; sourceTree = "<group>"; };
 		9ADE7BBA1FCA956A007AFC55 /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
@@ -133,7 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				581A292C1F8AFC6D00796B72 /* AppDelegate.swift */,
-				581A292E1F8AFC6D00796B72 /* ViewController.swift */,
+				9A31DA641FCAB8C800E99B22 /* ViewController0.swift */,
+				581A292E1F8AFC6D00796B72 /* ViewController1.swift */,
 				9AE919061FCA48AA0070E5BF /* ViewController2.swift */,
 				9ADE7BBA1FCA956A007AFC55 /* ViewController3.swift */,
 				581A29301F8AFC6D00796B72 /* Main.storyboard */,
@@ -499,12 +502,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				581A292F1F8AFC6D00796B72 /* ViewController.swift in Sources */,
+				581A292F1F8AFC6D00796B72 /* ViewController1.swift in Sources */,
 				9AE919071FCA48AA0070E5BF /* ViewController2.swift in Sources */,
 				9ADE7BBB1FCA956A007AFC55 /* ViewController3.swift in Sources */,
 				581A295E1F8BDB4400796B72 /* Crime.swift in Sources */,
 				581A292D1F8AFC6D00796B72 /* AppDelegate.swift in Sources */,
 				9AE9190B1FCA8BCB0070E5BF /* DataService.swift in Sources */,
+				9A31DA651FCAB8C800E99B22 /* ViewController0.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

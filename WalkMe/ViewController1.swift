@@ -14,7 +14,7 @@ import FirebaseDatabase
 import KeychainSwift
 //import UberRides
 
-class ViewController: UIViewController {
+class ViewController1: UIViewController {
 
     //LOGIN outlets
     @IBOutlet weak var emailText: UITextField!
@@ -78,7 +78,7 @@ class ViewController: UIViewController {
 
         let keyChain = DataService().keyChain
         if keyChain.get("uid") != nil {
-//            self.performSegue(withIdentifier: "goto_home", sender: self)
+//            self.performSegue(withIdentifier: "goto_home", sender: self) //Comment this back in to avoid having to resign in
         }
     }
 }
