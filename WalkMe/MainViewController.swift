@@ -12,7 +12,7 @@ import MapKit
 import CoreLocation
 import FirebaseAuth
 
-class ViewController2: UIViewController {
+class MainViewController: UIViewController {
     
     //HOME outlets
     @IBOutlet weak var searchBar: UISearchBar!
@@ -21,7 +21,7 @@ class ViewController2: UIViewController {
     @IBOutlet weak var sideBarLeadConst: NSLayoutConstraint!
     @IBAction func openNav(_ sender: Any) {
         if sideBarLeadConst.constant == 0 {
-            sideBarLeadConst.constant = -140
+            sideBarLeadConst.constant = -240
         } else {
             sideBarLeadConst.constant = 0
         }
@@ -179,7 +179,7 @@ class ViewController2: UIViewController {
     }
 }
 
-extension ViewController2: CLLocationManagerDelegate {
+extension MainViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         manager.stopUpdatingLocation()
         guard let currentLocation = locations.first else { return }
@@ -193,7 +193,7 @@ extension ViewController2: CLLocationManagerDelegate {
     }
 }
 
-extension ViewController2: UISearchBarDelegate {
+extension MainViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
         self.view.endEditing(true)
@@ -216,7 +216,7 @@ extension ViewController2: UISearchBarDelegate {
     }
 }
 
-extension ViewController2: MKMapViewDelegate {
+extension MainViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay is MKPolyline {
             let renderer = MKPolylineRenderer(overlay: overlay)

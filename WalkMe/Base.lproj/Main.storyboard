@@ -8,11 +8,16 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--WalkMe-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController2" customModule="WalkMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="WalkMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,10 +37,10 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                             </mapView>
                             <view contentMode="scaleToFill" restorationIdentifier="side_bar" translatesAutoresizingMaskIntoConstraints="NO" id="7j2-6m-zGj">
-                                <rect key="frame" x="-140" y="120" width="140" height="547"/>
+                                <rect key="frame" x="-240" y="120" width="240" height="547"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zF-Ut-Cyc">
-                                        <rect key="frame" x="8" y="8" width="124" height="30"/>
+                                        <rect key="frame" x="8" y="8" width="224" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="GNK-Bg-sLP"/>
                                         </constraints>
@@ -45,7 +50,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxI-cY-Omc">
-                                        <rect key="frame" x="8" y="46" width="124" height="30"/>
+                                        <rect key="frame" x="8" y="46" width="224" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="JsM-jf-Ohz"/>
                                         </constraints>
@@ -59,7 +64,7 @@
                                 <constraints>
                                     <constraint firstItem="pxI-cY-Omc" firstAttribute="top" secondItem="7zF-Ut-Cyc" secondAttribute="bottom" constant="8" id="DZM-fV-QxD"/>
                                     <constraint firstItem="pxI-cY-Omc" firstAttribute="leading" secondItem="7j2-6m-zGj" secondAttribute="leading" constant="8" id="ENh-bQ-m92"/>
-                                    <constraint firstAttribute="width" constant="140" id="ROl-YE-t9s"/>
+                                    <constraint firstAttribute="width" constant="240" id="ROl-YE-t9s"/>
                                     <constraint firstItem="7zF-Ut-Cyc" firstAttribute="leading" secondItem="7j2-6m-zGj" secondAttribute="leading" constant="8" id="Srx-us-ybJ"/>
                                     <constraint firstAttribute="trailing" secondItem="pxI-cY-Omc" secondAttribute="trailing" constant="8" id="cEB-PQ-12c"/>
                                     <constraint firstAttribute="trailing" secondItem="7zF-Ut-Cyc" secondAttribute="trailing" constant="8" id="cI5-ev-hSN"/>
@@ -79,7 +84,7 @@
                             <constraint firstItem="fem-2W-uo7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gV5-yh-Fbj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7j2-6m-zGj" secondAttribute="bottom" id="nNs-kf-Zv1"/>
                             <constraint firstItem="mPc-tZ-zCl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="o74-ai-lLE"/>
-                            <constraint firstItem="7j2-6m-zGj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-140" id="tWf-Hf-BDw"/>
+                            <constraint firstItem="7j2-6m-zGj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-240" id="tWf-Hf-BDw"/>
                             <constraint firstItem="mPc-tZ-zCl" firstAttribute="top" secondItem="fem-2W-uo7" secondAttribute="bottom" id="yUX-qK-ZP5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -102,7 +107,7 @@
                         <outlet property="searchBar" destination="fem-2W-uo7" id="wvG-Jq-HN6"/>
                         <outlet property="searchDisplayController" destination="uzr-rc-W0B" id="Lyn-8y-FND"/>
                         <outlet property="sideBarLeadConst" destination="tWf-Hf-BDw" id="jRH-GJ-d91"/>
-                        <segue destination="cav-b7-dE6" kind="show" identifier="goto_login" id="GsY-My-5vu"/>
+                        <segue destination="cav-b7-dE6" kind="presentation" identifier="goto_login" modalTransitionStyle="crossDissolve" id="GsY-My-5vu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -115,12 +120,12 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1578" y="385"/>
+            <point key="canvasLocation" x="1457" y="385"/>
         </scene>
         <!--WalkMe-->
         <scene sceneID="4ae-Kl-c4j">
             <objects>
-                <viewController id="cav-b7-dE6" customClass="ViewController1" customModule="WalkMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cav-b7-dE6" customClass="LoginView" customModule="WalkMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tkt-bV-haL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,7 +205,7 @@
                         <outlet property="passwordText" destination="f97-D0-fAZ" id="CBA-zo-dUQ"/>
                         <outlet property="segmentControl" destination="Wp8-l1-iy0" id="T6M-hY-np3"/>
                         <segue destination="drM-5p-aJ9" kind="show" identifier="goto_home" id="NMx-jD-wJW"/>
-                        <segue destination="JXv-6S-AJ8" kind="show" identifier="goto_sorry" id="2Ab-xp-ZEQ"/>
+                        <segue destination="JXv-6S-AJ8" kind="presentation" identifier="goto_sorry" modalTransitionStyle="crossDissolve" id="2Ab-xp-ZEQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vy2-2z-EQO" sceneMemberID="firstResponder"/>
@@ -210,67 +215,59 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-127.2" y="132.68365817091455"/>
+            <point key="canvasLocation" x="-4" y="132"/>
         </scene>
-        <!--View Controller3-->
+        <!--Sorry View-->
         <scene sceneID="URR-vR-4nf">
             <objects>
-                <viewController id="JXv-6S-AJ8" customClass="ViewController3" customModule="WalkMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JXv-6S-AJ8" customClass="SorryView" customModule="WalkMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="Ky9-BS-Tha">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIW-eJ-dvv">
-                                <rect key="frame" x="170" y="607" width="35" height="30"/>
+                                <rect key="frame" x="171" y="607" width="34" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="Tc6-MC-LYv"/>
                                     <constraint firstAttribute="height" constant="30" id="oWv-52-xX0"/>
                                 </constraints>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.88759122293671355" green="0.88303947307549957" blue="0.89214297279792742" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="backAction:" destination="JXv-6S-AJ8" eventType="touchUpInside" id="bb1-9K-isN"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aOH-Lk-rse">
-                                <rect key="frame" x="54" y="220" width="267" height="295"/>
-                                <color key="backgroundColor" red="0.76237094402313232" green="0.82896387577056885" blue="0.9451216459274292" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="295" id="Cwz-6x-LXg"/>
-                                    <constraint firstAttribute="width" constant="265" id="gBE-9z-Zko"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="295" id="hdr-PU-jDX"/>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">Dear user, thanks you for trying to use WalkMe.  Unfortunately, we are currently only available for Berkeley students and therefore requires a berkeley.edu domain to authenticate and use our app. Please check back at a later time as we continue to expand our service.</string>
-                                        <attributes>
-                                            <font key="NSFont" size="18" name="Avenir-Book"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walkme_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ci4-OG-lfl">
-                                <rect key="frame" x="7" y="60" width="361" height="190"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walkme" translatesAutoresizingMaskIntoConstraints="NO" id="ci4-OG-lfl">
+                                <rect key="frame" x="7" y="60" width="360" height="190"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="360" id="H3K-ys-np6"/>
                                     <constraint firstAttribute="height" constant="190" id="NcK-Do-6bc"/>
                                 </constraints>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOH-Lk-rse">
+                                <rect key="frame" x="54" y="290" width="265" height="295"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="295" id="Cwz-6x-LXg"/>
+                                    <constraint firstAttribute="width" constant="265" id="gBE-9z-Zko"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="295" id="hdr-PU-jDX"/>
+                                </constraints>
+                                <string key="text">Dear user, thanks you for trying to use WalkMe.  Unfortunately, we are currently only available for Berkeley students and therefore requires a berkeley.edu domain to authenticate and use our app. Please check back at a later time as we continue to expand our service.</string>
+                                <color key="textColor" red="0.88759122290000003" green="0.88303947309999997" blue="0.89214297279999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.76237094402313232" green="0.82896387577056885" blue="0.9451216459274292" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.28234323859214783" green="0.50725513696670532" blue="0.76476776599884033" alpha="0.44242407570422537" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="aOH-Lk-rse" firstAttribute="top" secondItem="dad-zF-k7h" secondAttribute="top" constant="185" id="0lc-3B-QKs"/>
                             <constraint firstItem="ci4-OG-lfl" firstAttribute="top" secondItem="dad-zF-k7h" secondAttribute="top" constant="40" id="2HG-0f-KCZ"/>
+                            <constraint firstItem="aOH-Lk-rse" firstAttribute="top" secondItem="ci4-OG-lfl" secondAttribute="bottom" constant="40" id="4bX-Zq-XIb"/>
                             <constraint firstItem="ci4-OG-lfl" firstAttribute="leading" secondItem="dad-zF-k7h" secondAttribute="leading" constant="7" id="HFM-6J-v36"/>
                             <constraint firstItem="aOH-Lk-rse" firstAttribute="leading" secondItem="dad-zF-k7h" secondAttribute="leading" constant="54" id="HLU-KL-M62"/>
                             <constraint firstItem="dad-zF-k7h" firstAttribute="bottom" secondItem="HIW-eJ-dvv" secondAttribute="bottom" constant="30" id="MVh-pa-BSY"/>
-                            <constraint firstItem="dad-zF-k7h" firstAttribute="trailing" secondItem="ci4-OG-lfl" secondAttribute="trailing" constant="7" id="R8q-sm-wWL"/>
-                            <constraint firstItem="dad-zF-k7h" firstAttribute="trailing" secondItem="aOH-Lk-rse" secondAttribute="trailing" constant="54" id="m2q-fM-Ebk"/>
-                            <constraint firstItem="dad-zF-k7h" firstAttribute="trailing" secondItem="HIW-eJ-dvv" secondAttribute="trailing" constant="170" id="p30-YO-l8S"/>
-                            <constraint firstItem="HIW-eJ-dvv" firstAttribute="leading" secondItem="dad-zF-k7h" secondAttribute="leading" constant="170" id="pHh-h2-AXB"/>
+                            <constraint firstItem="HIW-eJ-dvv" firstAttribute="leading" secondItem="Ky9-BS-Tha" secondAttribute="leading" constant="171" id="ZPg-Nw-JIK"/>
+                            <constraint firstItem="dad-zF-k7h" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HIW-eJ-dvv" secondAttribute="trailing" id="p30-YO-l8S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dad-zF-k7h"/>
                     </view>
@@ -300,10 +297,10 @@
             </objects>
             <point key="canvasLocation" x="743" y="385"/>
         </scene>
-        <!--View Controller0-->
+        <!--Welcome View-->
         <scene sceneID="GCx-hT-vzo">
             <objects>
-                <viewController id="Xzq-QG-2KZ" customClass="ViewController0" customModule="WalkMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Xzq-QG-2KZ" customClass="WelcomeView" customModule="WalkMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FdB-sS-ZfI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -322,15 +319,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVm-5v-JhP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-927" y="133"/>
+            <point key="canvasLocation" x="-780" y="132"/>
         </scene>
     </scenes>
     <resources>
         <image name="walkme" width="927" height="853"/>
-        <image name="walkme_icon" width="573" height="266"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DsU-Au-rf1"/>
+        <segue reference="GsY-My-5vu"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

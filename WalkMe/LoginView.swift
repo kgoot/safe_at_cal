@@ -14,7 +14,7 @@ import FirebaseDatabase
 import KeychainSwift
 //import UberRides
 
-class loginView: UIViewController {
+class LoginView: UIViewController {
 
     //LOGIN outlets
     @IBOutlet weak var emailText: UITextField!

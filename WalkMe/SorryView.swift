@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController3: UIViewController {
+class SorryView: UIViewController {
 
     @IBAction func backAction(_ sender: Any) {
         self.performSegue(withIdentifier: "goto_login", sender: self)

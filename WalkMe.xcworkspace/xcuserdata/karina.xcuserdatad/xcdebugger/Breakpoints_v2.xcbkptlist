@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WalkMe/ViewController2.swift"
-            timestampString = "533381250.371159"
+            timestampString = "533429057.387259"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
             endingLineNumber = "18"
-            landmarkName = "ViewController2"
+            landmarkName = "MainViewController"
             landmarkType = "3">
             <Locations>
                <Location
