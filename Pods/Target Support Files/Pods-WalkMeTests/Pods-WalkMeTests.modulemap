@@ -1,0 +1,6 @@
+framework module Pods_WalkMeTests {
+  umbrella header "Pods-WalkMeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

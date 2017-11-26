@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		426D28A71FED58200F4E27E0 /* Pods_WalkMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88B199786C825327F77B14D6 /* Pods_WalkMe.framework */; };
 		581A292D1F8AFC6D00796B72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A292C1F8AFC6D00796B72 /* AppDelegate.swift */; };
 		581A292F1F8AFC6D00796B72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A292E1F8AFC6D00796B72 /* ViewController.swift */; };
 		581A29321F8AFC6D00796B72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581A29301F8AFC6D00796B72 /* Main.storyboard */; };
@@ -16,8 +17,12 @@
 		581A294D1F8AFC6D00796B72 /* WalkMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A294C1F8AFC6D00796B72 /* WalkMeUITests.swift */; };
 		581A295C1F8AFCB000796B72 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 581A295B1F8AFCB000796B72 /* MapKit.framework */; };
 		581A295E1F8BDB4400796B72 /* Crime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A295D1F8BDB4400796B72 /* Crime.swift */; };
+		6456F073B69E51ACADC625D7 /* Pods_WalkMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABCF422D99719523B319E50 /* Pods_WalkMeUITests.framework */; };
 		9A4AEA221F9E9C8B00F7C16E /* crimedata.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9A4AEA211F9E9C8B00F7C16E /* crimedata.csv */; };
 		9A4AEA241FA6CE8E00F7C16E /* nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4AEA231FA6CE8E00F7C16E /* nav.png */; };
+		9AE919051FCA0D330070E5BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AE919041FCA0D330070E5BF /* GoogleService-Info.plist */; };
+		9AE919071FCA48AA0070E5BF /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE919061FCA48AA0070E5BF /* ViewController2.swift */; };
+		C445A0F000DCA598BA23CEA2 /* Pods_WalkMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F5A3908F54C14D78F237C /* Pods_WalkMeTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0463102B3A1059247CF7F488 /* Pods-WalkMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkMeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WalkMeTests/Pods-WalkMeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		13A78ED46795FCD5ECF4CCAE /* Pods-WalkMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkMeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WalkMeUITests/Pods-WalkMeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		13D13B221A4BF2D1B28EA84D /* Pods-WalkMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkMeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WalkMeUITests/Pods-WalkMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		14CDD3517B2C7BCB5396D279 /* Pods-WalkMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WalkMeTests/Pods-WalkMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		581A29291F8AFC6D00796B72 /* WalkMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		581A292C1F8AFC6D00796B72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		581A292E1F8AFC6D00796B72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,8 +62,15 @@
 		581A294E1F8AFC6D00796B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		581A295B1F8AFCB000796B72 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		581A295D1F8BDB4400796B72 /* Crime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crime.swift; sourceTree = "<group>"; };
+		724126051139EE24488798EB /* Pods-WalkMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-WalkMe/Pods-WalkMe.release.xcconfig"; sourceTree = "<group>"; };
+		777F5A3908F54C14D78F237C /* Pods_WalkMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88B199786C825327F77B14D6 /* Pods_WalkMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ABCF422D99719523B319E50 /* Pods_WalkMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkMeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4AEA211F9E9C8B00F7C16E /* crimedata.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = crimedata.csv; path = WalkMe/crimedata.csv; sourceTree = "<group>"; };
 		9A4AEA231FA6CE8E00F7C16E /* nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nav.png; path = ../../../Downloads/nav.png; sourceTree = "<group>"; };
+		9AE919041FCA0D330070E5BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9AE919061FCA48AA0070E5BF /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		B62AA286594DBB4EF2C47DA7 /* Pods-WalkMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WalkMe/Pods-WalkMe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				581A295C1F8AFCB000796B72 /* MapKit.framework in Frameworks */,
+				426D28A71FED58200F4E27E0 /* Pods_WalkMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C445A0F000DCA598BA23CEA2 /* Pods_WalkMeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6456F073B69E51ACADC625D7 /* Pods_WalkMeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +111,7 @@
 				581A294B1F8AFC6D00796B72 /* WalkMeUITests */,
 				581A292A1F8AFC6D00796B72 /* Products */,
 				581A295A1F8AFCB000796B72 /* Frameworks */,
+				FB653CC686B9E2337919BD00 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,11 +130,13 @@
 			children = (
 				581A292C1F8AFC6D00796B72 /* AppDelegate.swift */,
 				581A292E1F8AFC6D00796B72 /* ViewController.swift */,
+				9AE919061FCA48AA0070E5BF /* ViewController2.swift */,
 				581A29301F8AFC6D00796B72 /* Main.storyboard */,
 				9A4AEA231FA6CE8E00F7C16E /* nav.png */,
 				581A29331F8AFC6D00796B72 /* Assets.xcassets */,
 				581A29351F8AFC6D00796B72 /* LaunchScreen.storyboard */,
 				581A29381F8AFC6D00796B72 /* Info.plist */,
+				9AE919041FCA0D330070E5BF /* GoogleService-Info.plist */,
 				581A295D1F8BDB4400796B72 /* Crime.swift */,
 			);
 			path = WalkMe;
@@ -142,8 +164,24 @@
 			isa = PBXGroup;
 			children = (
 				581A295B1F8AFCB000796B72 /* MapKit.framework */,
+				88B199786C825327F77B14D6 /* Pods_WalkMe.framework */,
+				777F5A3908F54C14D78F237C /* Pods_WalkMeTests.framework */,
+				8ABCF422D99719523B319E50 /* Pods_WalkMeUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB653CC686B9E2337919BD00 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B62AA286594DBB4EF2C47DA7 /* Pods-WalkMe.debug.xcconfig */,
+				724126051139EE24488798EB /* Pods-WalkMe.release.xcconfig */,
+				0463102B3A1059247CF7F488 /* Pods-WalkMeTests.debug.xcconfig */,
+				14CDD3517B2C7BCB5396D279 /* Pods-WalkMeTests.release.xcconfig */,
+				13D13B221A4BF2D1B28EA84D /* Pods-WalkMeUITests.debug.xcconfig */,
+				13A78ED46795FCD5ECF4CCAE /* Pods-WalkMeUITests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,9 +191,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 581A29511F8AFC6D00796B72 /* Build configuration list for PBXNativeTarget "WalkMe" */;
 			buildPhases = (
+				4F7E44D429D4C12DC2CF7283 /* [CP] Check Pods Manifest.lock */,
 				581A29251F8AFC6C00796B72 /* Sources */,
 				581A29261F8AFC6C00796B72 /* Frameworks */,
 				581A29271F8AFC6C00796B72 /* Resources */,
+				C12F9A7D7EC7E3993DFAF105 /* [CP] Embed Pods Frameworks */,
+				0EC9F3B2BA99EC155D52EC9D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +211,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 581A29541F8AFC6D00796B72 /* Build configuration list for PBXNativeTarget "WalkMeTests" */;
 			buildPhases = (
+				B8F2675E164C6713C0B8BB27 /* [CP] Check Pods Manifest.lock */,
 				581A29391F8AFC6D00796B72 /* Sources */,
 				581A293A1F8AFC6D00796B72 /* Frameworks */,
 				581A293B1F8AFC6D00796B72 /* Resources */,
+				76650D05C6778C7D95D9E342 /* [CP] Embed Pods Frameworks */,
+				28B96E03E4F9A587EAE758BE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,9 +232,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 581A29571F8AFC6D00796B72 /* Build configuration list for PBXNativeTarget "WalkMeUITests" */;
 			buildPhases = (
+				5527AC277AD8EB3B25CC1605 /* [CP] Check Pods Manifest.lock */,
 				581A29441F8AFC6D00796B72 /* Sources */,
 				581A29451F8AFC6D00796B72 /* Frameworks */,
 				581A29461F8AFC6D00796B72 /* Resources */,
+				E7B47C3FFD30FF6F252A3172 /* [CP] Embed Pods Frameworks */,
+				5DD8B975FB176108FF36E306 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -263,6 +310,7 @@
 				581A29341F8AFC6D00796B72 /* Assets.xcassets in Resources */,
 				581A29321F8AFC6D00796B72 /* Main.storyboard in Resources */,
 				9A4AEA241FA6CE8E00F7C16E /* nav.png in Resources */,
+				9AE919051FCA0D330070E5BF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,12 +330,167 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0EC9F3B2BA99EC155D52EC9D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WalkMe/Pods-WalkMe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		28B96E03E4F9A587EAE758BE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WalkMeTests/Pods-WalkMeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F7E44D429D4C12DC2CF7283 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WalkMe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5527AC277AD8EB3B25CC1605 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WalkMeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DD8B975FB176108FF36E306 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WalkMeUITests/Pods-WalkMeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76650D05C6778C7D95D9E342 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WalkMeTests/Pods-WalkMeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8F2675E164C6713C0B8BB27 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WalkMeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C12F9A7D7EC7E3993DFAF105 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WalkMe/Pods-WalkMe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WalkMe/Pods-WalkMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7B47C3FFD30FF6F252A3172 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WalkMeUITests/Pods-WalkMeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		581A29251F8AFC6C00796B72 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				581A292F1F8AFC6D00796B72 /* ViewController.swift in Sources */,
+				9AE919071FCA48AA0070E5BF /* ViewController2.swift in Sources */,
 				581A295E1F8BDB4400796B72 /* Crime.swift in Sources */,
 				581A292D1F8AFC6D00796B72 /* AppDelegate.swift in Sources */,
 			);
@@ -453,6 +656,7 @@
 		};
 		581A29521F8AFC6D00796B72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B62AA286594DBB4EF2C47DA7 /* Pods-WalkMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -470,6 +674,7 @@
 		};
 		581A29531F8AFC6D00796B72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 724126051139EE24488798EB /* Pods-WalkMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -487,6 +692,7 @@
 		};
 		581A29551F8AFC6D00796B72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0463102B3A1059247CF7F488 /* Pods-WalkMeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -505,6 +711,7 @@
 		};
 		581A29561F8AFC6D00796B72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14CDD3517B2C7BCB5396D279 /* Pods-WalkMeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -523,6 +730,7 @@
 		};
 		581A29581F8AFC6D00796B72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13D13B221A4BF2D1B28EA84D /* Pods-WalkMeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -538,6 +746,7 @@
 		};
 		581A29591F8AFC6D00796B72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13A78ED46795FCD5ECF4CCAE /* Pods-WalkMeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
