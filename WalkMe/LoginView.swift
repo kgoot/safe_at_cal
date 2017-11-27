@@ -100,7 +100,7 @@ class LoginView: UIViewController {
 
         let keyChain = DataService().keyChain
         if keyChain.get("uid") != nil {
-//            self.performSegue(withIdentifier: "goto_home", sender: self) //Comment this back in to avoid having to resign in
+            self.performSegue(withIdentifier: "goto_home", sender: self) //Comment this back in to avoid having to resign in
         }
     }
 }

@@ -32,6 +32,11 @@ class MainViewController: UIViewController {
         self.performSegue(withIdentifier: "goto_login", sender: self)
     }
     
+    //ABOUT
+    @IBAction func about(_ sender: Any) {
+        self.performSegue(withIdentifier: "goto_about", sender: self)
+    }
+    
     let locationManager = CLLocationManager()
     var currentCoordinate: CLLocationCoordinate2D!
     var steps = [MKRouteStep]()
