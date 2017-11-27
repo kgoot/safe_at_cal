@@ -12,7 +12,6 @@ import CoreLocation
 import FirebaseAuth
 import FirebaseDatabase
 import KeychainSwift
-//import UberRides
 
 class LoginView: UIViewController {
 
@@ -39,30 +38,36 @@ class LoginView: UIViewController {
     
     // PROCESS USER
     func beginSignIn() {
+        func handleEroor(errorMessage: String) {
+            let alert = UIAlertController(title: "Error enountered", message: errorMessage, preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
         if emailText.text != "" && passwordText.text != "" {
-            if segmentControl.selectedSegmentIndex == 0 { //Login user {
-                Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
-                    if user != nil { //Sign in success
-                        if !(user?.isEmailVerified)! {
-                            let alert = UIAlertController(title: "Account not yet verified", message: "Please verify your email by confirming the sent link.", preferredStyle: UIAlertControllerStyle.alert)
-                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                            self.present(alert, animated: true, completion: nil)
-                        } else {
-                            self.completeSignIn(id: user!.uid)
+            if !self.emailText.text!.hasSuffix("berkeley.edu") {
+                self.performSegue(withIdentifier: "goto_sorry", sender: self)
+            } else {
+                if segmentControl.selectedSegmentIndex == 0 { //Login user {
+                    Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
+                        if user != nil { //Sign in success
+                            if !(user?.isEmailVerified)! {
+                                let alert = UIAlertController(title: "Account not yet verified", message: "Please verify your email by confirming the sent link.", preferredStyle: UIAlertControllerStyle.alert)
+                                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                                self.present(alert, animated: true, completion: nil)
+                            } else {
+                                self.completeSignIn(id: user!.uid)
+                            }
+                        } else { // Error
+                            if let errorMessage = error?.localizedDescription {
+                                handleEroor(errorMessage: errorMessage)
+                            } else {
+                                handleEroor(errorMessage: "Please try again.")
+                            }
                         }
-                    } else { // Error
-                        if let myError = error?.localizedDescription {
-                            print(myError)
-                        } else {
-                            print("Error")
-                        }
-                    }
-                })
-            }
-            else { //sign up user
-                if !self.emailText.text!.hasSuffix("berkeley.edu") {
-                    self.performSegue(withIdentifier: "goto_sorry", sender: self)
-                } else {
+                    })
+                }
+                else { //sign up user
                     Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
                         if user != nil { //success sign in
                             user?.sendEmailVerification(completion: { (error) in})
@@ -73,10 +78,10 @@ class LoginView: UIViewController {
                             //Shift view to login once account is created
                             self.segmentControl.selectedSegmentIndex = 0
                         } else {
-                            if let myError = error?.localizedDescription {
-                                print(myError)
+                            if let errorMessage = error?.localizedDescription {
+                                handleEroor(errorMessage: errorMessage)
                             } else {
-                                print("Error")
+                                handleEroor(errorMessage: "Please try again.")
                             }
                         }
                     })
