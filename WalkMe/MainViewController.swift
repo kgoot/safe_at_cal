@@ -18,7 +18,7 @@ class MainViewController: UIViewController {
     //HOME outlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
-    var heatmap: DTMHeatmap!
+    var heatMap = DTMHeatmap()
     
     //SIGN OUT
     @IBAction func signOut(_ sender: Any) {
@@ -193,24 +193,24 @@ class MainViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy' 'HH:mm"
        
-        self.heatmap = DTMHeatmap()
-//        var dict:[CLLocationCoordinate2D: Int] = [:]
-        var dict = Dictionary<NSObject, AnyObject>();
+        var heatmapdata:[NSObject: Double] = [:]
 
 //        var coords:[CLLocationCoordinate2D] = []
         for crime in crimes {
             if (crime.datetime > datetime) {
                 let coordinate = CLLocationCoordinate2D(latitude: crime.lat, longitude: crime.long);
-                let mapPoint = MKMapPointForCoordinate(coordinate)
-                let type = NSValue(mkCoordinate: coordinate).objCType // <- THIS IS IT
-                let value = NSValue(bytes: Unmanaged.passUnretained(mapPoint as AnyObject).toOpaque(), objCType: type);
-                dict[value] = 1 as AnyObject;
+                var point = MKMapPointForCoordinate(coordinate)
+                let type = "{MKMapPoint=dd}"
+                let value = NSValue(bytes: &point, objCType: type)
+                heatmapdata[value] = 1.0
+                
+//                let mapPoint = MKMapPointForCoordinate(coordinate)
+//                let value = NSValue(MKMapPoint: mapPoint)
 
             }
         }
-        print("HELLO")
-        self.heatmap.setData(dict as [NSObject : AnyObject]);
-        self.mapView.add(self.heatmap)
+        self.heatMap.setData(heatmapdata as [NSObject : AnyObject])
+        self.mapView.add(self.heatMap)
 
         //        var dict = Dictionary()
 //        self.heatmap.setData(dict)
@@ -266,13 +266,14 @@ extension MainViewController: UISearchBarDelegate {
 
 extension MainViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        if overlay is MKPolyline {
-            let renderer = MKPolylineRenderer(overlay: overlay)
-            renderer.strokeColor = .blue
-            renderer.lineWidth = 5
-            return renderer
-        }
-        return MKOverlayPathRenderer()
+        return DTMHeatmapRenderer.init(overlay: overlay)
+//        if overlay is MKPolyline {
+//            let renderer = MKPolylineRenderer(overlay: overlay)
+//            renderer.strokeColor = .blue
+//            renderer.lineWidth = 5
+//            return renderer
+//        }
+//        return MKOverlayPathRenderer()
     }
 }
 
