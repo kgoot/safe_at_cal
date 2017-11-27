@@ -43,7 +43,13 @@ class LoginView: UIViewController {
             if segmentControl.selectedSegmentIndex == 0 { //Login user {
                 Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
                     if user != nil { //Sign in success
-                        self.completeSignIn(id: user!.uid)
+                        if !(user?.isEmailVerified)! {
+                            let alert = UIAlertController(title: "Account not yet verified", message: "Please verify your email by confirming the sent link.", preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                        } else {
+                            self.completeSignIn(id: user!.uid)
+                        }
                     } else { // Error
                         if let myError = error?.localizedDescription {
                             print(myError)
@@ -54,20 +60,32 @@ class LoginView: UIViewController {
                 })
             }
             else { //sign up user
-                Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
-                    if user != nil { //success sign in
-                        self.completeSignIn(id: user!.uid)
-                    } else {
-                        if let myError = error?.localizedDescription {
-                            print(myError)
+                if !self.emailText.text!.hasSuffix("berkeley.edu") {
+                    self.performSegue(withIdentifier: "goto_sorry", sender: self)
+                } else {
+                    Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
+                        if user != nil { //success sign in
+                            user?.sendEmailVerification(completion: { (error) in})
+                            let alert = UIAlertController(title: "Your account is almost ready!", message: "Please verify your email by confirming the sent link.", preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                            
+                            //Shift view to login once account is created
+                            self.segmentControl.selectedSegmentIndex = 0
                         } else {
-                            print("Error")
+                            if let myError = error?.localizedDescription {
+                                print(myError)
+                            } else {
+                                print("Error")
+                            }
                         }
-                    }
-                })
+                    })
+                }
             }
         }
     }
+    
+    
     
     func completeSignIn(id: String) {
         if self.emailText.text!.hasSuffix("berkeley.edu") {
