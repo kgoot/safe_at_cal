@@ -15,7 +15,7 @@ import KeychainSwift
 
 class LoginView: UIViewController {
 
-    //LOGIN outlets
+    // LOGIN outlets
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var segmentControl: UISegmentedControl!
@@ -31,9 +31,18 @@ class LoginView: UIViewController {
         beginSignIn()
     }
     
-    //LOGIN Action
+    // LOGIN Action
     @IBAction func login_action(_ sender: Any) {
         beginSignIn()
+    }
+    
+    // REDEND EMAIL Action
+    @IBOutlet weak var resendBottomConstraint: NSLayoutConstraint!
+    @IBAction func resendVerificationEmailAction(_ sender: Any) {
+        Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in})
+        let alert = UIAlertController(title: "Your account is almost ready!", message: "Please verify your email by confirming the sent link.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     // PROCESS USER
@@ -55,6 +64,10 @@ class LoginView: UIViewController {
                                 let alert = UIAlertController(title: "Account not yet verified", message: "Please verify your email by confirming the sent link.", preferredStyle: UIAlertControllerStyle.alert)
                                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                                 self.present(alert, animated: true, completion: nil)
+                                
+                                //Reveal resend option button
+                                self.resendBottomConstraint.constant = 90
+                                
                             } else {
                                 self.completeSignIn(id: user!.uid)
                             }

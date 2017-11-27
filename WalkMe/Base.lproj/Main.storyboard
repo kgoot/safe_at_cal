@@ -251,12 +251,22 @@
                                     <action selector="primaryEmailAction:" destination="cav-b7-dE6" eventType="primaryActionTriggered" id="8ec-xx-eLy"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWp-MZ-hDh">
+                                <rect key="frame" x="112" y="673" width="151" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="Resend confirmation email?"/>
+                                <connections>
+                                    <action selector="resendVerificationEmailAction:" destination="cav-b7-dE6" eventType="touchUpInside" id="fCt-lv-uax"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97253084182739258" green="0.96862208843231201" blue="0.96863222122192383" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="ylZ-z5-gV1" firstAttribute="trailing" secondItem="gWp-MZ-hDh" secondAttribute="trailing" constant="112" id="1rW-vh-b5H"/>
                             <constraint firstItem="Wp8-l1-iy0" firstAttribute="leading" secondItem="ylZ-z5-gV1" secondAttribute="leading" constant="125" id="2Pi-s3-xrE"/>
                             <constraint firstItem="ylZ-z5-gV1" firstAttribute="trailing" secondItem="GL7-uf-bTn" secondAttribute="trailing" constant="50" id="ClZ-8Z-vvY"/>
                             <constraint firstItem="GL7-uf-bTn" firstAttribute="top" secondItem="Wp8-l1-iy0" secondAttribute="bottom" constant="30" id="J1e-Jr-rju"/>
+                            <constraint firstItem="ylZ-z5-gV1" firstAttribute="bottom" secondItem="gWp-MZ-hDh" secondAttribute="bottom" constant="-30" id="LDP-el-WGK"/>
                             <constraint firstItem="f97-D0-fAZ" firstAttribute="top" secondItem="GL7-uf-bTn" secondAttribute="bottom" constant="20" id="NKF-rw-qSm"/>
                             <constraint firstItem="yYC-aa-onN" firstAttribute="leading" secondItem="ylZ-z5-gV1" secondAttribute="leading" constant="88" id="S3P-2l-KRH"/>
                             <constraint firstItem="GL7-uf-bTn" firstAttribute="leading" secondItem="ylZ-z5-gV1" secondAttribute="leading" constant="50" id="SfI-Oz-dp0"/>
@@ -264,6 +274,7 @@
                             <constraint firstItem="ylZ-z5-gV1" firstAttribute="trailing" secondItem="AUO-LK-ANX" secondAttribute="trailing" constant="148" id="YTG-q0-NGx"/>
                             <constraint firstItem="ylZ-z5-gV1" firstAttribute="trailing" secondItem="Wp8-l1-iy0" secondAttribute="trailing" constant="125" id="bOU-eZ-w4d"/>
                             <constraint firstItem="ylZ-z5-gV1" firstAttribute="trailing" secondItem="f97-D0-fAZ" secondAttribute="trailing" constant="50" id="cWn-Ps-0Il"/>
+                            <constraint firstItem="gWp-MZ-hDh" firstAttribute="leading" secondItem="ylZ-z5-gV1" secondAttribute="leading" constant="112" id="cyL-Lp-Vkn"/>
                             <constraint firstItem="AUO-LK-ANX" firstAttribute="top" secondItem="f97-D0-fAZ" secondAttribute="bottom" constant="30" id="nvD-bF-jSA"/>
                             <constraint firstItem="AUO-LK-ANX" firstAttribute="leading" secondItem="ylZ-z5-gV1" secondAttribute="leading" constant="148" id="o5F-tc-mP1"/>
                             <constraint firstItem="f97-D0-fAZ" firstAttribute="leading" secondItem="ylZ-z5-gV1" secondAttribute="leading" constant="50" id="reH-SY-7J2"/>
@@ -277,6 +288,7 @@
                         <outlet property="imUpConst" destination="WKB-Np-mv4" id="nwt-0A-Ex2"/>
                         <outlet property="login_button" destination="AUO-LK-ANX" id="6NF-Kh-NIZ"/>
                         <outlet property="passwordText" destination="f97-D0-fAZ" id="CBA-zo-dUQ"/>
+                        <outlet property="resendBottomConstraint" destination="LDP-el-WGK" id="zUg-bo-btS"/>
                         <outlet property="segmentControl" destination="Wp8-l1-iy0" id="T6M-hY-np3"/>
                         <segue destination="drM-5p-aJ9" kind="show" identifier="goto_home" id="NMx-jD-wJW"/>
                         <segue destination="JXv-6S-AJ8" kind="presentation" identifier="goto_sorry" modalTransitionStyle="crossDissolve" id="2Ab-xp-ZEQ"/>
@@ -289,7 +301,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-4" y="132"/>
+            <point key="canvasLocation" x="-4" y="131.78410794602701"/>
         </scene>
         <!--Sorry View-->
         <scene sceneID="URR-vR-4nf">
@@ -351,7 +363,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nvU-hw-tbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="733.60000000000002" y="-311.69415292353824"/>
+            <point key="canvasLocation" x="742" y="-279"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PQV-M4-2rW">
@@ -400,8 +412,9 @@
         <image name="walkme" width="927" height="853"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="2Ab-xp-ZEQ"/>
         <segue reference="NMx-jD-wJW"/>
-        <segue reference="GsY-My-5vu"/>
+        <segue reference="OsE-1I-eGU"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
