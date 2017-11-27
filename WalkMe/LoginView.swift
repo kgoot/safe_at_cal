@@ -37,6 +37,7 @@ class LoginView: UIViewController {
         beginSignIn()
     }
     
+    // PROCESS USER
     func beginSignIn() {
         if emailText.text != "" && passwordText.text != "" {
             if segmentControl.selectedSegmentIndex == 0 { //Login user {
@@ -79,6 +80,7 @@ class LoginView: UIViewController {
         }
     }
     
+    // MOVE LOGO UP
     @IBOutlet weak var imUpConst: NSLayoutConstraint!
     @IBAction func emailedClicked(_ sender: Any) {
         imUpConst.constant = -220
@@ -86,7 +88,14 @@ class LoginView: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
+    @IBAction func passwordClicked(_ sender: Any) {
+        imUpConst.constant = -220
+        UIView.animate(withDuration: 1.0) {
+            self.view.layoutIfNeeded()
+        }
+    }
     
+    // MOVE LOGO DOWN
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
         imUpConst.constant = 0
@@ -95,6 +104,7 @@ class LoginView: UIViewController {
         }
     }
 
+    // LOAD VIEW
     override func viewDidLoad() {
         super.viewDidLoad()
 

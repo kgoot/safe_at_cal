@@ -229,6 +229,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
                                 <connections>
+                                    <action selector="passwordClicked:" destination="cav-b7-dE6" eventType="editingDidBegin" id="fti-a2-Zqw"/>
                                     <action selector="primaryPasswordAction:" destination="cav-b7-dE6" eventType="primaryActionTriggered" id="47v-bT-DkC"/>
                                 </connections>
                             </textField>
@@ -399,8 +400,7 @@
         <image name="walkme" width="927" height="853"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hx6-y2-5rK"/>
-        <segue reference="gKg-6E-AYY"/>
+        <segue reference="NMx-jD-wJW"/>
         <segue reference="GsY-My-5vu"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

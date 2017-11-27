@@ -18,15 +18,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
     
-    @IBOutlet weak var sideBarLeadConst: NSLayoutConstraint!
-    @IBAction func openNav(_ sender: Any) {
-        if sideBarLeadConst.constant == 0 {
-            sideBarLeadConst.constant = -240
-        } else {
-            sideBarLeadConst.constant = 0
-        }
-    }
-    
     //SIGN OUT
     @IBAction func signOut(_ sender: Any) {
         self.performSegue(withIdentifier: "goto_login", sender: self)
@@ -41,9 +32,9 @@ class MainViewController: UIViewController {
     var currentCoordinate: CLLocationCoordinate2D!
     var steps = [MKRouteStep]()
     
+    //LOAD MAIN VIEW
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("hello world view2")
         
 //        _ = Auth.auth().currentUser
         locationManager.requestWhenInUseAuthorization()
@@ -60,14 +51,30 @@ class MainViewController: UIViewController {
         let date = dateFormatter.date(from: "09/29/16 00:00")! //FIXME(kgoot) remove this hardcode
         addCrimeData(datetime: date)
     }
+    
+    // HIDE KEYBOARD
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    // SHOW SIDE BAR
+    @IBOutlet weak var sideBarLeadConst: NSLayoutConstraint!
+    @IBAction func openNav(_ sender: Any) {
+        if sideBarLeadConst.constant == 0 {
+            sideBarLeadConst.constant = -240
+        } else {
+            sideBarLeadConst.constant = 0
+        }
+    }
 
+    // SIDE BAR ACTIONS
     @IBAction func loadWeeklyData(_ sender: Any) {
         mapView.removeAnnotations(mapView.annotations)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yy' 'HH:mm"
         let date = dateFormatter.date(from: "09/20/17 00:00")!
         addCrimeData(datetime: date)
-        sideBarLeadConst.constant = -140
+        sideBarLeadConst.constant = -240 //TODO(kgoot) Remove Hardcode
     }
     
     @IBAction func loadAllData(_ sender: Any) {
@@ -76,7 +83,7 @@ class MainViewController: UIViewController {
         dateFormatter.dateFormat = "MM/dd/yy' 'HH:mm"
         let date = dateFormatter.date(from: "09/29/16 00:00")! //FIXME(kgoot) remove this hardcode
         addCrimeData(datetime: date)
-        sideBarLeadConst.constant = -140
+        sideBarLeadConst.constant = -240 //TODO(kgoot) Remove Hardcode
     }
     
     func getDirections(to destination: MKMapItem) {
