@@ -10,15 +10,27 @@ pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'KeychainSwift'
+pod 'DTMHeatmap'
 
-  target 'WalkMeTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
 
-  target 'WalkMeUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+
+#platform :ios,'10.0'
+#workspace 'Test'
+#project 'TestMyPod'
+#target :TestMyPod do
+#    project 'TestMyPod'
+#    pod 'JDSwiftHeatMap'
+#    use_frameworks!
+#end
+
+#  target 'WalkMeTests' do
+#    inherit! :search_paths
+#    # Pods for testing
+#  end
+#
+#  target 'WalkMeUITests' do
+#    inherit! :search_paths
+#    # Pods for testing
+#  end
 
 end

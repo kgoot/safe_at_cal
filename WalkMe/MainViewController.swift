@@ -11,12 +11,14 @@ import UIKit
 import MapKit
 import CoreLocation
 import FirebaseAuth
+import DTMHeatmap
 
 class MainViewController: UIViewController {
     
     //HOME outlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
+    var heatmap: DTMHeatmap!
     
     //SIGN OUT
     @IBAction func signOut(_ sender: Any) {
@@ -68,15 +70,27 @@ class MainViewController: UIViewController {
     }
 
     // SIDE BAR ACTIONS
+    // WEEKLY
     @IBAction func loadWeeklyData(_ sender: Any) {
         mapView.removeAnnotations(mapView.annotations)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yy' 'HH:mm"
-        let date = dateFormatter.date(from: "09/20/17 00:00")!
+        let date = dateFormatter.date(from: "09/20/17 00:00")! //FIXME(kgoot) remove this hardcode
         addCrimeData(datetime: date)
         sideBarLeadConst.constant = -240 //TODO(kgoot) Remove Hardcode
     }
     
+    // MONTHLY
+    @IBAction func loadMonthlyData(_ sender: Any) {
+        mapView.removeAnnotations(mapView.annotations)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy' 'HH:mm"
+        let date = dateFormatter.date(from: "09/01/17 00:00")! //FIXME(kgoot) remove this hardcode
+        addCrimeData(datetime: date)
+        sideBarLeadConst.constant = -240 //TODO(kgoot) Remove Hardcode
+    }
+    
+    // ALL
     @IBAction func loadAllData(_ sender: Any) {
         mapView.removeAnnotations(mapView.annotations)
         let dateFormatter = DateFormatter()
@@ -178,16 +192,38 @@ class MainViewController: UIViewController {
         let crimes = createCrimes(rows: csvRows)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy' 'HH:mm"
-        // Add annotations to map
+       
+        self.heatmap = DTMHeatmap()
+//        var dict:[CLLocationCoordinate2D: Int] = [:]
+        var dict = Dictionary<NSObject, AnyObject>();
+
+//        var coords:[CLLocationCoordinate2D] = []
         for crime in crimes {
             if (crime.datetime > datetime) {
-                let myTestAnnotation = MKPointAnnotation()
-                myTestAnnotation.coordinate = CLLocationCoordinate2DMake(crime.lat, crime.long)
-                myTestAnnotation.title = crime.offense
-                myTestAnnotation.subtitle = dateFormatter.string(for: crime.datetime)
-                mapView.addAnnotation(myTestAnnotation)
+                let coordinate = CLLocationCoordinate2D(latitude: crime.lat, longitude: crime.long);
+                let mapPoint = MKMapPointForCoordinate(coordinate)
+                let type = NSValue(mkCoordinate: coordinate).objCType // <- THIS IS IT
+                let value = NSValue(bytes: Unmanaged.passUnretained(mapPoint as AnyObject).toOpaque(), objCType: type);
+                dict[value] = 1 as AnyObject;
+
             }
         }
+        print("HELLO")
+        self.heatmap.setData(dict as [NSObject : AnyObject]);
+        self.mapView.add(self.heatmap)
+
+        //        var dict = Dictionary()
+//        self.heatmap.setData(dict)
+//        // Add annotations to map
+//        for crime in crimes {
+//            if (crime.datetime > datetime) {
+//                let myTestAnnotation = MKPointAnnotation()
+//                myTestAnnotation.coordinate = CLLocationCoordinate2DMake(crime.lat, crime.long)
+//                myTestAnnotation.title = crime.offense
+//                myTestAnnotation.subtitle = dateFormatter.string(for: crime.datetime)
+//                mapView.addAnnotation(myTestAnnotation)
+//            }
+//        }
     }
 }
 
