@@ -17,4 +17,6 @@ internal class Channel {
         self.id = id
         self.name = name
     }
+    
 }
+

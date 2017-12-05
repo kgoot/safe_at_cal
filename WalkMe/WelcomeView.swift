@@ -10,6 +10,7 @@ import UIKit
 
 class WelcomeView: UIViewController {
     
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         

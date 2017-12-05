@@ -13,6 +13,7 @@ import CoreLocation
 import FirebaseAuth
 import DTMHeatmap
 
+
 class MainViewController: UIViewController {
     
     //HOME outlets

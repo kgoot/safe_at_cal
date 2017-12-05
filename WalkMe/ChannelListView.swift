@@ -35,8 +35,10 @@ class ChannelListViewController: UITableViewController {
                 return channels.count
             }
         } else {
+            // print('lol wut')
             return 0
         }
+        
     }
 
 
