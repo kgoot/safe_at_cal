@@ -100,6 +100,7 @@ class MainViewController: UIViewController {
         sideBarLeadConst.constant = -240 //TODO(kgoot) Remove Hardcode
     }
     
+    
     func getDirections(to destination: MKMapItem) {
         let overlays = mapView.overlays
         mapView.removeOverlays(overlays)
@@ -134,7 +135,7 @@ class MainViewController: UIViewController {
     
     func scoreRoutes(routes: [MKRoute]) -> MKRoute {
         for route in routes {
-            print("hello world")
+            // print("hello world")
             for step in route.steps {
                 let coord = step.polyline.coordinate
                 //                MKPinAnnotationView.bluePinColor()
@@ -142,7 +143,7 @@ class MainViewController: UIViewController {
                 myTestAnnotation.coordinate = CLLocationCoordinate2DMake(coord.latitude, coord.longitude)
                 mapView.addAnnotation(myTestAnnotation)
             }
-            print("end world")
+           // print("end world")
         }
         return routes.first!
     }

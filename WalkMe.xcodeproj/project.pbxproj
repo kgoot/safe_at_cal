@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09F45DEC1FD606C9008DF034 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09F45DEB1FD606C9008DF034 /* GoogleService-Info.plist */; };
+		09F45DED1FD606C9008DF034 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09F45DEB1FD606C9008DF034 /* GoogleService-Info.plist */; };
+		09F45DEE1FD606C9008DF034 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09F45DEB1FD606C9008DF034 /* GoogleService-Info.plist */; };
+		09F45DF01FD60CFA008DF034 /* ChannelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F45DEF1FD60CFA008DF034 /* ChannelListView.swift */; };
+		09F45DF41FD60E9A008DF034 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F45DF31FD60E9A008DF034 /* Channel.swift */; };
+		09F45DF81FD60F3B008DF034 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F45DF71FD60F3A008DF034 /* ChatViewController.swift */; };
+		09F45DFC1FD610CB008DF034 /* CreateChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F45DFB1FD610CB008DF034 /* CreateChannelCell.swift */; };
 		426D28A71FED58200F4E27E0 /* Pods_WalkMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88B199786C825327F77B14D6 /* Pods_WalkMe.framework */; };
 		581A292D1F8AFC6D00796B72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A292C1F8AFC6D00796B72 /* AppDelegate.swift */; };
 		581A292F1F8AFC6D00796B72 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A292E1F8AFC6D00796B72 /* LoginView.swift */; };
@@ -21,7 +28,6 @@
 		9A3BB7131FCB928500DFF152 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3BB7121FCB928500DFF152 /* AboutView.swift */; };
 		9A4AEA221F9E9C8B00F7C16E /* crimedata.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9A4AEA211F9E9C8B00F7C16E /* crimedata.csv */; };
 		9ADE7BBB1FCA956A007AFC55 /* SorryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADE7BBA1FCA956A007AFC55 /* SorryView.swift */; };
-		9AE919051FCA0D330070E5BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AE919041FCA0D330070E5BF /* GoogleService-Info.plist */; };
 		9AE919071FCA48AA0070E5BF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE919061FCA48AA0070E5BF /* MainViewController.swift */; };
 		9AE9190B1FCA8BCB0070E5BF /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE9190A1FCA8BCB0070E5BF /* DataService.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09F45DEB1FD606C9008DF034 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		09F45DEF1FD60CFA008DF034 /* ChannelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListView.swift; sourceTree = "<group>"; };
+		09F45DF31FD60E9A008DF034 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		09F45DF71FD60F3A008DF034 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		09F45DFB1FD610CB008DF034 /* CreateChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChannelCell.swift; sourceTree = "<group>"; };
 		581A29291F8AFC6D00796B72 /* WalkMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		581A292C1F8AFC6D00796B72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		581A292E1F8AFC6D00796B72 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -67,7 +78,6 @@
 		9A3BB7121FCB928500DFF152 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		9A4AEA211F9E9C8B00F7C16E /* crimedata.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = crimedata.csv; path = WalkMe/crimedata.csv; sourceTree = "<group>"; };
 		9ADE7BBA1FCA956A007AFC55 /* SorryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorryView.swift; sourceTree = "<group>"; };
-		9AE919041FCA0D330070E5BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9AE919061FCA48AA0070E5BF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9AE9190A1FCA8BCB0070E5BF /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		B62AA286594DBB4EF2C47DA7 /* Pods-WalkMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WalkMe/Pods-WalkMe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,13 +140,17 @@
 				9A31DA641FCAB8C800E99B22 /* WelcomeView.swift */,
 				581A292E1F8AFC6D00796B72 /* LoginView.swift */,
 				9AE919061FCA48AA0070E5BF /* MainViewController.swift */,
+				09F45DF31FD60E9A008DF034 /* Channel.swift */,
+				09F45DEF1FD60CFA008DF034 /* ChannelListView.swift */,
+				09F45DFB1FD610CB008DF034 /* CreateChannelCell.swift */,
+				09F45DF71FD60F3A008DF034 /* ChatViewController.swift */,
 				9ADE7BBA1FCA956A007AFC55 /* SorryView.swift */,
 				9A3BB7121FCB928500DFF152 /* AboutView.swift */,
 				581A29301F8AFC6D00796B72 /* Main.storyboard */,
 				581A29331F8AFC6D00796B72 /* Assets.xcassets */,
 				581A29351F8AFC6D00796B72 /* LaunchScreen.storyboard */,
 				581A29381F8AFC6D00796B72 /* Info.plist */,
-				9AE919041FCA0D330070E5BF /* GoogleService-Info.plist */,
+				09F45DEB1FD606C9008DF034 /* GoogleService-Info.plist */,
 				581A295D1F8BDB4400796B72 /* Crime.swift */,
 				9AE9190A1FCA8BCB0070E5BF /* DataService.swift */,
 			);
@@ -300,7 +314,7 @@
 				9A4AEA221F9E9C8B00F7C16E /* crimedata.csv in Resources */,
 				581A29341F8AFC6D00796B72 /* Assets.xcassets in Resources */,
 				581A29321F8AFC6D00796B72 /* Main.storyboard in Resources */,
-				9AE919051FCA0D330070E5BF /* GoogleService-Info.plist in Resources */,
+				09F45DEC1FD606C9008DF034 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09F45DED1FD606C9008DF034 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09F45DEE1FD606C9008DF034 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +380,8 @@
 				"${BUILT_PRODUCTS_DIR}/DTMHeatmap/DTMHeatmap.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -373,6 +391,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTMHeatmap.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -390,13 +410,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A3BB7131FCB928500DFF152 /* AboutView.swift in Sources */,
+				09F45DF41FD60E9A008DF034 /* Channel.swift in Sources */,
+				09F45DF81FD60F3B008DF034 /* ChatViewController.swift in Sources */,
 				581A292F1F8AFC6D00796B72 /* LoginView.swift in Sources */,
 				9AE919071FCA48AA0070E5BF /* MainViewController.swift in Sources */,
 				9ADE7BBB1FCA956A007AFC55 /* SorryView.swift in Sources */,
 				581A295E1F8BDB4400796B72 /* Crime.swift in Sources */,
+				09F45DF01FD60CFA008DF034 /* ChannelListView.swift in Sources */,
 				581A292D1F8AFC6D00796B72 /* AppDelegate.swift in Sources */,
 				9AE9190B1FCA8BCB0070E5BF /* DataService.swift in Sources */,
 				9A31DA651FCAB8C800E99B22 /* WelcomeView.swift in Sources */,
+				09F45DFC1FD610CB008DF034 /* CreateChannelCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,7 +589,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6WTZ75CGPV;
+				DEVELOPMENT_TEAM = F9YJQ9Z5M9;
 				INFOPLIST_FILE = WalkMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kglg.walkeme;
@@ -583,7 +607,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6WTZ75CGPV;
+				DEVELOPMENT_TEAM = F9YJQ9Z5M9;
 				INFOPLIST_FILE = WalkMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kglg.walkeme;

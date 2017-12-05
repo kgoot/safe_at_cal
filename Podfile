@@ -6,9 +6,12 @@ target 'WalkMe' do
   use_frameworks!
 
   # Pods for WalkMe
+pod 'Firebase'
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'Firebase/Storage'
 pod 'Firebase/Database'
+pod 'JSQMessagesViewController', '7.3.4'
 pod 'KeychainSwift'
 pod 'DTMHeatmap'
 
