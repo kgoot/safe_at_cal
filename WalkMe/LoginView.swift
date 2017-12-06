@@ -103,12 +103,10 @@ class LoginView: UIViewController {
         }
     }
     
-    
-    
     func completeSignIn(id: String) {
         if self.emailText.text!.hasSuffix("berkeley.edu") {
-            print("success login")
             let keyChain = DataService().keyChain
+            print(keyChain)
             keyChain.set(id, forKey: "uid")
             self.performSegue(withIdentifier: "goto_home", sender: self)
         } else {

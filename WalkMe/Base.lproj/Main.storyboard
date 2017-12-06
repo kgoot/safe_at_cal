@@ -31,11 +31,13 @@
                                 <subviews>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxI-cY-Omc">
                                         <rect key="frame" x="70" y="343" width="125" height="30"/>
+                                        <gestureRecognizers/>
                                         <state key="normal" title="Last Month's Data">
                                             <color key="titleColor" red="0.78117435150000003" green="0.76489988590000002" blue="0.76489988590000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
                                             <action selector="loadMonthlyData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qee-yP-7ZT"/>
+                                            <outletCollection property="gestureRecognizers" destination="A1B-P2-r38" appends="YES" id="LzA-he-heO"/>
                                         </connections>
                                     </button>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zF-Ut-Cyc">
@@ -132,6 +134,7 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.2901554404145078" green="0.2901554404145078" blue="0.2901554404145078" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="gEb-t2-PRF" firstAttribute="top" secondItem="Abx-Jx-Ej5" secondAttribute="bottom" constant="15" id="1hI-aG-7UN"/>
                                     <constraint firstAttribute="trailing" secondItem="Kbh-sq-Lmp" secondAttribute="trailing" constant="22" id="7w2-DX-RSu"/>
@@ -174,6 +177,9 @@
                                     <constraint firstItem="Ebc-rT-ncO" firstAttribute="leading" secondItem="7j2-6m-zGj" secondAttribute="leading" constant="22" id="wbS-aN-xEI"/>
                                     <constraint firstItem="Kbh-sq-Lmp" firstAttribute="leading" secondItem="7j2-6m-zGj" secondAttribute="leading" constant="22" id="yHj-K5-qce"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="A1B-P2-r38" appends="YES" id="Fil-qA-2Ax"/>
+                                </connections>
                             </view>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Where To?" translatesAutoresizingMaskIntoConstraints="NO" id="fem-2W-uo7">
                                 <rect key="frame" x="30" y="60" width="315" height="56"/>
@@ -240,6 +246,7 @@
                         <outlet property="searchBar" destination="fem-2W-uo7" id="wvG-Jq-HN6"/>
                         <outlet property="searchDisplayController" destination="uzr-rc-W0B" id="Lyn-8y-FND"/>
                         <outlet property="sideBarLeadConst" destination="tWf-Hf-BDw" id="jRH-GJ-d91"/>
+                        <outlet property="sideBarView" destination="7j2-6m-zGj" id="S9v-8p-zl5"/>
                         <segue destination="cav-b7-dE6" kind="presentation" identifier="goto_login" modalTransitionStyle="crossDissolve" id="GsY-My-5vu"/>
                         <segue destination="4jf-M9-QD5" kind="presentation" identifier="goto_about" modalTransitionStyle="crossDissolve" id="hx6-y2-5rK"/>
                     </connections>
@@ -253,6 +260,11 @@
                         <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="Cnl-u2-8Si"/>
                     </connections>
                 </searchDisplayController>
+                <swipeGestureRecognizer direction="right" id="A1B-P2-r38">
+                    <connections>
+                        <action selector="swipeLeft:" destination="BYZ-38-t0r" id="0Qe-gC-myO"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="742" y="439"/>
         </scene>
@@ -293,7 +305,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2UF-gh-h49" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1530" y="439"/>
+            <point key="canvasLocation" x="1510" y="-279"/>
         </scene>
         <!--WalkMe-->
         <scene sceneID="4ae-Kl-c4j">
@@ -405,7 +417,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-4" y="131.78410794602701"/>
+            <point key="canvasLocation" x="-265" y="132"/>
         </scene>
         <!--Sorry View-->
         <scene sceneID="URR-vR-4nf">
@@ -492,7 +504,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVm-5v-JhP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-780" y="132"/>
+            <point key="canvasLocation" x="-1124" y="132"/>
         </scene>
     </scenes>
     <resources>
@@ -504,8 +516,9 @@
         <image name="walkme" width="927" height="853"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DsU-Au-rf1"/>
-        <segue reference="Go8-0A-8dg"/>
+        <segue reference="hx6-y2-5rK"/>
+        <segue reference="GsY-My-5vu"/>
+        <segue reference="76x-Es-82b"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

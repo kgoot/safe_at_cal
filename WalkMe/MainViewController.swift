@@ -6,7 +6,6 @@
 //  Copyright © 2017 KGLG. All rights reserved.
 //
 
-
 import UIKit
 import MapKit
 import CoreLocation
@@ -19,6 +18,7 @@ class MainViewController: UIViewController {
     //HOME outlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var sideBarView: UIView!
     var heatMap = DTMHeatmap()
     
     //SIGN OUT
@@ -41,7 +41,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        _ = Auth.auth().currentUser
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -55,6 +54,19 @@ class MainViewController: UIViewController {
         dateFormatter.dateFormat = "MM/dd/yy' 'HH:mm"
         let date = dateFormatter.date(from: "09/29/16 00:00")! //FIXME(kgoot) remove this hardcode
         addCrimeData(datetime: date)
+        
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeLeft.direction = .left
+        self.sideBarView.addGestureRecognizer(swipeLeft)
+    }
+    
+    @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+        if gesture.direction == UISwipeGestureRecognizerDirection.left {
+            if sideBarLeadConst.constant == 0 {
+                sideBarLeadConst.constant = -240
+            }
+        }
     }
     
     // HIDE KEYBOARD
@@ -73,7 +85,6 @@ class MainViewController: UIViewController {
         }
     }
     
-
     // SIDE BAR ACTIONS
     // WEEKLY
     @IBAction func loadWeeklyData(_ sender: Any) {
