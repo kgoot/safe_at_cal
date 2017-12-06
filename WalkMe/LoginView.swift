@@ -38,7 +38,7 @@ class LoginView: UIViewController {
         beginSignIn()
     }
     
-    // REDEND EMAIL Action
+    // RESEND EMAIL Action
     @IBOutlet weak var resendBottomConstraint: NSLayoutConstraint!
     @IBAction func resendVerificationEmailAction(_ sender: Any) {
         Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in})
