@@ -17,9 +17,9 @@
 		581A294D1F8AFC6D00796B72 /* WalkMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A294C1F8AFC6D00796B72 /* WalkMeUITests.swift */; };
 		581A295C1F8AFCB000796B72 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 581A295B1F8AFCB000796B72 /* MapKit.framework */; };
 		581A295E1F8BDB4400796B72 /* Crime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A295D1F8BDB4400796B72 /* Crime.swift */; };
-		9A31DA651FCAB8C800E99B22 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A31DA641FCAB8C800E99B22 /* WelcomeView.swift */; };
 		9A3BB7131FCB928500DFF152 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3BB7121FCB928500DFF152 /* AboutView.swift */; };
 		9A4AEA221F9E9C8B00F7C16E /* crimedata.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9A4AEA211F9E9C8B00F7C16E /* crimedata.csv */; };
+		9A538DF31FD77FC800FDAF44 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A538DF21FD77FC800FDAF44 /* WelcomeView.swift */; };
 		9ADE7BBB1FCA956A007AFC55 /* SorryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADE7BBA1FCA956A007AFC55 /* SorryView.swift */; };
 		9AE919051FCA0D330070E5BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AE919041FCA0D330070E5BF /* GoogleService-Info.plist */; };
 		9AE919071FCA48AA0070E5BF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE919061FCA48AA0070E5BF /* MainViewController.swift */; };
@@ -63,9 +63,9 @@
 		777F5A3908F54C14D78F237C /* Pods_WalkMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B199786C825327F77B14D6 /* Pods_WalkMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ABCF422D99719523B319E50 /* Pods_WalkMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkMeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A31DA641FCAB8C800E99B22 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		9A3BB7121FCB928500DFF152 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		9A4AEA211F9E9C8B00F7C16E /* crimedata.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = crimedata.csv; path = WalkMe/crimedata.csv; sourceTree = "<group>"; };
+		9A538DF21FD77FC800FDAF44 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		9ADE7BBA1FCA956A007AFC55 /* SorryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorryView.swift; sourceTree = "<group>"; };
 		9AE919041FCA0D330070E5BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9AE919061FCA48AA0070E5BF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				581A292C1F8AFC6D00796B72 /* AppDelegate.swift */,
-				9A31DA641FCAB8C800E99B22 /* WelcomeView.swift */,
+				9A538DF21FD77FC800FDAF44 /* WelcomeView.swift */,
 				581A292E1F8AFC6D00796B72 /* LoginView.swift */,
 				9AE919061FCA48AA0070E5BF /* MainViewController.swift */,
 				9ADE7BBA1FCA956A007AFC55 /* SorryView.swift */,
@@ -392,11 +392,11 @@
 				9A3BB7131FCB928500DFF152 /* AboutView.swift in Sources */,
 				581A292F1F8AFC6D00796B72 /* LoginView.swift in Sources */,
 				9AE919071FCA48AA0070E5BF /* MainViewController.swift in Sources */,
+				9A538DF31FD77FC800FDAF44 /* WelcomeView.swift in Sources */,
 				9ADE7BBB1FCA956A007AFC55 /* SorryView.swift in Sources */,
 				581A295E1F8BDB4400796B72 /* Crime.swift in Sources */,
 				581A292D1F8AFC6D00796B72 /* AppDelegate.swift in Sources */,
 				9AE9190B1FCA8BCB0070E5BF /* DataService.swift in Sources */,
-				9A31DA651FCAB8C800E99B22 /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

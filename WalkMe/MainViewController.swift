@@ -12,6 +12,7 @@ import MapKit
 import CoreLocation
 import FirebaseAuth
 import DTMHeatmap
+import KeychainSwift
 
 class MainViewController: UIViewController {
     
@@ -22,6 +23,8 @@ class MainViewController: UIViewController {
     
     //SIGN OUT
     @IBAction func signOut(_ sender: Any) {
+        let keyChain = DataService().keyChain
+        keyChain.delete("uid")
         self.performSegue(withIdentifier: "goto_login", sender: self)
     }
     
@@ -62,12 +65,14 @@ class MainViewController: UIViewController {
     // SHOW SIDE BAR
     @IBOutlet weak var sideBarLeadConst: NSLayoutConstraint!
     @IBAction func openNav(_ sender: Any) {
+        self.view.endEditing(true)
         if sideBarLeadConst.constant == 0 {
             sideBarLeadConst.constant = -240
         } else {
             sideBarLeadConst.constant = 0
         }
     }
+    
 
     // SIDE BAR ACTIONS
     // WEEKLY
@@ -261,18 +266,20 @@ extension MainViewController: UISearchBarDelegate {
             
             self.getDirections(to: mapItem)
         }
+//        mapView.removeAnnotations(mapView.annotations)
     }
 }
 
 extension MainViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        return DTMHeatmapRenderer.init(overlay: overlay)
-//        if overlay is MKPolyline {
-//            let renderer = MKPolylineRenderer(overlay: overlay)
-//            renderer.strokeColor = .blue
-//            renderer.lineWidth = 5
-//            return renderer
-//        }
+        if overlay is MKPolyline {
+            let renderer = MKPolylineRenderer(overlay: overlay)
+            renderer.strokeColor = .blue
+            renderer.lineWidth = 3
+            return renderer
+        } else {
+            return DTMHeatmapRenderer.init(overlay: overlay)
+        }
 //        return MKOverlayPathRenderer()
     }
 }

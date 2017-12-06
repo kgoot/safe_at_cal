@@ -139,14 +139,9 @@ class LoginView: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
-
+    
     // LOAD VIEW
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let keyChain = DataService().keyChain
-        if keyChain.get("uid") != nil {
-            self.performSegue(withIdentifier: "goto_home", sender: self) //Comment this back in to avoid having to resign in
-        }
     }
 }
