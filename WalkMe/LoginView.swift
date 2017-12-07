@@ -151,4 +151,5 @@ class LoginView: UIViewController {
             self.performSegue(withIdentifier: "goto_home", sender: self) //Comment this back in to avoid having to resign in
         }
     }
+
 }

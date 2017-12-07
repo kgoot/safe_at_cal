@@ -8,8 +8,18 @@
 
 import Foundation
 import UIKit
+import Firebase
+import JSQMessagesViewController
 
-final class ChatViewController: UIViewController {
+
+// final class ChatViewController: UIViewController {
+final class ChatViewController: JSQMessagesViewController {
+    var channelRef: DatabaseReference?
+    var channel: Channel? {
+        didSet {
+            title = channel?.name
+        }
+    }
     
     // MARK: Properties
     
@@ -17,6 +27,7 @@ final class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.senderId = Auth.auth().currentUser?.uid
     }
     
     

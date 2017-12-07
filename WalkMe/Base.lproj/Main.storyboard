@@ -572,16 +572,12 @@
         <scene sceneID="S2D-D5-9a6">
             <objects>
                 <viewController id="mF0-LU-gHx" customClass="ChatViewController" customModule="ChatChat" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FuI-e3-cGQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="ynP-kS-qb2"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Gk7-zT-9hq">
+                    <view key="view" contentMode="scaleToFill" id="hx0-Tw-1Xc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yee-Rt-bFG">
-                                <rect key="frame" x="25" y="94" width="325" height="553"/>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vbt-Fv-Sf1">
+                                <rect key="frame" x="26" y="74" width="323" height="583"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -589,12 +585,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="fQB-E8-Tm3" firstAttribute="trailing" secondItem="Yee-Rt-bFG" secondAttribute="trailing" constant="25" id="7q5-eF-1gt"/>
-                            <constraint firstItem="Yee-Rt-bFG" firstAttribute="leading" secondItem="fQB-E8-Tm3" secondAttribute="leading" constant="25" id="9MR-ua-1df"/>
-                            <constraint firstItem="ynP-kS-qb2" firstAttribute="top" secondItem="Yee-Rt-bFG" secondAttribute="bottom" constant="25" id="If0-HE-Oz1"/>
-                            <constraint firstItem="Yee-Rt-bFG" firstAttribute="top" secondItem="FuI-e3-cGQ" secondAttribute="bottom" constant="25" id="OBq-mY-lxN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vbt-Fv-Sf1" secondAttribute="trailing" constant="10" id="1ah-lD-51t"/>
+                            <constraint firstItem="vbt-Fv-Sf1" firstAttribute="leading" secondItem="hx0-Tw-1Xc" secondAttribute="leadingMargin" constant="10" id="q9B-Jr-FyU"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="fQB-E8-Tm3"/>
+                        <viewLayoutGuide key="safeArea" id="8vd-sA-cm3"/>
                     </view>
                     <navigationItem key="navigationItem" id="uX5-vX-umE"/>
                 </viewController>
