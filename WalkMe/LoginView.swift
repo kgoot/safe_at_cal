@@ -151,5 +151,53 @@ class LoginView: UIViewController {
             self.performSegue(withIdentifier: "goto_home", sender: self) //Comment this back in to avoid having to resign in
         }
     }
+    
+
+//        channelVc.senderDisplayName = Auth.auth().currentUser?.uid
+    
+    // MARK: Navigation
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        super.prepare(for: segue, sender: sender)
+//        let navVc = segue.destination as! UINavigationController // 1
+//        let channelVc = navVc.viewControllers.first as! ChannelListViewController // 2
+//
+//        channelVc.senderDisplayName = nameField?.text // 3
+//    }
+//    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        super.prepare(for: segue, sender: sender)
+//
+//        if segue.identifier == "goto_channels" {
+//            let channelVc = segue.destination as! ChannelListViewController
+//         //   let channelVc = segue.identifier as! "goto_channels"
+//
+//            channelVc.senderDisplayName = emailText.text
+//        }
+//    }
+    
+    // MARK: Navigation
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        super.prepare(for: segue, sender: sender)
+
+//         given
+//        let navVc = segue.destination as! UINavigationController // 1
+//        let channelVc = navVc.viewControllers.first as! ChannelListViewController // 2
+//
+//        channelVc.senderDisplayName = emailText?.text // 3
+//
+//         what I think it should be
+
+//        if segue.identifier == "goto_channels" {
+//            print("segue identifier", segue.identifier)
+//            let channelVc = segue.destination as! ChannelListViewController
+//            print("channelVc", channelVc)
+//            channelVc.senderDisplayName = emailText?.text
+//            print("senderDisplayName", channelVc.senderDisplayName)
+//
+//        }
+//        print("not gotochannels")
+//
+//    }
 
 }

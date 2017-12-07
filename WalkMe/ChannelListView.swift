@@ -146,7 +146,7 @@ class ChannelListViewController: UITableViewController {
     // MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "RW RIC"
+        title = "Chats"
         observeChannels()
     }
     
@@ -167,14 +167,6 @@ class ChannelListViewController: UITableViewController {
         }
     }
     
-    // MARK: UITableViewDelegate
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == Section.currentChannelsSection.rawValue {
-            let channel = channels[(indexPath as NSIndexPath).row]
-            self.performSegue(withIdentifier: "ShowChannel", sender: channel)
-        }
-    }
-    
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -187,6 +179,18 @@ class ChannelListViewController: UITableViewController {
             chatVc.channelRef = channelRef.child(channel.id)
         }
     }
+    
+    // MARK: UITableViewDelegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("switching to a channel")
+        if indexPath.section == Section.currentChannelsSection.rawValue {
+            let channel = channels[(indexPath as NSIndexPath).row]
+            self.performSegue(withIdentifier: "ShowChannel", sender: channel)
+            print("segue done")
+        }
+    }
+    
+
 }
 
 

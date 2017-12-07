@@ -202,7 +202,7 @@
                             </barButtonItem>
                             <barButtonItem title="Channels" id="xBW-af-HqM">
                                 <connections>
-                                    <segue destination="0Qe-yb-34I" kind="show" identifier="goto_channels" id="jyi-mg-Nbg"/>
+                                    <segue destination="0Qe-yb-34I" kind="show" identifier="goto_channels" id="DtO-yV-baO"/>
                                 </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
@@ -489,13 +489,13 @@
         <!--Channel List View Controller-->
         <scene sceneID="13h-Dy-uRk">
             <objects>
-                <tableViewController id="0Qe-yb-34I" customClass="ChannelListViewController" customModule="ChatChat" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="0Qe-yb-34I" customClass="ChannelListViewController" customModule="WalkMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="PcN-Vs-ylj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewChannel" id="b0p-51-5cv" customClass="CreateChannelCell" customModule="ChatChat" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewChannel" id="b0p-51-5cv" customClass="CreateChannelCell" customModule="WalkMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b0p-51-5cv" id="5PU-zX-A54">
@@ -529,8 +529,8 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="t53-8f-V1t"/>
                                             <exclude reference="iEY-TO-qqe"/>
+                                            <exclude reference="t53-8f-V1t"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -571,12 +571,12 @@
         <!--Chat View Controller-->
         <scene sceneID="S2D-D5-9a6">
             <objects>
-                <viewController id="mF0-LU-gHx" customClass="ChatViewController" customModule="ChatChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mF0-LU-gHx" customClass="ChatViewController" customModule="WalkMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hx0-Tw-1Xc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vbt-Fv-Sf1">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vbt-Fv-Sf1">
                                 <rect key="frame" x="26" y="74" width="323" height="583"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -586,6 +586,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="vbt-Fv-Sf1" secondAttribute="trailing" constant="10" id="1ah-lD-51t"/>
+                            <constraint firstItem="8vd-sA-cm3" firstAttribute="bottom" secondItem="vbt-Fv-Sf1" secondAttribute="bottom" constant="10" id="SWj-s2-Kx1"/>
+                            <constraint firstItem="vbt-Fv-Sf1" firstAttribute="top" secondItem="8vd-sA-cm3" secondAttribute="top" constant="10" id="jS7-EA-aeJ"/>
                             <constraint firstItem="vbt-Fv-Sf1" firstAttribute="leading" secondItem="hx0-Tw-1Xc" secondAttribute="leadingMargin" constant="10" id="q9B-Jr-FyU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8vd-sA-cm3"/>
@@ -605,8 +607,8 @@
         <image name="walkme" width="927" height="853"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NMx-jD-wJW"/>
-        <segue reference="OsE-1I-eGU"/>
+        <segue reference="gKg-6E-AYY"/>
+        <segue reference="DsU-Au-rf1"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

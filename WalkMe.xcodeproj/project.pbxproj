@@ -14,7 +14,6 @@
 		09F45DF41FD60E9A008DF034 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F45DF31FD60E9A008DF034 /* Channel.swift */; };
 		09F45DF81FD60F3B008DF034 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F45DF71FD60F3A008DF034 /* ChatViewController.swift */; };
 		09F45DFC1FD610CB008DF034 /* CreateChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F45DFB1FD610CB008DF034 /* CreateChannelCell.swift */; };
-		426D28A71FED58200F4E27E0 /* Pods_WalkMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88B199786C825327F77B14D6 /* Pods_WalkMe.framework */; };
 		581A292D1F8AFC6D00796B72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A292C1F8AFC6D00796B72 /* AppDelegate.swift */; };
 		581A292F1F8AFC6D00796B72 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A292E1F8AFC6D00796B72 /* LoginView.swift */; };
 		581A29321F8AFC6D00796B72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581A29301F8AFC6D00796B72 /* Main.storyboard */; };
@@ -30,6 +29,7 @@
 		9ADE7BBB1FCA956A007AFC55 /* SorryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADE7BBA1FCA956A007AFC55 /* SorryView.swift */; };
 		9AE919071FCA48AA0070E5BF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE919061FCA48AA0070E5BF /* MainViewController.swift */; };
 		9AE9190B1FCA8BCB0070E5BF /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE9190A1FCA8BCB0070E5BF /* DataService.swift */; };
+		E580F275A7919744FE60553E /* Pods_WalkMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D6971AE084D5001087FF54 /* Pods_WalkMe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +55,7 @@
 		09F45DF31FD60E9A008DF034 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		09F45DF71FD60F3A008DF034 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		09F45DFB1FD610CB008DF034 /* CreateChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChannelCell.swift; sourceTree = "<group>"; };
+		2911F55F12043BA69287F996 /* Pods-WalkMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WalkMe/Pods-WalkMe.debug.xcconfig"; sourceTree = "<group>"; };
 		581A29291F8AFC6D00796B72 /* WalkMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		581A292C1F8AFC6D00796B72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		581A292E1F8AFC6D00796B72 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -70,17 +71,14 @@
 		581A294E1F8AFC6D00796B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		581A295B1F8AFCB000796B72 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		581A295D1F8BDB4400796B72 /* Crime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crime.swift; sourceTree = "<group>"; };
-		724126051139EE24488798EB /* Pods-WalkMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-WalkMe/Pods-WalkMe.release.xcconfig"; sourceTree = "<group>"; };
-		777F5A3908F54C14D78F237C /* Pods_WalkMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		88B199786C825327F77B14D6 /* Pods_WalkMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8ABCF422D99719523B319E50 /* Pods_WalkMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkMeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88D6971AE084D5001087FF54 /* Pods_WalkMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9667A0B4002249B2BF0818B5 /* Pods-WalkMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-WalkMe/Pods-WalkMe.release.xcconfig"; sourceTree = "<group>"; };
 		9A31DA641FCAB8C800E99B22 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		9A3BB7121FCB928500DFF152 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		9A4AEA211F9E9C8B00F7C16E /* crimedata.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = crimedata.csv; path = WalkMe/crimedata.csv; sourceTree = "<group>"; };
 		9ADE7BBA1FCA956A007AFC55 /* SorryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorryView.swift; sourceTree = "<group>"; };
 		9AE919061FCA48AA0070E5BF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9AE9190A1FCA8BCB0070E5BF /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
-		B62AA286594DBB4EF2C47DA7 /* Pods-WalkMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WalkMe/Pods-WalkMe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +87,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				581A295C1F8AFCB000796B72 /* MapKit.framework in Frameworks */,
-				426D28A71FED58200F4E27E0 /* Pods_WalkMe.framework in Frameworks */,
+				E580F275A7919744FE60553E /* Pods_WalkMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +117,7 @@
 				581A294B1F8AFC6D00796B72 /* WalkMeUITests */,
 				581A292A1F8AFC6D00796B72 /* Products */,
 				581A295A1F8AFCB000796B72 /* Frameworks */,
-				FB653CC686B9E2337919BD00 /* Pods */,
+				62B6A1A77F7B44886B5850B1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -179,18 +177,16 @@
 			isa = PBXGroup;
 			children = (
 				581A295B1F8AFCB000796B72 /* MapKit.framework */,
-				88B199786C825327F77B14D6 /* Pods_WalkMe.framework */,
-				777F5A3908F54C14D78F237C /* Pods_WalkMeTests.framework */,
-				8ABCF422D99719523B319E50 /* Pods_WalkMeUITests.framework */,
+				88D6971AE084D5001087FF54 /* Pods_WalkMe.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FB653CC686B9E2337919BD00 /* Pods */ = {
+		62B6A1A77F7B44886B5850B1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B62AA286594DBB4EF2C47DA7 /* Pods-WalkMe.debug.xcconfig */,
-				724126051139EE24488798EB /* Pods-WalkMe.release.xcconfig */,
+				2911F55F12043BA69287F996 /* Pods-WalkMe.debug.xcconfig */,
+				9667A0B4002249B2BF0818B5 /* Pods-WalkMe.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -202,12 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 581A29511F8AFC6D00796B72 /* Build configuration list for PBXNativeTarget "WalkMe" */;
 			buildPhases = (
-				4F7E44D429D4C12DC2CF7283 /* [CP] Check Pods Manifest.lock */,
+				059796FC3F80B21A9A9D1BA4 /* [CP] Check Pods Manifest.lock */,
 				581A29251F8AFC6C00796B72 /* Sources */,
 				581A29261F8AFC6C00796B72 /* Frameworks */,
 				581A29271F8AFC6C00796B72 /* Resources */,
-				C12F9A7D7EC7E3993DFAF105 /* [CP] Embed Pods Frameworks */,
-				0EC9F3B2BA99EC155D52EC9D /* [CP] Copy Pods Resources */,
+				AD2253B252CA659BEBDBFEF7 /* [CP] Embed Pods Frameworks */,
+				A853C5231D2613CBD808328F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -337,22 +333,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0EC9F3B2BA99EC155D52EC9D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WalkMe/Pods-WalkMe-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4F7E44D429D4C12DC2CF7283 /* [CP] Check Pods Manifest.lock */ = {
+		059796FC3F80B21A9A9D1BA4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -370,7 +351,22 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C12F9A7D7EC7E3993DFAF105 /* [CP] Embed Pods Frameworks */ = {
+		A853C5231D2613CBD808328F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WalkMe/Pods-WalkMe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD2253B252CA659BEBDBFEF7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -584,7 +580,7 @@
 		};
 		581A29521F8AFC6D00796B72 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B62AA286594DBB4EF2C47DA7 /* Pods-WalkMe.debug.xcconfig */;
+			baseConfigurationReference = 2911F55F12043BA69287F996 /* Pods-WalkMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -602,7 +598,7 @@
 		};
 		581A29531F8AFC6D00796B72 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 724126051139EE24488798EB /* Pods-WalkMe.release.xcconfig */;
+			baseConfigurationReference = 9667A0B4002249B2BF0818B5 /* Pods-WalkMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

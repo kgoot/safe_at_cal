@@ -31,15 +31,15 @@ class MainViewController: UIViewController {
         self.performSegue(withIdentifier: "goto_about", sender: self)
     }
     
-//    //CHANNELS
-//    @IBAction func allChannels(_ sender: Any) {
-//        self.performSegue(withIdentifier: "goto_channels", sender: self)
-//    }
-//    
-//    //CHAT
-//    @IBAction func chat(_ sender: Any) {
-//        self.performSegue(withIdentifier: "goto_chat", sender: self)
-//    }
+    //CHANNELS
+    @IBAction func allChannels(_ sender: Any) {
+        self.performSegue(withIdentifier: "goto_channels", sender: self)
+    }
+//
+    //CHAT
+    @IBAction func chat(_ sender: Any) {
+        self.performSegue(withIdentifier: "ShowChannel", sender: self)
+    }
     
     
     
