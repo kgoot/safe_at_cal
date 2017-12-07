@@ -86,6 +86,13 @@ class MainViewController: UIViewController {
     }
     
     // SIDE BAR ACTIONS
+    // SHOW USER PROFILE
+    @IBAction func showUserProfile(_ sender: Any) {
+        if sideBarLeadConst.constant == 0 {
+            sideBarLeadConst.constant = -240
+        }
+        self.performSegue(withIdentifier: "goto_profile", sender: self)
+    }
     // WEEKLY
     @IBAction func loadWeeklyData(_ sender: Any) {
         mapView.removeAnnotations(mapView.annotations)
@@ -115,6 +122,30 @@ class MainViewController: UIViewController {
         addCrimeData(datetime: date)
         sideBarLeadConst.constant = -240 //TODO(kgoot) Remove Hardcode
     }
+    
+//    func checkPermission() {
+//        let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
+//        switch photoAuthorizationStatus {
+//        case .authorized:
+//            print("Access is granted by user")
+//        case .notDetermined:
+//            PHPhotoLibrary.requestAuthorization({
+//                (newStatus) in
+//                print("status is \(newStatus)")
+//                if newStatus ==  PHAuthorizationStatus.authorized {
+//                    /* do stuff here */
+//                    print("success")
+//                }
+//            })
+//            print("It is not determined until now")
+//        case .restricted:
+//            // same same
+//            print("User do not have access to photo album.")
+//        case .denied:
+//            // same same
+//            print("User has denied the permission.")
+//        }
+//    }
     
     func getDirections(to destination: MKMapItem) {
         let overlays = mapView.overlays

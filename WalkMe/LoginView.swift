@@ -14,6 +14,9 @@ import FirebaseDatabase
 import KeychainSwift
 
 class LoginView: UIViewController {
+    
+    // Variables
+    let databaseRef = Database.database().reference(fromURL: "https://walkme-29.firebaseio.com/")
 
     // LOGIN outlets
     @IBOutlet weak var emailText: UITextField!
@@ -88,6 +91,21 @@ class LoginView: UIViewController {
                             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                             self.present(alert, animated: true, completion: nil)
                             
+                            guard let uid = user?.uid else{
+                                return
+                            }
+                            
+                            let userReference = self.databaseRef.child("users").child(uid)
+                            let values = ["username": self.emailText.text!, "email": self.emailText.text!, "pic":""] //TODO(kgoot): Username and email are the same right now
+                            
+                            userReference.updateChildValues(values
+                                , withCompletionBlock: { (error, ref) in
+                                    if error != nil{
+                                        print(error!)
+                                        return
+                                    }
+                                    self.dismiss(animated: true, completion: nil)
+                            })
                             //Shift view to login once account is created
                             self.segmentControl.selectedSegmentIndex = 0
                         } else {

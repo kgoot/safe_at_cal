@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Give this app permission to load photo library</string>
 	<key>CFBundleDisplayName</key>
 	<string>WalkMe</string>
 	<key>CFBundleDocumentTypes</key>

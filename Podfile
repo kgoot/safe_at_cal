@@ -11,6 +11,8 @@ pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'KeychainSwift'
 pod 'DTMHeatmap'
+pod 'Firebase/Storage'
+
 
 
 

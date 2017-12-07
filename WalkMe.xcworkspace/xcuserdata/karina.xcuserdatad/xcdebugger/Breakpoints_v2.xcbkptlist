@@ -88,11 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WalkMe/LoginView.swift"
-            timestampString = "534220930.532771"
+            timestampString = "534314187.576317"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "resendVerificationEmailAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
