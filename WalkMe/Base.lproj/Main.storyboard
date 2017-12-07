@@ -324,6 +324,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="homeButtonView" destination="isk-7H-wP3" id="7FB-6u-y3e"/>
+                        <outlet property="libraryBottomConst" destination="AIf-wq-F54" id="2PF-hq-ZdN"/>
                         <outlet property="libraryButtonView" destination="Czq-KN-rqS" id="za9-2t-LeD"/>
                         <outlet property="mapView" destination="mPc-tZ-zCl" id="NeY-Pg-V1h"/>
                         <outlet property="searchBar" destination="fem-2W-uo7" id="wvG-Jq-HN6"/>

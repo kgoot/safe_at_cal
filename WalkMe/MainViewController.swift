@@ -78,6 +78,9 @@ class MainViewController: UIViewController {
             if sideBarLeadConst.constant == 0 {
                 sideBarLeadConst.constant = -240
             }
+            if libraryBottomConst.constant == -70 {
+                libraryBottomConst.constant = 70
+            }
         }
     }
     
@@ -123,6 +126,8 @@ class MainViewController: UIViewController {
     
     
     // SHOW SIDE BAR
+    
+    @IBOutlet weak var libraryBottomConst: NSLayoutConstraint!
     @IBOutlet weak var sideBarLeadConst: NSLayoutConstraint!
     @IBAction func openNav(_ sender: Any) {
         self.view.endEditing(true)
@@ -130,6 +135,12 @@ class MainViewController: UIViewController {
             sideBarLeadConst.constant = -240
         } else {
             sideBarLeadConst.constant = 0
+        }
+        
+        if libraryBottomConst.constant == 70 {
+            libraryBottomConst.constant = -70
+        } else {
+            libraryBottomConst.constant = 70
         }
     }
     
@@ -139,16 +150,23 @@ class MainViewController: UIViewController {
         if sideBarLeadConst.constant == 0 {
             sideBarLeadConst.constant = -240
         }
+        if libraryBottomConst.constant == 70 {
+            libraryBottomConst.constant = -70
+        } else {
+            libraryBottomConst.constant = 70
+        }
         self.performSegue(withIdentifier: "goto_profile", sender: self)
     }
     // WEEKLY
-    @IBAction func loadWeeklyData(_ sender: Any) {
+    @IBAction func loadWeeklyData(_ sender: AnyObject? = nil) {
         mapView.removeAnnotations(mapView.annotations)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yy' 'HH:mm"
         let date = dateFormatter.date(from: "09/20/17 00:00")! //FIXME(kgoot) remove this hardcode
         addCrimeData(datetime: date)
         sideBarLeadConst.constant = -240 //TODO(kgoot) Remove Hardcode
+        libraryBottomConst.constant = 70
+        
     }
     
     // MONTHLY
@@ -159,6 +177,8 @@ class MainViewController: UIViewController {
         let date = dateFormatter.date(from: "09/01/17 00:00")! //FIXME(kgoot) remove this hardcode
         addCrimeData(datetime: date)
         sideBarLeadConst.constant = -240 //TODO(kgoot) Remove Hardcode
+        libraryBottomConst.constant = 70
+        
     }
     
     // ALL
@@ -169,31 +189,8 @@ class MainViewController: UIViewController {
         let date = dateFormatter.date(from: "09/29/16 00:00")! //FIXME(kgoot) remove this hardcode
         addCrimeData(datetime: date)
         sideBarLeadConst.constant = -240 //TODO(kgoot) Remove Hardcode
+        libraryBottomConst.constant = 70
     }
-    
-//    func checkPermission() {
-//        let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
-//        switch photoAuthorizationStatus {
-//        case .authorized:
-//            print("Access is granted by user")
-//        case .notDetermined:
-//            PHPhotoLibrary.requestAuthorization({
-//                (newStatus) in
-//                print("status is \(newStatus)")
-//                if newStatus ==  PHAuthorizationStatus.authorized {
-//                    /* do stuff here */
-//                    print("success")
-//                }
-//            })
-//            print("It is not determined until now")
-//        case .restricted:
-//            // same same
-//            print("User do not have access to photo album.")
-//        case .denied:
-//            // same same
-//            print("User has denied the permission.")
-//        }
-//    }
     
     func getDirections(to destination: MKMapItem) {
         let overlays = mapView.overlays
@@ -221,9 +218,11 @@ class MainViewController: UIViewController {
             
             self.mapView.add(primaryRoute.polyline)
             self.mapView.setVisibleMapRect(primaryRoute.polyline.boundingMapRect,
-                                           edgePadding: UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0),
+                                           edgePadding: UIEdgeInsetsMake(70.0, 50.0, 50.0, 50.0),
                                            animated: true)
-            self.steps = primaryRoute.steps // todo
+            
+//            self.steps = primaryRoute.steps // todo
+            self.loadWeeklyData()
         }
     }
     
