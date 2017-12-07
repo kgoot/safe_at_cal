@@ -96,7 +96,7 @@ class LoginView: UIViewController {
                             }
                             
                             let userReference = self.databaseRef.child("users").child(uid)
-                            let values = ["username": self.emailText.text!, "email": self.emailText.text!, "pic":""] //TODO(kgoot): Username and email are the same right now
+                            let values = ["username": self.emailText.text!, "email": self.emailText.text!, "pic":"", "password": self.passwordText.text!] //TODO(kgoot): Username and email are the same right now
                             
                             userReference.updateChildValues(values
                                 , withCompletionBlock: { (error, ref) in

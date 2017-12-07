@@ -11,7 +11,6 @@ import Firebase
 import Photos
 import KeychainSwift
 
-
 class UserProfileView: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // VARIABLES
@@ -64,6 +63,8 @@ class UserProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    
     
     // UPDATE LIB ADDER
     @IBAction func updateLibAddress(_ sender: Any) {

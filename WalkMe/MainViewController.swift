@@ -12,13 +12,20 @@ import CoreLocation
 import FirebaseAuth
 import DTMHeatmap
 import KeychainSwift
+import Firebase
 
 class MainViewController: UIViewController {
+    
+    // VARIABLES
+    let database = Database.database().reference()
     
     //HOME outlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var sideBarView: UIView!
+    @IBOutlet weak var homeButtonView: UIView!
+    @IBOutlet weak var libraryButtonView: UIView!
+    
     var heatMap = DTMHeatmap()
     
     //SIGN OUT
@@ -48,12 +55,17 @@ class MainViewController: UIViewController {
 
         mapView.delegate = self
         searchBar.delegate = self
-//        searchCompleter.delegate = self
 
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yy' 'HH:mm"
         let date = dateFormatter.date(from: "09/29/16 00:00")! //FIXME(kgoot) remove this hardcode
         addCrimeData(datetime: date)
+        
+        // Make buttons round
+        homeButtonView.layer.cornerRadius = homeButtonView.frame.size.width / 2
+        homeButtonView.clipsToBounds = true
+        libraryButtonView.layer.cornerRadius = homeButtonView.frame.size.width / 2
+        libraryButtonView.clipsToBounds = true
         
         
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
@@ -73,6 +85,42 @@ class MainViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    //NAGIVAGE HOME
+    @IBAction func navigateHome(_ sender: Any) {
+        let keyChain = DataService().keyChain
+        self.database.child("users").child(keyChain.get("uid")!).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let dict = snapshot.value as? [String: AnyObject] {
+                print(dict)
+                if let address = dict["homeAddress"] as? String {
+                    let geoCoder = CLGeocoder()
+                    geoCoder.geocodeAddressString(address) { (placemarks, error) in
+                        guard let placemarks = placemarks else {return}
+                        self.getDirections(to:MKMapItem.init(placemark: MKPlacemark.init(placemark: placemarks.first!)))
+                    }
+                }
+            }
+        })
+    }
+    
+    // NAVIGATE TO THE LIB
+    @IBAction func navigateLibrary(_ sender: Any) {
+        let keyChain = DataService().keyChain
+        self.database.child("users").child(keyChain.get("uid")!).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let dict = snapshot.value as? [String: AnyObject] {
+                print(dict)
+                if let address = dict["libAddress"] as? String {
+                    let geoCoder = CLGeocoder()
+                    geoCoder.geocodeAddressString(address) { (placemarks, error) in
+                        guard let placemarks = placemarks else {return}
+                        self.getDirections(to:MKMapItem.init(placemark: MKPlacemark.init(placemark: placemarks.first!)))
+                    }
+                }
+            }
+        })
+    }
+    
+    
     
     // SHOW SIDE BAR
     @IBOutlet weak var sideBarLeadConst: NSLayoutConstraint!
