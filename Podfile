@@ -12,6 +12,7 @@ pod 'Firebase/Database'
 pod 'KeychainSwift'
 pod 'DTMHeatmap'
 pod 'Firebase/Storage'
+pod 'JSQMessagesViewController', '7.3.4'
 
 
 
