@@ -45,6 +45,12 @@ class MainViewController: UIViewController {
     var currentCoordinate: CLLocationCoordinate2D!
     var steps = [MKRouteStep]()
     
+    // CHAT
+    @IBAction func loadChat(_ sender: Any) {
+        self.performSegue(withIdentifier: "goto_chat", sender: self)
+    }
+    
+    
     //LOAD MAIN VIEW
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,7 +101,7 @@ class MainViewController: UIViewController {
         let keyChain = DataService().keyChain
         self.database.child("users").child(keyChain.get("uid")!).observeSingleEvent(of: .value, with: { (snapshot) in
             if let dict = snapshot.value as? [String: AnyObject] {
-                print(dict)
+//                print(dict)
                 if let address = dict["homeAddress"] as? String {
                     let geoCoder = CLGeocoder()
                     geoCoder.geocodeAddressString(address) { (placemarks, error) in
@@ -229,7 +235,7 @@ class MainViewController: UIViewController {
     
     func scoreRoutes(routes: [MKRoute]) -> MKRoute {
         for route in routes {
-            print("hello world")
+//            print("hello world")
             for step in route.steps {
                 let coord = step.polyline.coordinate
                 //                MKPinAnnotationView.bluePinColor()
@@ -237,7 +243,7 @@ class MainViewController: UIViewController {
                 myTestAnnotation.coordinate = CLLocationCoordinate2DMake(coord.latitude, coord.longitude)
                 mapView.addAnnotation(myTestAnnotation)
             }
-            print("end world")
+//            print("end world")
         }
         return routes.first!
     }

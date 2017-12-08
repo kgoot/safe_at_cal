@@ -274,6 +274,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOS-wv-huN">
+                                <rect key="frame" x="121" y="185" width="133" height="107"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="BOO"/>
+                                <connections>
+                                    <action selector="loadChat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KV7-SW-hN6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -335,6 +344,7 @@
                         <segue destination="cav-b7-dE6" kind="presentation" identifier="goto_login" modalTransitionStyle="crossDissolve" id="GsY-My-5vu"/>
                         <segue destination="4jf-M9-QD5" kind="presentation" identifier="goto_about" modalTransitionStyle="crossDissolve" id="hx6-y2-5rK"/>
                         <segue destination="4dH-r2-7bk" kind="show" identifier="goto_profile" id="zxi-JH-Ugf"/>
+                        <segue destination="VQ3-1N-Szk" kind="show" identifier="goto_chat" id="KM6-hp-PdW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -819,7 +829,16 @@
                             <outlet property="delegate" destination="dBd-7F-Mj5" id="76g-vs-tZp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="gV5-oL-BNp"/>
+                    <navigationItem key="navigationItem" id="gV5-oL-BNp">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="gEy-sz-00G">
+                            <connections>
+                                <action selector="goHome:" destination="dBd-7F-Mj5" id="a4r-6u-YpD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goto_home" modalTransitionStyle="crossDissolve" id="gfN-38-jdE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Klf-ZZ-RBT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -881,8 +900,8 @@
         <image name="walkme" width="927" height="853"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OsE-1I-eGU"/>
-        <segue reference="ALq-Py-wOL"/>
+        <segue reference="iRd-Pq-26w"/>
+        <segue reference="gfN-38-jdE"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
