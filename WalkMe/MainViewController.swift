@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
     
     // VARIABLES
     let database = Database.database().reference()
+    lazy var geocoder = CLGeocoder()
     
     //HOME outlets
     @IBOutlet weak var searchBar: UISearchBar!
@@ -262,7 +263,10 @@ class MainViewController: UIViewController {
     }
     
     //return a list of crimes
-    func createCrimes(rows: [[String]]) -> [Crime]{
+    func createCrimes(rows: [[String]]) -> [Crime] {
+        // Read this from DB and Add Zipcode stuff
+        
+        
         var crimes:[Crime] = []
         for row in rows {
             if (row.count == 5) { //TODO(kgoot) better error handling
@@ -271,7 +275,7 @@ class MainViewController: UIViewController {
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "MM/dd/yy' 'HH:mm"
                 let date = dateFormatter.date(from: row[3])!
-                crimes.append(Crime.init(lat: latlong[0], long: latlong[1], datetime: date, offense: offense))
+                crimes.append(Crime.init(lat: latlong[0], long: latlong[1], datetime: date, zipcode: "", offense: offense))
             }
         }
         return crimes
@@ -288,8 +292,6 @@ class MainViewController: UIViewController {
         dateFormatter.dateFormat = "MM-dd-yyyy' 'HH:mm"
        
         var heatmapdata:[NSObject: Double] = [:]
-
-//        var coords:[CLLocationCoordinate2D] = []
         for crime in crimes {
             if (crime.datetime > datetime) {
                 let coordinate = CLLocationCoordinate2D(latitude: crime.lat, longitude: crime.long);
@@ -297,27 +299,10 @@ class MainViewController: UIViewController {
                 let type = "{MKMapPoint=dd}"
                 let value = NSValue(bytes: &point, objCType: type)
                 heatmapdata[value] = 1.0
-                
-//                let mapPoint = MKMapPointForCoordinate(coordinate)
-//                let value = NSValue(MKMapPoint: mapPoint)
-
             }
         }
         self.heatMap.setData(heatmapdata as [NSObject : AnyObject])
         self.mapView.add(self.heatMap)
-
-        //        var dict = Dictionary()
-//        self.heatmap.setData(dict)
-//        // Add annotations to map
-//        for crime in crimes {
-//            if (crime.datetime > datetime) {
-//                let myTestAnnotation = MKPointAnnotation()
-//                myTestAnnotation.coordinate = CLLocationCoordinate2DMake(crime.lat, crime.long)
-//                myTestAnnotation.title = crime.offense
-//                myTestAnnotation.subtitle = dateFormatter.string(for: crime.datetime)
-//                mapView.addAnnotation(myTestAnnotation)
-//            }
-//        }
     }
 }
 

@@ -18,14 +18,17 @@ class Crime {
     
     let long: Double
     
-    let datetime: Date //TODO: is this the right type?
+    let datetime: Date
+    
+    let zipcode: String
     
     let offense: String
     
-    init(lat: Double, long: Double, datetime: Date, offense: String) {
+    init(lat: Double, long: Double, datetime: Date, zipcode: String, offense: String) {
         self.lat = lat
         self.long = long
         self.datetime = datetime
+        self.zipcode = zipcode
         self.offense = offense
     }
 }
