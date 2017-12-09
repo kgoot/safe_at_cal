@@ -20,7 +20,6 @@ class UserProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
     // OUTLETS
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var lastnameLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var homeAddress: UIButton!
     @IBOutlet weak var libAddress: UIButton!
@@ -42,7 +41,7 @@ class UserProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
         let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
             if (alertController.textFields![0] as? UITextField) != nil {
                 self.homeAddress.setTitle(alertController.textFields![0].text, for: .normal)
-                
+
                 //Add to databse!!!!!!
                 if let uid = Auth.auth().currentUser?.uid {
                     self.database.child("users").child((uid)).updateChildValues(["homeAddress" : alertController.textFields![0].text!], withCompletionBlock: { (error, ref) in
@@ -58,12 +57,11 @@ class UserProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
         alertController.addTextField { (textField) in
             textField.placeholder = "Address"
         }
-        
+
         alertController.addAction(confirmAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
     }
-    
     
     
     // UPDATE LIB ADDER
@@ -134,19 +132,21 @@ class UserProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
             database.child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
                 if let dict = snapshot.value as? [String: AnyObject]
                 {
-                    print(dict)
                     self.usernameLabel.text = dict["username"] as? String
+                    self.nameLabel.text = dict["fullName"] as? String
                     if let profileImageURL = dict["pic"] as? String {
-                        let url = URL(string: profileImageURL)
-                        URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
-                            if error != nil{
-                                print(error!)
-                                return
-                            }
-                            DispatchQueue.main.async {
-                                self.profileImage?.image = UIImage(data: data!)
-                            }
-                        }).resume()
+                        if profileImageURL != "" {
+                            let url = URL(string: profileImageURL)
+                            URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+                                if error != nil{
+                                    print(error!)
+                                    return
+                                }
+                                DispatchQueue.main.async {
+                                    self.profileImage?.image = UIImage(data: data!)
+                                }
+                            }).resume()
+                        }
                     }
                     if let home = dict["homeAddress"] as? String {
                         self.homeAddress.setTitle(home, for: .normal)

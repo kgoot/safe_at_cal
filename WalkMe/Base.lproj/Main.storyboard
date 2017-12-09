@@ -385,14 +385,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVL-D2-cF9">
-                                <rect key="frame" x="181" y="170" width="40" height="24"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Karina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQk-cP-FSo">
-                                <rect key="frame" x="181" y="131" width="49" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVL-D2-cF9">
+                                <rect key="frame" x="181" y="170" width="47" height="24"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -438,16 +432,6 @@
                                     <action selector="updatePhoto:" destination="4dH-r2-7bk" eventType="touchUpInside" id="66R-bn-XgC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvn-ly-XwP">
-                                <rect key="frame" x="118" y="351" width="216" height="36"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <state key="normal" title="Add your home address">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="navigateHome:" destination="4dH-r2-7bk" eventType="touchUpInside" id="3rq-LP-Xb9"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wj-T1-lFs">
                                 <rect key="frame" x="118" y="398" width="216" height="36"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
@@ -467,33 +451,40 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SdQ-I7-KZJ">
+                                <rect key="frame" x="118" y="348" width="183" height="36"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Add your home address">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateHomeAddress:" destination="4dH-r2-7bk" eventType="touchUpInside" id="lpK-OP-4hu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2wj-T1-lFs" firstAttribute="top" secondItem="SdQ-I7-KZJ" secondAttribute="bottom" constant="14" id="3wG-Jq-vSg"/>
                             <constraint firstItem="LaJ-IT-wKo" firstAttribute="top" secondItem="Zug-cO-s2B" secondAttribute="bottom" constant="46" id="4Rz-9Y-gCD"/>
                             <constraint firstItem="hHa-PA-WWb" firstAttribute="trailing" secondItem="NGd-6j-4KS" secondAttribute="trailing" constant="146" id="5nj-Nn-KbV"/>
-                            <constraint firstItem="yQk-cP-FSo" firstAttribute="leading" secondItem="GLa-zH-ezA" secondAttribute="trailing" constant="20" id="6Ir-Go-NWK"/>
                             <constraint firstItem="GLa-zH-ezA" firstAttribute="top" secondItem="hHa-PA-WWb" secondAttribute="top" constant="100" id="7XZ-G8-toI"/>
+                            <constraint firstItem="SdQ-I7-KZJ" firstAttribute="leading" secondItem="AYu-Z0-8Xs" secondAttribute="trailing" constant="30" id="7nz-VR-YJ6"/>
                             <constraint firstItem="AYu-Z0-8Xs" firstAttribute="top" secondItem="LaJ-IT-wKo" secondAttribute="bottom" constant="8" id="F4t-Xi-7uk"/>
                             <constraint firstItem="lVL-D2-cF9" firstAttribute="leading" secondItem="GLa-zH-ezA" secondAttribute="trailing" constant="20" id="GWH-YG-20S"/>
                             <constraint firstItem="Zug-cO-s2B" firstAttribute="leading" secondItem="hHa-PA-WWb" secondAttribute="leading" constant="58" id="Hfz-NC-l5A"/>
-                            <constraint firstItem="2wj-T1-lFs" firstAttribute="top" secondItem="Yvn-ly-XwP" secondAttribute="bottom" constant="11" id="J9u-0H-3Ct"/>
-                            <constraint firstItem="Yvn-ly-XwP" firstAttribute="leading" secondItem="AYu-Z0-8Xs" secondAttribute="trailing" constant="30" id="S1O-yc-RVy"/>
                             <constraint firstItem="TG0-ej-PIt" firstAttribute="leading" secondItem="GLa-zH-ezA" secondAttribute="trailing" constant="20" id="TS9-6e-NIm"/>
                             <constraint firstItem="LaJ-IT-wKo" firstAttribute="leading" secondItem="hHa-PA-WWb" secondAttribute="leading" constant="31" id="XFy-xG-zuN"/>
                             <constraint firstItem="Zug-cO-s2B" firstAttribute="top" secondItem="hHa-PA-WWb" secondAttribute="top" constant="100" id="XwK-ma-kNJ"/>
                             <constraint firstItem="YxD-Fp-e2I" firstAttribute="leading" secondItem="hHa-PA-WWb" secondAttribute="leading" constant="58" id="a25-6A-fw7"/>
+                            <constraint firstItem="SdQ-I7-KZJ" firstAttribute="top" secondItem="Zug-cO-s2B" secondAttribute="bottom" constant="88" id="bPl-01-Nox"/>
                             <constraint firstItem="hHa-PA-WWb" firstAttribute="bottom" secondItem="NGd-6j-4KS" secondAttribute="bottom" constant="20" id="bTv-Yp-sr0"/>
                             <constraint firstItem="GLa-zH-ezA" firstAttribute="leading" secondItem="hHa-PA-WWb" secondAttribute="leading" constant="41" id="bfN-V0-aBZ"/>
                             <constraint firstItem="ilA-PU-sGw" firstAttribute="top" secondItem="hHa-PA-WWb" secondAttribute="top" constant="20" id="eqE-OM-g3m"/>
                             <constraint firstItem="TG0-ej-PIt" firstAttribute="top" secondItem="lVL-D2-cF9" secondAttribute="bottom" constant="15" id="ezM-nJ-pN6"/>
                             <constraint firstItem="ilA-PU-sGw" firstAttribute="leading" secondItem="hHa-PA-WWb" secondAttribute="leading" constant="20" id="ge5-XB-SHz"/>
                             <constraint firstItem="AYu-Z0-8Xs" firstAttribute="leading" secondItem="hHa-PA-WWb" secondAttribute="leading" constant="58" id="hVz-IU-Swa"/>
-                            <constraint firstItem="yQk-cP-FSo" firstAttribute="top" secondItem="hHa-PA-WWb" secondAttribute="top" constant="111" id="hem-wT-kU7"/>
-                            <constraint firstItem="hHa-PA-WWb" firstAttribute="trailing" secondItem="Yvn-ly-XwP" secondAttribute="trailing" constant="41" id="ilF-qq-yXh"/>
+                            <constraint firstItem="lVL-D2-cF9" firstAttribute="top" secondItem="hHa-PA-WWb" secondAttribute="top" constant="150" id="k18-WP-fmK"/>
                             <constraint firstItem="2wj-T1-lFs" firstAttribute="leading" secondItem="YxD-Fp-e2I" secondAttribute="trailing" constant="30" id="lxN-M4-5rW"/>
-                            <constraint firstItem="lVL-D2-cF9" firstAttribute="top" secondItem="yQk-cP-FSo" secondAttribute="bottom" constant="15" id="mjG-V8-YyL"/>
-                            <constraint firstItem="Yvn-ly-XwP" firstAttribute="top" secondItem="LaJ-IT-wKo" secondAttribute="bottom" constant="8" id="rvA-8U-gOi"/>
                             <constraint firstItem="hHa-PA-WWb" firstAttribute="trailing" secondItem="2wj-T1-lFs" secondAttribute="trailing" constant="41" id="sIe-m4-rIo"/>
                             <constraint firstItem="YxD-Fp-e2I" firstAttribute="top" secondItem="AYu-Z0-8Xs" secondAttribute="bottom" constant="20" id="sNx-gH-Lwa"/>
                             <constraint firstItem="NGd-6j-4KS" firstAttribute="leading" secondItem="hHa-PA-WWb" secondAttribute="leading" constant="146" id="yOr-UR-ExC"/>
@@ -501,10 +492,8 @@
                         <viewLayoutGuide key="safeArea" id="hHa-PA-WWb"/>
                     </view>
                     <connections>
-                        <outlet property="homeAddress" destination="Yvn-ly-XwP" id="ypv-N9-kGJ"/>
-                        <outlet property="lastnameLabel" destination="lVL-D2-cF9" id="msf-J6-kff"/>
                         <outlet property="libAddress" destination="2wj-T1-lFs" id="6S9-0R-WWy"/>
-                        <outlet property="nameLabel" destination="yQk-cP-FSo" id="TLD-FN-HHx"/>
+                        <outlet property="nameLabel" destination="lVL-D2-cF9" id="msf-J6-kff"/>
                         <outlet property="profileImage" destination="GLa-zH-ezA" id="75S-qq-kWk"/>
                         <outlet property="usernameLabel" destination="TG0-ej-PIt" id="ALA-HM-HlF"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goto_home" id="ALq-Py-wOL"/>
@@ -584,6 +573,9 @@
                                     <segment title="Sign Up"/>
                                 </segments>
                                 <color key="tintColor" red="0.28234323859214783" green="0.50725513696670532" blue="0.76476776599884033" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="segmentControlPressed:" destination="cav-b7-dE6" eventType="valueChanged" id="p5B-2G-RNC"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f97-D0-fAZ">
                                 <rect key="frame" x="50" y="428" width="275" height="30"/>
@@ -608,7 +600,7 @@
                                 <color key="tintColor" red="0.28234323859999999" green="0.50725513700000002" blue="0.76476776599999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                 <connections>
                                     <action selector="emailedClicked:" destination="cav-b7-dE6" eventType="touchDown" id="3EG-A6-8GU"/>
                                     <action selector="primaryEmailAction:" destination="cav-b7-dE6" eventType="primaryActionTriggered" id="8ec-xx-eLy"/>
@@ -622,11 +614,22 @@
                                     <action selector="resendVerificationEmailAction:" destination="cav-b7-dE6" eventType="touchUpInside" id="fCt-lv-uax"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BNN-bR-yjL">
+                                <rect key="frame" x="50" y="1348" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next" textContentType="name"/>
+                                <connections>
+                                    <action selector="nameClicked:" destination="cav-b7-dE6" eventType="touchDown" id="PlW-i2-ake"/>
+                                    <action selector="primaryNameAction:" destination="cav-b7-dE6" eventType="primaryActionTriggered" id="cAY-sv-E1i"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.97253084182739258" green="0.96862208843231201" blue="0.96863222122192383" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="ylZ-z5-gV1" firstAttribute="trailing" secondItem="gWp-MZ-hDh" secondAttribute="trailing" constant="112" id="1rW-vh-b5H"/>
                             <constraint firstItem="Wp8-l1-iy0" firstAttribute="leading" secondItem="ylZ-z5-gV1" secondAttribute="leading" constant="125" id="2Pi-s3-xrE"/>
+                            <constraint firstItem="BNN-bR-yjL" firstAttribute="top" secondItem="Wp8-l1-iy0" secondAttribute="bottom" constant="1000" id="2eG-Xf-zSg"/>
                             <constraint firstItem="ylZ-z5-gV1" firstAttribute="trailing" secondItem="GL7-uf-bTn" secondAttribute="trailing" constant="50" id="ClZ-8Z-vvY"/>
                             <constraint firstItem="GL7-uf-bTn" firstAttribute="top" secondItem="Wp8-l1-iy0" secondAttribute="bottom" constant="30" id="J1e-Jr-rju"/>
                             <constraint firstItem="ylZ-z5-gV1" firstAttribute="bottom" secondItem="gWp-MZ-hDh" secondAttribute="bottom" constant="-30" id="LDP-el-WGK"/>
@@ -640,16 +643,21 @@
                             <constraint firstItem="gWp-MZ-hDh" firstAttribute="leading" secondItem="ylZ-z5-gV1" secondAttribute="leading" constant="112" id="cyL-Lp-Vkn"/>
                             <constraint firstItem="AUO-LK-ANX" firstAttribute="top" secondItem="f97-D0-fAZ" secondAttribute="bottom" constant="30" id="nvD-bF-jSA"/>
                             <constraint firstItem="AUO-LK-ANX" firstAttribute="leading" secondItem="ylZ-z5-gV1" secondAttribute="leading" constant="148" id="o5F-tc-mP1"/>
+                            <constraint firstItem="ylZ-z5-gV1" firstAttribute="trailing" secondItem="BNN-bR-yjL" secondAttribute="trailing" constant="50" id="rVy-z5-w9B"/>
                             <constraint firstItem="f97-D0-fAZ" firstAttribute="leading" secondItem="ylZ-z5-gV1" secondAttribute="leading" constant="50" id="reH-SY-7J2"/>
                             <constraint firstItem="Wp8-l1-iy0" firstAttribute="top" secondItem="yYC-aa-onN" secondAttribute="bottom" constant="50" id="wV1-sN-zKp"/>
+                            <constraint firstItem="BNN-bR-yjL" firstAttribute="leading" secondItem="ylZ-z5-gV1" secondAttribute="leading" constant="50" id="xes-Qw-dcU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ylZ-z5-gV1"/>
                     </view>
                     <navigationItem key="navigationItem" title="WalkMe" id="tz0-Wr-wLx"/>
                     <connections>
+                        <outlet property="emailConstraint" destination="J1e-Jr-rju" id="6mB-Hs-Ve1"/>
                         <outlet property="emailText" destination="GL7-uf-bTn" id="1zI-iw-xjz"/>
                         <outlet property="imUpConst" destination="WKB-Np-mv4" id="nwt-0A-Ex2"/>
                         <outlet property="login_button" destination="AUO-LK-ANX" id="6NF-Kh-NIZ"/>
+                        <outlet property="nameConstraint" destination="2eG-Xf-zSg" id="wo5-ZR-ug7"/>
+                        <outlet property="nameText" destination="BNN-bR-yjL" id="RmV-Eh-nbG"/>
                         <outlet property="passwordText" destination="f97-D0-fAZ" id="CBA-zo-dUQ"/>
                         <outlet property="resendBottomConstraint" destination="LDP-el-WGK" id="zUg-bo-btS"/>
                         <outlet property="segmentControl" destination="Wp8-l1-iy0" id="T6M-hY-np3"/>
@@ -664,7 +672,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-265" y="132"/>
+            <point key="canvasLocation" x="-266.39999999999998" y="131.78410794602701"/>
         </scene>
         <!--Sorry View-->
         <scene sceneID="URR-vR-4nf">
@@ -756,13 +764,13 @@
         <!--Channel List View Controller-->
         <scene sceneID="yjF-z2-YUZ">
             <objects>
-                <tableViewController id="dBd-7F-Mj5" customClass="ChannelListViewController" customModule="ChatChat" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="dBd-7F-Mj5" customClass="ChannelListViewController" customModule="WalkMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xlz-VA-AAl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewChannel" id="R8N-AO-HWb" customClass="CreateChannelCell" customModule="ChatChat" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewChannel" id="R8N-AO-HWb" customClass="CreateChannelCell" customModule="WalkMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R8N-AO-HWb" id="Nzg-B8-gSu">
@@ -793,8 +801,8 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="wU3-6x-RsX"/>
                                             <exclude reference="3Ks-Da-qjB"/>
+                                            <exclude reference="wU3-6x-RsX"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -847,7 +855,7 @@
         <!--Chat View Controller-->
         <scene sceneID="rBT-Ha-iPk">
             <objects>
-                <viewController id="AoT-BG-st8" customClass="ChatViewController" customModule="ChatChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AoT-BG-st8" customClass="ChatViewController" customModule="WalkMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lcm-PU-Ba1"/>
                         <viewControllerLayoutGuide type="bottom" id="RUJ-CE-42P"/>
@@ -901,7 +909,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="iRd-Pq-26w"/>
-        <segue reference="gfN-38-jdE"/>
+        <segue reference="ALq-Py-wOL"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

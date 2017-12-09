@@ -61,9 +61,8 @@ final class ChatViewController: JSQMessagesViewController {
         self.senderDisplayName = "defaultUser"
         self.database.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
             if let dict = snapshot.value as? [String: AnyObject] {
-                if let email = dict["email"] as? String {
-                    print("test")
-                    self.senderDisplayName = email
+                if let name = dict["fullName"] as? String {
+                    self.senderDisplayName = name
                 }
             }
         })
