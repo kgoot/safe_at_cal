@@ -104,11 +104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WalkMe/MainViewController.swift"
-            timestampString = "534570620.248424"
+            timestampString = "534570930.911668"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "getDirections(to:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -131,8 +131,6 @@ class MainViewController: UIViewController {
         })
     }
     
-    
-    
     // SHOW SIDE BAR
     @IBOutlet weak var libraryBottomConst: NSLayoutConstraint!
     @IBOutlet weak var sideBarLeadConst: NSLayoutConstraint!
@@ -180,7 +178,6 @@ class MainViewController: UIViewController {
         sideBarLeadConst.constant = -240 //TODO(kgoot) Remove Hardcode
         libraryBottomConst.constant = 70
         chatBottomConst.constant = 20
-        
     }
     
     // MONTHLY
@@ -193,7 +190,6 @@ class MainViewController: UIViewController {
         sideBarLeadConst.constant = -240 //TODO(kgoot) Remove Hardcode
         libraryBottomConst.constant = 70
         chatBottomConst.constant = 20
-        
     }
     
     // ALL
