@@ -87,6 +87,7 @@ class MainViewController: UIViewController {
             }
             if libraryBottomConst.constant == -70 {
                 libraryBottomConst.constant = 70
+                chatBottomConst.constant = 20
             }
         }
     }
@@ -133,9 +134,10 @@ class MainViewController: UIViewController {
     
     
     // SHOW SIDE BAR
-    
     @IBOutlet weak var libraryBottomConst: NSLayoutConstraint!
     @IBOutlet weak var sideBarLeadConst: NSLayoutConstraint!
+    @IBOutlet weak var chatBottomConst: NSLayoutConstraint!
+    
     @IBAction func openNav(_ sender: Any) {
         self.view.endEditing(true)
         if sideBarLeadConst.constant == 0 {
@@ -146,8 +148,10 @@ class MainViewController: UIViewController {
         
         if libraryBottomConst.constant == 70 {
             libraryBottomConst.constant = -70
+            chatBottomConst.constant = -20
         } else {
             libraryBottomConst.constant = 70
+            chatBottomConst.constant = 20
         }
     }
     
@@ -159,8 +163,10 @@ class MainViewController: UIViewController {
         }
         if libraryBottomConst.constant == 70 {
             libraryBottomConst.constant = -70
+            chatBottomConst.constant = -20
         } else {
             libraryBottomConst.constant = 70
+            chatBottomConst.constant = 20
         }
         self.performSegue(withIdentifier: "goto_profile", sender: self)
     }
@@ -173,6 +179,7 @@ class MainViewController: UIViewController {
         addCrimeData(datetime: date)
         sideBarLeadConst.constant = -240 //TODO(kgoot) Remove Hardcode
         libraryBottomConst.constant = 70
+        chatBottomConst.constant = 20
         
     }
     
@@ -185,6 +192,7 @@ class MainViewController: UIViewController {
         addCrimeData(datetime: date)
         sideBarLeadConst.constant = -240 //TODO(kgoot) Remove Hardcode
         libraryBottomConst.constant = 70
+        chatBottomConst.constant = 20
         
     }
     
@@ -197,6 +205,7 @@ class MainViewController: UIViewController {
         addCrimeData(datetime: date)
         sideBarLeadConst.constant = -240 //TODO(kgoot) Remove Hardcode
         libraryBottomConst.constant = 70
+        chatBottomConst.constant = 20
     }
     
     func getDirections(to destination: MKMapItem) {

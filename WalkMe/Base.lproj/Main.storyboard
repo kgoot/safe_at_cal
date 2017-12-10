@@ -228,7 +228,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.92530665115787247" green="0.92056148884424227" blue="0.93005181347150256" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.83142924308776855" green="0.82731485366821289" blue="0.83531808853149414" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="Qp7-qp-jM5" firstAttribute="leading" secondItem="isk-7H-wP3" secondAttribute="leading" id="KwB-QO-OWJ"/>
                                     <constraint firstAttribute="height" constant="70" id="Mct-am-aG2"/>
@@ -252,7 +252,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.92553466558456421" green="0.92141866683959961" blue="0.92942291498184204" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.83142924308776855" green="0.82731485366821289" blue="0.83531808853149414" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="1d3-Sf-W7H"/>
                                     <constraint firstAttribute="trailing" secondItem="ZcU-uF-7oW" secondAttribute="trailing" id="47t-HK-NIa"/>
@@ -274,11 +274,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOS-wv-huN">
-                                <rect key="frame" x="121" y="185" width="133" height="107"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="BOO"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOS-wv-huN">
+                                <rect key="frame" x="123" y="627" width="138" height="20"/>
+                                <color key="backgroundColor" red="0.83070596681029929" green="0.82644593621127205" blue="0.83496599740932642" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="VE7-dB-Fej"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Walk With Friends">
+                                    <color key="titleColor" red="0.083203547166092379" green="0.084165330387522649" blue="0.087050680051813489" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loadChat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KV7-SW-hN6"/>
                                 </connections>
@@ -298,8 +309,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fem-2W-uo7" secondAttribute="trailing" constant="30" id="LcO-gC-g6s"/>
                             <constraint firstItem="yy3-Zg-L72" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="25" id="Lpa-Pk-MqC"/>
                             <constraint firstItem="FRK-Yt-XUJ" firstAttribute="top" secondItem="Czq-KN-rqS" secondAttribute="bottom" constant="9" id="TYA-2P-5z6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VOS-wv-huN" secondAttribute="trailing" constant="114" id="UfB-Nl-QIp"/>
                             <constraint firstItem="isk-7H-wP3" firstAttribute="leading" secondItem="7j2-6m-zGj" secondAttribute="trailing" constant="100" id="VBt-ex-Y3D"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FRK-Yt-XUJ" secondAttribute="trailing" constant="116" id="Zf2-au-4xV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VOS-wv-huN" secondAttribute="bottom" constant="20" id="gIG-WG-Qbe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7j2-6m-zGj" secondAttribute="bottom" id="nNs-kf-Zv1"/>
                             <constraint firstItem="mPc-tZ-zCl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="o74-ai-lLE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="isk-7H-wP3" secondAttribute="bottom" constant="70" id="oTn-I1-hjz"/>
@@ -333,6 +346,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="chatBottomConst" destination="gIG-WG-Qbe" id="Qr2-y4-K7v"/>
                         <outlet property="homeButtonView" destination="isk-7H-wP3" id="7FB-6u-y3e"/>
                         <outlet property="libraryBottomConst" destination="AIf-wq-F54" id="2PF-hq-ZdN"/>
                         <outlet property="libraryButtonView" destination="Czq-KN-rqS" id="za9-2t-LeD"/>
@@ -492,6 +506,7 @@
                         <viewLayoutGuide key="safeArea" id="hHa-PA-WWb"/>
                     </view>
                     <connections>
+                        <outlet property="homeAddress" destination="SdQ-I7-KZJ" id="RlI-WU-kau"/>
                         <outlet property="libAddress" destination="2wj-T1-lFs" id="6S9-0R-WWy"/>
                         <outlet property="nameLabel" destination="lVL-D2-cF9" id="msf-J6-kff"/>
                         <outlet property="profileImage" destination="GLa-zH-ezA" id="75S-qq-kWk"/>
@@ -908,7 +923,8 @@
         <image name="walkme" width="927" height="853"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iRd-Pq-26w"/>
+        <segue reference="zxi-JH-Ugf"/>
+        <segue reference="GsY-My-5vu"/>
         <segue reference="ALq-Py-wOL"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
