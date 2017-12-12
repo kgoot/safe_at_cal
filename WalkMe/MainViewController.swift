@@ -131,7 +131,6 @@ class MainViewController: UIViewController {
         let keyChain = DataService().keyChain
         self.database.child("users").child(keyChain.get("uid")!).observeSingleEvent(of: .value, with: { (snapshot) in
             if let dict = snapshot.value as? [String: AnyObject] {
-//                print(dict)
                 if let address = dict["homeAddress"] as? String {
                     let geoCoder = CLGeocoder()
                     geoCoder.geocodeAddressString(address) { (placemarks, error) in
@@ -148,7 +147,6 @@ class MainViewController: UIViewController {
         let keyChain = DataService().keyChain
         self.database.child("users").child(keyChain.get("uid")!).observeSingleEvent(of: .value, with: { (snapshot) in
             if let dict = snapshot.value as? [String: AnyObject] {
-                print(dict)
                 if let address = dict["libAddress"] as? String {
                     let geoCoder = CLGeocoder()
                     geoCoder.geocodeAddressString(address) { (placemarks, error) in
@@ -320,9 +318,7 @@ class MainViewController: UIViewController {
                     let coord = dict["block_location"]!["coordinates"] as! [String]
                     let lat = NSString(string: coord[1]).doubleValue
                     let long = NSString(string: coord[0]).doubleValue
-                    print(lat)
                     let crime = Crime.init(lat: lat, long: long, datetime: date, zipcode: "94720", offense: dict["offense"] as! String)
-                    print(crime)
                     self.crimes.append(crime)
                 }
             })
@@ -371,7 +367,6 @@ class MainViewController: UIViewController {
                 if self.zipcodePopuations[crime.zipcode] != nil {
                     heatmapdata[value] =  self.zipcodePopuations[crime.zipcode]! / 100
                 } else {
-                    print(crime.zipcode)
                     heatmapdata[value] =  1.0
                 }
                 

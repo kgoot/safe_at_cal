@@ -541,27 +541,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="walkme" translatesAutoresizingMaskIntoConstraints="NO" id="o3N-Bk-0QQ">
-                                <rect key="frame" x="38" y="50" width="300" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walkme" translatesAutoresizingMaskIntoConstraints="NO" id="o3N-Bk-0QQ">
+                                <rect key="frame" x="37" y="50" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="eN8-da-Ruv"/>
+                                    <constraint firstAttribute="height" constant="300" id="oia-NK-bj0"/>
+                                </constraints>
                             </imageView>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Coming Soon..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pnp-Q7-MNA">
-                                <rect key="frame" x="102" y="420" width="171" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1M4-Yz-bSx">
-                                <rect key="frame" x="165" y="617" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1M4-Yz-bSx">
+                                <rect key="frame" x="165" y="617" width="45" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="goHomeAction:" destination="4jf-M9-QD5" eventType="touchUpInside" id="frb-yl-fbF"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ojf-ev-wjH">
+                                <rect key="frame" x="52" y="380" width="271" height="207"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">WalkMe lets users visualize crime data, connect with others users and find the safest routes home. Our algorithm routes users based on routes with the least crime hotspots. To learn more please visit our website at www.walkmeberkeley.org</string>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1M4-Yz-bSx" firstAttribute="top" secondItem="Ojf-ev-wjH" secondAttribute="bottom" constant="30" id="5wy-s4-t9C"/>
+                            <constraint firstItem="Ojf-ev-wjH" firstAttribute="leading" secondItem="ZPC-0K-fGy" secondAttribute="leading" constant="52" id="NKj-rU-W8M"/>
+                            <constraint firstItem="ZPC-0K-fGy" firstAttribute="bottom" secondItem="1M4-Yz-bSx" secondAttribute="bottom" constant="20" id="NLb-u3-YT8"/>
+                            <constraint firstItem="ZPC-0K-fGy" firstAttribute="trailing" secondItem="1M4-Yz-bSx" secondAttribute="trailing" constant="165" id="NtV-Do-5iC"/>
+                            <constraint firstItem="ZPC-0K-fGy" firstAttribute="trailing" secondItem="Ojf-ev-wjH" secondAttribute="trailing" constant="52" id="gU3-FI-fyF"/>
+                            <constraint firstItem="ZPC-0K-fGy" firstAttribute="trailing" secondItem="o3N-Bk-0QQ" secondAttribute="trailing" constant="38" id="gwm-bO-F0f"/>
+                            <constraint firstItem="o3N-Bk-0QQ" firstAttribute="top" secondItem="ZPC-0K-fGy" secondAttribute="top" constant="30" id="jLn-Dc-NR7"/>
+                            <constraint firstItem="1M4-Yz-bSx" firstAttribute="leading" secondItem="ZPC-0K-fGy" secondAttribute="leading" constant="165" id="mEh-cn-0B0"/>
+                            <constraint firstItem="Ojf-ev-wjH" firstAttribute="top" secondItem="o3N-Bk-0QQ" secondAttribute="bottom" constant="30" id="yus-VZ-Hns"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZPC-0K-fGy"/>
                     </view>
                     <connections>
@@ -570,7 +583,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2UF-gh-h49" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1727" y="-279"/>
+            <point key="canvasLocation" x="1725.5999999999999" y="-279.31034482758622"/>
         </scene>
         <!--WalkMe-->
         <scene sceneID="4ae-Kl-c4j">
@@ -999,7 +1012,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="iRd-Pq-26w"/>
-        <segue reference="6KY-Rp-rPB"/>
+        <segue reference="76x-Es-82b"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
