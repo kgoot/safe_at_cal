@@ -35,6 +35,8 @@ class MainViewController: UIViewController {
                              "94710": 695.0,
                              "94712": 0.0,
                              "94720": 296.0] as [String : Double]
+    var instructions: [MKRouteStep] = []
+    var primaryRoute: MKRoute!
     
     //HOME outlets
     @IBOutlet weak var searchBar: UISearchBar!
@@ -42,6 +44,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var sideBarView: UIView!
     @IBOutlet weak var homeButtonView: UIView!
     @IBOutlet weak var libraryButtonView: UIView!
+    @IBOutlet weak var Stepbystep: UIButton!
     
     var heatMap = DTMHeatmap()
     
@@ -66,6 +69,10 @@ class MainViewController: UIViewController {
         self.performSegue(withIdentifier: "goto_chat", sender: self)
     }
     
+    @IBAction func ShowInstructions(_ sender: Any) {
+        self.performSegue(withIdentifier: "ShowInstructions", sender: self)
+    }
+    
     //LOAD MAIN VIEW
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,11 +95,18 @@ class MainViewController: UIViewController {
         homeButtonView.clipsToBounds = true
         libraryButtonView.layer.cornerRadius = homeButtonView.frame.size.width / 2
         libraryButtonView.clipsToBounds = true
-        
+        Stepbystep.isHidden = true
         
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeLeft.direction = .left
         self.sideBarView.addGestureRecognizer(swipeLeft)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowInstructions" {
+            let nextController = segue.destination as! DirectionsViewController
+            nextController.primaryRoute = self.primaryRoute
+        }
     }
     
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
@@ -226,6 +240,7 @@ class MainViewController: UIViewController {
         let sourcePlacemark = MKPlacemark(coordinate: currentCoordinate)
         let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
         let directionRequest = MKDirectionsRequest()
+        var instructions: [String] = []
         directionRequest.source = sourceMapItem
         directionRequest.destination = destination
         directionRequest.transportType = .walking
@@ -242,6 +257,13 @@ class MainViewController: UIViewController {
             } else {
                 primaryRoute = responce.routes.first!
             }
+            
+            for step in primaryRoute.steps {
+                instructions.append(step.instructions)
+            }
+            self.primaryRoute = primaryRoute
+            self.Stepbystep.isHidden = false
+            self.instructions = primaryRoute.steps
             
             self.mapView.add(primaryRoute.polyline)
             self.mapView.setVisibleMapRect(primaryRoute.polyline.boundingMapRect,

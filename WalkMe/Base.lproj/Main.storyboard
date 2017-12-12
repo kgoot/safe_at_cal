@@ -294,6 +294,15 @@
                                     <action selector="loadChat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KV7-SW-hN6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nuv-dL-5Oy">
+                                <rect key="frame" x="305" y="25" width="40" height="30"/>
+                                <state key="normal" title="Steps">
+                                    <color key="titleColor" red="0.30998742579999999" green="0.31366011500000002" blue="0.3216626346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="ShowInstructions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jaK-OX-jpe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -311,7 +320,9 @@
                             <constraint firstItem="FRK-Yt-XUJ" firstAttribute="top" secondItem="Czq-KN-rqS" secondAttribute="bottom" constant="9" id="TYA-2P-5z6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VOS-wv-huN" secondAttribute="trailing" constant="114" id="UfB-Nl-QIp"/>
                             <constraint firstItem="isk-7H-wP3" firstAttribute="leading" secondItem="7j2-6m-zGj" secondAttribute="trailing" constant="100" id="VBt-ex-Y3D"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nuv-dL-5Oy" secondAttribute="trailing" constant="30" id="VVr-vp-wyk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FRK-Yt-XUJ" secondAttribute="trailing" constant="116" id="Zf2-au-4xV"/>
+                            <constraint firstItem="Nuv-dL-5Oy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="d8i-zS-wcg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VOS-wv-huN" secondAttribute="bottom" constant="20" id="gIG-WG-Qbe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7j2-6m-zGj" secondAttribute="bottom" id="nNs-kf-Zv1"/>
                             <constraint firstItem="mPc-tZ-zCl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="o74-ai-lLE"/>
@@ -320,6 +331,7 @@
                             <constraint firstItem="7j2-6m-zGj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-240" id="tWf-Hf-BDw"/>
                             <constraint firstItem="HDd-hf-PvJ" firstAttribute="top" secondItem="isk-7H-wP3" secondAttribute="bottom" constant="8" id="vml-Wo-ZhE"/>
                             <constraint firstItem="fem-2W-uo7" firstAttribute="leading" secondItem="7j2-6m-zGj" secondAttribute="trailing" constant="30" id="wEg-mn-ur5"/>
+                            <constraint firstItem="fem-2W-uo7" firstAttribute="top" secondItem="Nuv-dL-5Oy" secondAttribute="bottom" constant="5" id="ztn-9Y-DlX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -346,6 +358,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="Stepbystep" destination="Nuv-dL-5Oy" id="0Gh-T2-wvr"/>
                         <outlet property="chatBottomConst" destination="gIG-WG-Qbe" id="Qr2-y4-K7v"/>
                         <outlet property="homeButtonView" destination="isk-7H-wP3" id="7FB-6u-y3e"/>
                         <outlet property="libraryBottomConst" destination="AIf-wq-F54" id="2PF-hq-ZdN"/>
@@ -359,6 +372,7 @@
                         <segue destination="4jf-M9-QD5" kind="presentation" identifier="goto_about" modalTransitionStyle="crossDissolve" id="hx6-y2-5rK"/>
                         <segue destination="4dH-r2-7bk" kind="show" identifier="goto_profile" id="zxi-JH-Ugf"/>
                         <segue destination="VQ3-1N-Szk" kind="show" identifier="goto_chat" id="KM6-hp-PdW"/>
+                        <segue destination="1ja-P8-6AP" kind="show" identifier="ShowInstructions" id="tEp-N4-viO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -517,7 +531,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IbV-4c-vb9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1509.5999999999999" y="438.53073463268368"/>
+            <point key="canvasLocation" x="2654" y="-279"/>
         </scene>
         <!--About View-->
         <scene sceneID="toJ-YZ-MvD">
@@ -556,7 +570,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2UF-gh-h49" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1510" y="-279"/>
+            <point key="canvasLocation" x="1727" y="-279"/>
         </scene>
         <!--WalkMe-->
         <scene sceneID="4ae-Kl-c4j">
@@ -910,6 +924,67 @@
             </objects>
             <point key="canvasLocation" x="-266" y="1247"/>
         </scene>
+        <!--Procrastinator's Route-->
+        <scene sceneID="m7n-ez-uUw">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="1ja-P8-6AP" customClass="DirectionsViewController" customModule="WalkMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Tn-Bq-9nw"/>
+                        <viewControllerLayoutGuide type="bottom" id="sx4-Es-V4r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YsQ-i3-5H7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" bounces="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="dbE-uq-noY" customClass="DirectionsTableView" customModule="WalkMe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="678"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.32799488310000002" green="0.54455459120000005" blue="0.88577204939999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DirectionCell" id="smP-cF-ScQ">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="smP-cF-ScQ" id="PVj-vR-5TA">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8I-EQ-m2g">
+                                <rect key="frame" x="16" y="45" width="34" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goHomeAction:" destination="1ja-P8-6AP" eventType="touchUpInside" id="HEG-GC-IsO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.32799488310000002" green="0.54455459120000005" blue="0.88577204939999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sx4-Es-V4r" firstAttribute="top" secondItem="dbE-uq-noY" secondAttribute="bottom" id="9Ej-vt-bNY"/>
+                            <constraint firstItem="dbE-uq-noY" firstAttribute="leading" secondItem="YsQ-i3-5H7" secondAttribute="leading" id="FtB-EB-pIa"/>
+                            <constraint firstAttribute="trailing" secondItem="dbE-uq-noY" secondAttribute="trailing" id="UkZ-AN-kub"/>
+                            <constraint firstItem="F8I-EQ-m2g" firstAttribute="leading" secondItem="YsQ-i3-5H7" secondAttribute="leading" constant="18" id="Vjx-6n-Fco"/>
+                            <constraint firstAttribute="trailing" secondItem="F8I-EQ-m2g" secondAttribute="trailing" constant="321" id="bJv-QR-EFW"/>
+                            <constraint firstItem="dbE-uq-noY" firstAttribute="top" secondItem="2Tn-Bq-9nw" secondAttribute="bottom" id="hHz-l2-lf1"/>
+                            <constraint firstItem="F8I-EQ-m2g" firstAttribute="top" secondItem="2Tn-Bq-9nw" secondAttribute="bottom" constant="25" id="rg0-12-eig"/>
+                            <constraint firstItem="dbE-uq-noY" firstAttribute="top" secondItem="2Tn-Bq-9nw" secondAttribute="bottom" id="w6r-9L-3Cm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eaB-3m-JU0"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Procrastinator's Route" id="AeD-t3-uIc"/>
+                    <connections>
+                        <outlet property="directionsTableView" destination="dbE-uq-noY" id="GBa-O9-47N"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goto_home" id="6KY-Rp-rPB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E5w-qJ-6OA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1726" y="439"/>
+        </scene>
     </scenes>
     <resources>
         <image name="24-hour-service" width="64" height="64"/>
@@ -923,8 +998,8 @@
         <image name="walkme" width="927" height="853"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GsY-My-5vu"/>
-        <segue reference="Qiz-N2-hBm"/>
+        <segue reference="iRd-Pq-26w"/>
+        <segue reference="6KY-Rp-rPB"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
