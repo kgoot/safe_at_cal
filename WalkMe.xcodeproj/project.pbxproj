@@ -21,6 +21,7 @@
 		9A0589EF1FDA19EC0002495F /* CreateChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0589EE1FDA19EC0002495F /* CreateChannelCell.swift */; };
 		9A0589F11FDA1A200002495F /* ChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0589F01FDA1A200002495F /* ChannelListViewController.swift */; };
 		9A0589F31FDA1A4C0002495F /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0589F21FDA1A4C0002495F /* Channel.swift */; };
+		9A0C16FF1FDE82C800D7C85E /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C16FE1FDE82C800D7C85E /* InstructionsView.swift */; };
 		9A3BB7131FCB928500DFF152 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3BB7121FCB928500DFF152 /* AboutView.swift */; };
 		9A4AEA221F9E9C8B00F7C16E /* crimedata.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9A4AEA211F9E9C8B00F7C16E /* crimedata.csv */; };
 		9A538DF31FD77FC800FDAF44 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A538DF21FD77FC800FDAF44 /* WelcomeView.swift */; };
@@ -72,6 +73,7 @@
 		9A0589EE1FDA19EC0002495F /* CreateChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChannelCell.swift; sourceTree = "<group>"; };
 		9A0589F01FDA1A200002495F /* ChannelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListViewController.swift; sourceTree = "<group>"; };
 		9A0589F21FDA1A4C0002495F /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		9A0C16FE1FDE82C800D7C85E /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
 		9A3BB7121FCB928500DFF152 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		9A4AEA211F9E9C8B00F7C16E /* crimedata.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = crimedata.csv; path = WalkMe/crimedata.csv; sourceTree = "<group>"; };
 		9A538DF21FD77FC800FDAF44 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				9AE9190A1FCA8BCB0070E5BF /* DataService.swift */,
 				9A0589EE1FDA19EC0002495F /* CreateChannelCell.swift */,
 				9A0589F21FDA1A4C0002495F /* Channel.swift */,
+				9A0C16FE1FDE82C800D7C85E /* InstructionsView.swift */,
 			);
 			path = WalkMe;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				9AA621D91FD79397005AA48E /* UserProfileView.swift in Sources */,
 				9A0589EF1FDA19EC0002495F /* CreateChannelCell.swift in Sources */,
 				9A0589ED1FDA19A70002495F /* ChatViewController.swift in Sources */,
+				9A0C16FF1FDE82C800D7C85E /* InstructionsView.swift in Sources */,
 				9AE9190B1FCA8BCB0070E5BF /* DataService.swift in Sources */,
 				9A0589F11FDA1A200002495F /* ChannelListViewController.swift in Sources */,
 			);

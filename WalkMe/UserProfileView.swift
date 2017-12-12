@@ -136,6 +136,7 @@ class UserProfileView: UIViewController, UIImagePickerControllerDelegate, UINavi
                     self.nameLabel.text = dict["fullName"] as? String
                     if let profileImageURL = dict["pic"] as? String {
                         if profileImageURL != "" {
+                            print("hello")
                             let url = URL(string: profileImageURL)
                             URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
                                 if error != nil{

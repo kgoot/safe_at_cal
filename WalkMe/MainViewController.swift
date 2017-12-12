@@ -14,11 +14,28 @@ import DTMHeatmap
 import KeychainSwift
 import Firebase
 
+typealias DataClosure = (Data?, Error?) -> Void
+
 class MainViewController: UIViewController {
     
     // VARIABLES
+    var crimes:[Crime] = []
     let database = Database.database().reference()
     lazy var geocoder = CLGeocoder()
+    var instructions:[MKRouteStep] = []
+    var zipcodePopuations = ["94611": 372.0,
+                             "94612": 143.0,
+                             "94701": 0.0,
+                             "94702": 160.0,
+                             "94703": 198.0,
+                             "94704": 256.0,
+                             "94705": 128.0,
+                             "94707": 117.0,
+                             "94708": 110.0,
+                             "94709": 118.0,
+                             "94710": 695.0,
+                             "94712": 0.0,
+                             "94720": 296.0] as [String : Double]
     
     //HOME outlets
     @IBOutlet weak var searchBar: UISearchBar!
@@ -48,6 +65,11 @@ class MainViewController: UIViewController {
     // CHAT
     @IBAction func loadChat(_ sender: Any) {
         self.performSegue(withIdentifier: "goto_chat", sender: self)
+    }
+    
+    
+    @IBAction func stepByStepInstructions(_ sender: Any) {
+        self.performSegue(withIdentifier: "ShowInstructions", sender: self)
     }
     
     
@@ -89,6 +111,13 @@ class MainViewController: UIViewController {
                 libraryBottomConst.constant = 70
                 chatBottomConst.constant = 20
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowInstructions" {
+            let nextCont = segue.destination as! InstructionsView
+            nextCont.instructions = self.instructions
         }
     }
     
@@ -240,15 +269,12 @@ class MainViewController: UIViewController {
     
     func scoreRoutes(routes: [MKRoute]) -> MKRoute {
         for route in routes {
-//            print("hello world")
             for step in route.steps {
                 let coord = step.polyline.coordinate
-                //                MKPinAnnotationView.bluePinColor()
                 let myTestAnnotation = MKPointAnnotation()
                 myTestAnnotation.coordinate = CLLocationCoordinate2DMake(coord.latitude, coord.longitude)
                 mapView.addAnnotation(myTestAnnotation)
             }
-//            print("end world")
         }
         return routes.first!
     }
@@ -263,7 +289,7 @@ class MainViewController: UIViewController {
                 let rows = data.components(separatedBy: "\n")
                 var result: [[String]] = []
                 for row in rows {
-                    let columns = row.components(separatedBy: "    ") //TODO: why doesn't \t work for me?
+                    let columns = row.components(separatedBy: "    ")//TODO: why doesn't \t work for me?
                     result.append(columns)
                 }
                 return result
@@ -273,47 +299,79 @@ class MainViewController: UIViewController {
         else { return []}
     }
     
-    //return a list of crimes
-    func createCrimes(rows: [[String]]) -> [Crime] {
-        // Read this from DB and Add Zipcode stuff
-        
-        
-        var crimes:[Crime] = []
-        for row in rows {
-            if (row.count == 5) { //TODO(kgoot) better error handling
-                let offense:String = row[2]
-                let latlong = row[4].components(separatedBy: ",").flatMap { Double($0.trimmingCharacters(in: .whitespaces))}
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "MM/dd/yy' 'HH:mm"
-                let date = dateFormatter.date(from: row[3])!
-                crimes.append(Crime.init(lat: latlong[0], long: latlong[1], datetime: date, zipcode: "", offense: offense))
-            }
+    //Load crimes from DB
+    func loadCrimesFromDB(completion: @escaping (Bool) -> ()){
+        let ucpdUID = "-L08_0czjNpi52a00GjZ"
+        let campusUID = "-L-rkCeQY3F5CmD33x6m"
+        for i in stride(from: 1, to: 18, by: 1) {
+            self.database.child("crimes").child(campusUID).child(String(i)).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let dict = snapshot.value as? [String: AnyObject] {
+                    let dateFormatter = DateFormatter()
+                    let temp = "2017-12-12'T'00:00:00"
+                    let date = Date()
+                    let coord = dict["block_location"]!["coordinates"] as! [String]
+                    let lat = NSString(string: coord[1]).doubleValue
+                    let long = NSString(string: coord[0]).doubleValue
+                    print(lat)
+                    let crime = Crime.init(lat: lat, long: long, datetime: date, zipcode: "94720", offense: dict["offense"] as! String)
+                    print(crime)
+                    self.crimes.append(crime)
+                }
+            })
         }
-        return crimes
+        
+        for i in stride(from: 1, to: 3001, by: 1) {
+            self.database.child("crimes").child(ucpdUID).child(String(i)).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let dict = snapshot.value as? [String: AnyObject] {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+                    let temp = String(describing: dict["eventdt"]!).prefix(19)
+                    let date = dateFormatter.date(from: String(temp))
+                    let crime = Crime.init(lat: dict["lat"] as! Double, long: dict["long"] as! Double, datetime: date!, zipcode: dict["zip"] as! String, offense: dict["offense"] as! String)
+                    self.crimes.append(crime)
+                    if i == 3000 {
+                        completion(true)
+                    }
+                }
+            })
+        }
     }
-    
+
     /***
      Add annotations to the map displaying lat/long information
      about crimes in the area
      ***/
     func addCrimeData(datetime: Date) {
-        let csvRows = csv()
-        let crimes = createCrimes(rows: csvRows)
+        loadCrimesFromDB {
+            success in
+            guard success == true else {
+                //Do something if some error occured while retreiving data from firebase
+                print("bad")
+                return
+            }
+            
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy' 'HH:mm"
        
         var heatmapdata:[NSObject: Double] = [:]
-        for crime in crimes {
+        for crime in self.crimes {
             if (crime.datetime > datetime) {
                 let coordinate = CLLocationCoordinate2D(latitude: crime.lat, longitude: crime.long);
                 var point = MKMapPointForCoordinate(coordinate)
                 let type = "{MKMapPoint=dd}"
                 let value = NSValue(bytes: &point, objCType: type)
-                heatmapdata[value] = 1.0
+                if self.zipcodePopuations[crime.zipcode] != nil {
+                    heatmapdata[value] =  self.zipcodePopuations[crime.zipcode]! / 100
+                } else {
+                    print(crime.zipcode)
+                    heatmapdata[value] =  1.0
+                }
+                
             }
         }
         self.heatMap.setData(heatmapdata as [NSObject : AnyObject])
         self.mapView.add(self.heatMap)
+    }
     }
 }
 
