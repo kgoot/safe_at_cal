@@ -294,17 +294,6 @@
                                     <action selector="loadChat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KV7-SW-hN6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fB4-wo-InX">
-                                <rect key="frame" x="274" y="18" width="85" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Steps">
-                                    <color key="titleColor" red="0.083203547170000003" green="0.084165330390000001" blue="0.087050680049999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="stepByStepInstructions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ob8-BO-AnZ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -370,7 +359,6 @@
                         <segue destination="4jf-M9-QD5" kind="presentation" identifier="goto_about" modalTransitionStyle="crossDissolve" id="hx6-y2-5rK"/>
                         <segue destination="4dH-r2-7bk" kind="show" identifier="goto_profile" id="zxi-JH-Ugf"/>
                         <segue destination="VQ3-1N-Szk" kind="show" identifier="goto_chat" id="KM6-hp-PdW"/>
-                        <segue destination="pwO-uf-Sna" kind="show" identifier="ShowInstructions" id="Qw4-4t-VF7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -530,30 +518,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IbV-4c-vb9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1509.5999999999999" y="438.53073463268368"/>
-        </scene>
-        <!--Instructions View-->
-        <scene sceneID="br8-VO-lCW">
-            <objects>
-                <viewController id="pwO-uf-Sna" customClass="InstructionsView" customModule="WalkMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QD3-IC-KgR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="text" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1r0-hM-s3y">
-                                <rect key="frame" x="139" y="259" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="3vz-JS-hUN"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="osZ-27-LEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2250" y="439"/>
         </scene>
         <!--About View-->
         <scene sceneID="toJ-YZ-MvD">

@@ -22,7 +22,6 @@ class MainViewController: UIViewController {
     var crimes:[Crime] = []
     let database = Database.database().reference()
     lazy var geocoder = CLGeocoder()
-    var instructions:[MKRouteStep] = []
     var zipcodePopuations = ["94611": 372.0,
                              "94612": 143.0,
                              "94701": 0.0,
@@ -67,12 +66,6 @@ class MainViewController: UIViewController {
         self.performSegue(withIdentifier: "goto_chat", sender: self)
     }
     
-    
-    @IBAction func stepByStepInstructions(_ sender: Any) {
-        self.performSegue(withIdentifier: "ShowInstructions", sender: self)
-    }
-    
-    
     //LOAD MAIN VIEW
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,13 +104,6 @@ class MainViewController: UIViewController {
                 libraryBottomConst.constant = 70
                 chatBottomConst.constant = 20
             }
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowInstructions" {
-            let nextCont = segue.destination as! InstructionsView
-            nextCont.instructions = self.instructions
         }
     }
     
